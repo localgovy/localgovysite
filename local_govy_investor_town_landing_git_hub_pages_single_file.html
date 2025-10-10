@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalGovy — Connect Towns, Residents & Local Business</title>
+  <meta name="description" content="LocalGovy is a one‑stop town app: official news, school updates, business directory, polls and a 24/7 FAQ chatbot. Built for municipalities. Attractive unit economics for investors."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            lg: {
+              bg: '#070A0A',
+              card: '#0E1413',
+              line: '#19211F',
+              neon: '#00E676',
+              neon2: '#65FFDA',
+              text: '#E6F7F2',
+              muted: '#9FB7B1'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(101,255,218,0.15), 0 0 30px rgba(0,230,118,0.12)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Open Graph / X Cards -->
+  <meta property="og:title" content="LocalGovy — Connect Towns, Residents & Local Business"/>
+  <meta property="og:description" content="A modern municipal app: news, school updates, business directory, polls and a 24/7 FAQ chatbot."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/og-image.png"/>
+  <meta property="og:url" content="https://localgovy.example"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="LocalGovy — One App for Your Town"/>
+  <meta name="twitter:description" content="Launch a branded town app in weeks, not months."/>
+  <meta name="twitter:image" content="/og-image.png"/>
+
+  <!-- JSON-LD: Organization + SoftwareApplication + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LocalGovy",
+    "url": "https://localgovy.example",
+    "logo": "https://localgovy.example/logo.png",
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LocalGovy",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "50",
+      "priceCurrency": "USD",
+      "category": "municipal-subscription"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LocalGovy",
+    "url": "https://localgovy.example",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://localgovy.example/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <style>
+    /* Fine‑tuned visuals */
+    .grid-gradient { background: radial-gradient(1200px 400px at 50% -10%, rgba(101,255,218,0.14), rgba(7,10,10,0)); }
+    .ring-underline { box-shadow: inset 0 -2px 0 0 #00E676; }
+    .noise { background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'.9\' numOctaves=\'2\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23n)\' opacity=\'.03\'/></svg>'); }
+  </style>
+</head>
+<body class="bg-lg-bg text-lg-text font-inter antialiased selection:bg-lg-neon/30">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-backdrop-blur:bg-lg-bg/70 bg-lg-bg/70 border-b border-lg-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2">
+        <svg width="26" height="26" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 1.5c4.694 0 8.5 3.806 8.5 8.5s-3.806 8.5-8.5 8.5S1.5 14.694 1.5 10 5.306 1.5 10 1.5Zm0 2.2a6.3 6.3 0 1 0 0 12.6 6.3 6.3 0 0 0 0-12.6Z" fill="#65FFDA"/>
+          <circle cx="10" cy="10" r="2.4" fill="#00E676"/>
+        </svg>
+        <span class="text-lg font-semibold tracking-tight">LocalGovy</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#towns" class="hover:text-white">For Towns</a>
+        <a href="#investors" class="hover:text-white">For Investors</a>
+        <a href="#features" class="hover:text-white">Features</a>
+        <a href="#pricing" class="hover:text-white">Pricing</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#demo" class="px-4 py-2 rounded-xl bg-lg-neon text-black font-medium hover:shadow-glow transition">Book a demo</a>
+        <a href="#investor-deck" class="px-4 py-2 rounded-xl border border-lg-line hover:border-lg-neon transition">Investor deck</a>
+      </div>
+      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#E6F7F2" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-lg-line bg-lg-bg">
+      <nav class="px-4 py-3 flex flex-col gap-3">
+        <a onclick="toggleMenu()" href="#towns" class="py-2">For Towns</a>
+        <a onclick="toggleMenu()" href="#investors" class="py-2">For Investors</a>
+        <a onclick="toggleMenu()" href="#features" class="py-2">Features</a>
+        <a onclick="toggleMenu()" href="#pricing" class="py-2">Pricing</a>
+        <a onclick="toggleMenu()" href="#faq" class="py-2">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="grid-gradient absolute inset-0 noise"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <div class="grid md:grid-cols-2 items-center gap-10">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lg-neon2/90 bg-lg-card/40 border border-lg-line px-3 py-1 rounded-full">Municipal engagement • Investor‑ready</div>
+          <h1 class="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+            One app to connect <span class="ring-underline">towns</span>, residents & local business
+          </h1>
+          <p class="mt-5 text-lg text-lg-muted max-w-xl">Branded town apps that ship in weeks, not months. News & school updates, business directory, polls, and a 24/7 FAQ chatbot — with low, predictable pricing.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#demo" class="px-5 py-3 rounded-2xl bg-lg-neon text-black font-semibold hover:shadow-glow">Book a demo</a>
+            <a href="#investor-deck" class="px-5 py-3 rounded-2xl border border-lg-line hover:border-lg-neon">View investor deck</a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-xs text-lg-muted">
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-lg-neon"></span> HTTPS & privacy‑first</div>
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-lg-neon"></span> iOS & Android</div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-lg-neon/10 to-transparent blur-2xl"></div>
+          <div class="relative aspect-[4/3] rounded-[2rem] bg-lg-card border border-lg-line p-6 shadow-glow">
+            <div class="grid grid-cols-12 gap-2 h-full">
+              <div class="col-span-7 rounded-xl bg-black/60 border border-lg-line p-4 flex flex-col">
+                <div class="text-sm text-lg-muted">Live feed</div>
+                <div class="mt-2 space-y-2 text-sm">
+                  <div class="p-3 rounded-lg bg-white/5 border border-lg-line">School update: Early dismissal Wed.</div>
+                  <div class="p-3 rounded-lg bg-white/5 border border-lg-line">Business spotlight: Green Bean Cafe</div>
+                  <div class="p-3 rounded-lg bg-white/5 border border-lg-line">Trash pickup moved to Friday</div>
+                </div>
+                <div class="mt-auto pt-3 text-xs text-right text-lg-muted">Demo UI</div>
+              </div>
+              <div class="col-span-5 flex flex-col gap-2">
+                <div class="rounded-xl bg-white/5 border border-lg-line p-4 h-full">
+                  <div class="text-sm">Poll</div>
+                  <div class="mt-2 text-xs text-lg-muted">How should we allocate park budget?</div>
+                  <div class="mt-3 grid gap-2 text-xs">
+                    <button class="px-3 py-2 rounded-lg border border-lg-line hover:border-lg-neon text-left">Playground upgrade</button>
+                    <button class="px-3 py-2 rounded-lg border border-lg-line hover:border-lg-neon text-left">Trail lighting</button>
+                    <button class="px-3 py-2 rounded-lg border border-lg-line hover:border-lg-neon text-left">Dog area</button>
+                  </div>
+                </div>
+                <div class="rounded-xl bg-white/5 border border-lg-line p-4 h-full">
+                  <div class="text-sm">FAQ Chatbot</div>
+                  <div class="mt-2 text-xs text-lg-muted">“When is trash day on holidays?”</div>
+                  <div class="mt-2 text-xs">Pickup shifts to Friday this week.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Props -->
+  <section id="features" class="py-16 md:py-20 border-t border-lg-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="text-lg font-semibold">Official updates</div>
+          <p class="mt-2 text-sm text-lg-muted">News from town hall & schools in one feed. Cut misinformation and reduce phone calls.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="text-lg font-semibold">Local directory</div>
+          <p class="mt-2 text-sm text-lg-muted">Give every business a home. Promote featured listings & coupons without clutter.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="text-lg font-semibold">Polls & surveys</div>
+          <p class="mt-2 text-sm text-lg-muted">Take the pulse in days, not months. Make data‑backed decisions with resident input.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="text-lg font-semibold">24/7 FAQ chatbot</div>
+          <p class="mt-2 text-sm text-lg-muted">Instant answers to common questions so staff can focus on high‑value work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Split sections: Towns / Investors -->
+  <section id="towns" class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-start">
+      <div class="p-8 rounded-3xl bg-lg-card border border-lg-line shadow-glow">
+        <h2 class="text-2xl md:text-3xl font-bold">For Towns</h2>
+        <ul class="mt-5 space-y-3 text-sm leading-6 text-lg-muted">
+          <li>• Branded iOS & Android apps with your colors and seal</li>
+          <li>• Easy CMS: staff post news, events & directory updates in minutes</li>
+          <li>• Push notifications, polls, and a resident‑friendly chatbot</li>
+          <li>• Launch in weeks with low ongoing cost</li>
+          <li>• Optional featured listings for local sponsors</li>
+        </ul>
+        <div class="mt-6 flex gap-3">
+          <a href="#pricing" class="px-5 py-3 rounded-2xl bg-lg-neon text-black font-semibold">See pricing</a>
+          <a href="#demo" class="px-5 py-3 rounded-2xl border border-lg-line hover:border-lg-neon">Request a demo</a>
+        </div>
+      </div>
+      <div id="investors" class="p-8 rounded-3xl bg-lg-card border border-lg-line">
+        <h2 class="text-2xl md:text-3xl font-bold">For Investors</h2>
+        <div class="mt-5 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-lg-line p-4">
+            <div class="text-xs text-lg-muted">Model</div>
+            <div class="mt-1 font-semibold">SaaS subscription + local ads</div>
+          </div>
+          <div class="rounded-2xl border border-lg-line p-4">
+            <div class="text-xs text-lg-muted">Target customer</div>
+            <div class="mt-1 font-semibold">10k–100k population towns</div>
+          </div>
+          <div class="rounded-2xl border border-lg-line p-4">
+            <div class="text-xs text-lg-muted">Unit economics</div>
+            <div class="mt-1 font-semibold">~$50 MRR per town (baseline)</div>
+            <div class="text-xs text-lg-muted">Variable: featured listings/sponsors</div>
+          </div>
+          <div class="rounded-2xl border border-lg-line p-4">
+            <div class="text-xs text-lg-muted">Scale advantage</div>
+            <div class="mt-1 font-semibold">Single codebase, multi‑tenant backend</div>
+          </div>
+        </div>
+        <p class="mt-5 text-sm text-lg-muted">Pipeline focus on New England municipalities; go‑to‑market via warm intros, chambers, incubators & pilot towns.</p>
+        <div class="mt-6">
+          <a href="#investor-deck" class="inline-block px-5 py-3 rounded-2xl border border-lg-line hover:border-lg-neon">Open investor deck</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 md:py-24 border-t border-lg-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">Simple pricing</h2>
+      <p class="mt-2 text-lg-muted">Low, predictable subscription. Annual billing recommended; monthly available on request.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-lg-card border border-lg-line shadow-glow">
+          <div class="text-sm uppercase tracking-widest text-lg-muted">Starter</div>
+          <div class="mt-3 text-4xl font-extrabold">$50<span class="text-base font-semibold text-lg-muted">/month</span></div>
+          <div class="text-xs text-lg-muted">billed annually</div>
+          <ul class="mt-6 space-y-3 text-sm text-lg-muted">
+            <li>• Branded iOS & Android apps</li>
+            <li>• News, directory, polls & chatbot modules</li>
+            <li>• Unlimited push notifications</li>
+            <li>• Admin CMS & onboarding support</li>
+            <li>• Basic analytics</li>
+          </ul>
+          <a href="#demo" class="mt-6 inline-block px-5 py-3 rounded-2xl bg-lg-neon text-black font-semibold w-full text-center">Get started</a>
+        </div>
+        <div class="p-8 rounded-3xl bg-lg-card border border-lg-line">
+          <div class="text-sm uppercase tracking-widest text-lg-muted">Growth</div>
+          <div class="mt-3 text-4xl font-extrabold">Custom</div>
+          <div class="text-xs text-lg-muted">for larger cities or special modules</div>
+          <ul class="mt-6 space-y-3 text-sm text-lg-muted">
+            <li>• Priority support & SLAs</li>
+            <li>• Advanced integrations (e.g., work orders)</li>
+            <li>• Additional languages & accessibility reviews</li>
+            <li>• Data export & SSO options</li>
+          </ul>
+          <a href="#demo" class="mt-6 inline-block px-5 py-3 rounded-2xl border border-lg-line hover:border-lg-neon w-full text-center">Talk to us</a>
+        </div>
+        <div class="p-8 rounded-3xl bg-lg-card border border-lg-line">
+          <div class="text-sm uppercase tracking-widest text-lg-muted">Sponsors</div>
+          <div class="mt-3 text-4xl font-extrabold">Local Ads</div>
+          <div class="text-xs text-lg-muted">optional featured listings & banners</div>
+          <ul class="mt-6 space-y-3 text-sm text-lg-muted">
+            <li>• Non‑invasive placements</li>
+            <li>• Town‑friendly revenue model</li>
+            <li>• Transparent reporting</li>
+          </ul>
+          <a href="#demo" class="mt-6 inline-block px-5 py-3 rounded-2xl border border-lg-line hover:border-lg-neon w-full text-center">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech & Compliance -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-6 items-start">
+      <div class="p-8 rounded-3xl bg-lg-card border border-lg-line">
+        <h3 class="text-xl font-semibold">Built to scale</h3>
+        <p class="mt-3 text-sm text-lg-muted">Single codebase, multi‑tenant backend. Modules can be toggled per town. CI/CD keeps every app current.</p>
+      </div>
+      <div class="p-8 rounded-3xl bg-lg-card border border-lg-line">
+        <h3 class="text-xl font-semibold">Privacy & security</h3>
+        <p class="mt-3 text-sm text-lg-muted">HTTPS by default, least‑privilege access, encrypted data at rest where supported. No PII required for most features.</p>
+      </div>
+      <div class="p-8 rounded-3xl bg-lg-card border border-lg-line">
+        <h3 class="text-xl font-semibold">Accessibility</h3>
+        <p class="mt-3 text-sm text-lg-muted">High‑contrast design, keyboard navigable and screen‑reader friendly. Continuous improvements guided by feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 md:py-24 border-t border-lg-line">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">FAQs</h2>
+      <div class="mt-8 divide-y divide-lg-line">
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">How long does onboarding take?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">A few weeks for branding, content import and App Store submissions, depending on response times.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Can we use our own app store accounts?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">Yes. We can publish apps under our account or yours. Either way, the app is fully branded for your town.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">How are ads handled?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">Non‑invasive placements (e.g., featured directory listings). The app remains information‑first.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="demo" class="py-16 md:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold">Ready to see LocalGovy for your town?</h2>
+      <p class="mt-3 text-lg-muted">Ask for a 20‑minute walkthrough or request the investor pack.</p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="mailto:hello@localgovy.example?subject=LocalGovy%20Demo%20Request" class="px-6 py-3 rounded-2xl bg-lg-neon text-black font-semibold">Email us</a>
+        <a href="#investor-deck" class="px-6 py-3 rounded-2xl border border-lg-line hover:border-lg-neon">Investor pack</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-lg-line py-10 text-center text-sm text-lg-muted">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div>© <span id="year"></span> LocalGovy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function toggleMenu(){ mobileMenu.classList.toggle('hidden'); }
+    if (menuBtn){ menuBtn.addEventListener('click', toggleMenu); }
+  </script>
+</body>
+</html>
