@@ -207,6 +207,238 @@
     </div>
   </section>
 
+  <!-- App Showcase -->
+  <section id="app-showcase" class="py-16 md:py-24 border-t border-lg-line overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">The LocalGovy Experience</h2>
+        <p class="mt-3 text-lg-muted max-w-2xl mx-auto">Beautiful, intuitive interfaces that keep residents informed and engaged with your community.</p>
+      </div>
+      
+      <!-- App Screenshots Carousel -->
+      <div class="relative">
+        <!-- Carousel Navigation -->
+        <div class="absolute top-1/2 -translate-y-1/2 left-4 z-10">
+          <button id="prevBtn" class="p-2 rounded-full bg-lg-card border border-lg-line text-lg-text hover:bg-lg-line">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="absolute top-1/2 -translate-y-1/2 right-4 z-10">
+          <button id="nextBtn" class="p-2 rounded-full bg-lg-card border border-lg-line text-lg-text hover:bg-lg-line">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Carousel Container -->
+        <div class="carousel-container overflow-hidden">
+          <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Screen 1: Snow Day Likelihood -->
+            <div class="carousel-item min-w-full px-4">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="w-full md:w-1/3 max-w-xs">
+                  <div class="device-wrapper relative">
+                    <div class="device-frame rounded-[40px] bg-black border-8 border-gray-800 shadow-xl overflow-hidden">
+                      <img src="https://i.ibb.co/wJdqcLq/snow-day-likelihood.png" alt="Snow Day Likelihood Screen" class="w-full h-auto" />
+                    </div>
+                    <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                  <h3 class="text-xl font-bold text-lg-neon">Snow Day Likelihood</h3>
+                  <p class="mt-3 text-lg-muted">Real-time updates on school closures with our proprietary LocalGovy Snow Score. Keep parents informed with accurate predictions and official announcements.</p>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Real-time updates</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Push notifications</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Community sponsored</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Screen 2: School Announcements -->
+            <div class="carousel-item min-w-full px-4">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="w-full md:w-1/3 max-w-xs">
+                  <div class="device-wrapper relative">
+                    <div class="device-frame rounded-[40px] bg-black border-8 border-gray-800 shadow-xl overflow-hidden">
+                      <img src="https://i.ibb.co/qyLRWvM/school-announcements.png" alt="School Announcements Screen" class="w-full h-auto" />
+                    </div>
+                    <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                  <h3 class="text-xl font-bold text-lg-neon">School Announcements</h3>
+                  <p class="mt-3 text-lg-muted">Keep parents and students informed with important school announcements, upcoming events, and schedule changes all in one place.</p>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Calendar integration</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Important dates</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Staff updates</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Screen 3: Gardner Chat -->
+            <div class="carousel-item min-w-full px-4">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="w-full md:w-1/3 max-w-xs">
+                  <div class="device-wrapper relative">
+                    <div class="device-frame rounded-[40px] bg-black border-8 border-gray-800 shadow-xl overflow-hidden">
+                      <img src="https://i.ibb.co/KxBYcqV/gardner-chat.png" alt="Gardner Chat Screen" class="w-full h-auto" />
+                    </div>
+                    <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                  <h3 class="text-xl font-bold text-lg-neon">Virtual Assistant</h3>
+                  <p class="mt-3 text-lg-muted">24/7 access to a virtual assistant that helps residents find information about local services, schedules, community resources, and contact information for city officials.</p>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">AI-powered</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Always available</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Reduces staff calls</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Screen 4: Local Events -->
+            <div class="carousel-item min-w-full px-4">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="w-full md:w-1/3 max-w-xs">
+                  <div class="device-wrapper relative">
+                    <div class="device-frame rounded-[40px] bg-black border-8 border-gray-800 shadow-xl overflow-hidden">
+                      <img src="https://i.ibb.co/7vQnXnF/local-events.png" alt="Local Events Screen" class="w-full h-auto" />
+                    </div>
+                    <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                  <h3 class="text-xl font-bold text-lg-neon">Local Events</h3>
+                  <p class="mt-3 text-lg-muted">Browse upcoming events in your community with filtering options for school, government, and community gatherings. Never miss an important meeting or event again.</p>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Calendar integration</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Category filters</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Event details</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Screen 5: Business Directory -->
+            <div class="carousel-item min-w-full px-4">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="w-full md:w-1/3 max-w-xs">
+                  <div class="device-wrapper relative">
+                    <div class="device-frame rounded-[40px] bg-black border-8 border-gray-800 shadow-xl overflow-hidden">
+                      <img src="https://i.ibb.co/X4Jdw3L/business-directory.png" alt="Business Directory Screen" class="w-full h-auto" />
+                    </div>
+                    <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                  <h3 class="text-xl font-bold text-lg-neon">Business Directory</h3>
+                  <p class="mt-3 text-lg-muted">Support local businesses with a comprehensive directory featuring search, categories, and sponsored listings. Connect residents with local services they need.</p>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Search functionality</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Category filters</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Sponsored listings</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Screen 6: Community Poll -->
+            <div class="carousel-item min-w-full px-4">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="w-full md:w-1/3 max-w-xs">
+                  <div class="device-wrapper relative">
+                    <div class="device-frame rounded-[40px] bg-black border-8 border-gray-800 shadow-xl overflow-hidden">
+                      <img src="https://i.ibb.co/vkKhZRV/community-poll.png" alt="Community Poll Screen" class="w-full h-auto" />
+                    </div>
+                    <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                  <h3 class="text-xl font-bold text-lg-neon">Community Polls</h3>
+                  <p class="mt-3 text-lg-muted">Gather resident feedback on important community decisions. Increase civic engagement and make data-driven decisions with easy-to-use polls.</p>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Civic engagement</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Real-time results</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Decision support</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Screen 7: Home News -->
+            <div class="carousel-item min-w-full px-4">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="w-full md:w-1/3 max-w-xs">
+                  <div class="device-wrapper relative">
+                    <div class="device-frame rounded-[40px] bg-black border-8 border-gray-800 shadow-xl overflow-hidden">
+                      <img src="https://i.ibb.co/vxZKb9F/home-news.png" alt="Home News Screen" class="w-full h-auto" />
+                    </div>
+                    <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                  <h3 class="text-xl font-bold text-lg-neon">Community News</h3>
+                  <p class="mt-3 text-lg-muted">Stay informed with the latest community news and updates. From yard waste pickup schedules to utility information, everything residents need to know in one place.</p>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Featured stories</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Important notices</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Community updates</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Screen 8: Quick Links -->
+            <div class="carousel-item min-w-full px-4">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="w-full md:w-1/3 max-w-xs">
+                  <div class="device-wrapper relative">
+                    <div class="device-frame rounded-[40px] bg-black border-8 border-gray-800 shadow-xl overflow-hidden">
+                      <img src="https://i.ibb.co/bKH4pYL/quick-links.png" alt="Quick Links Screen" class="w-full h-auto" />
+                    </div>
+                    <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                  <h3 class="text-xl font-bold text-lg-neon">Quick Links & Services</h3>
+                  <p class="mt-3 text-lg-muted">Easy access to essential municipal services including permits, licenses, bill payments, and utilities. Streamline resident interactions with local government.</p>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">E-government</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Online payments</span>
+                    <span class="px-3 py-1 bg-lg-card border border-lg-line rounded-full text-xs">Service access</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Carousel Indicators -->
+        <div class="flex justify-center mt-8">
+          <div class="flex gap-2" id="carousel-indicators">
+            <button class="w-2 h-2 rounded-full bg-lg-neon" data-index="0"></button>
+            <button class="w-2 h-2 rounded-full bg-lg-line" data-index="1"></button>
+            <button class="w-2 h-2 rounded-full bg-lg-line" data-index="2"></button>
+            <button class="w-2 h-2 rounded-full bg-lg-line" data-index="3"></button>
+            <button class="w-2 h-2 rounded-full bg-lg-line" data-index="4"></button>
+            <button class="w-2 h-2 rounded-full bg-lg-line" data-index="5"></button>
+            <button class="w-2 h-2 rounded-full bg-lg-line" data-index="6"></button>
+            <button class="w-2 h-2 rounded-full bg-lg-line" data-index="7"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Split sections: Towns / Investors -->
   <section id="towns" class="py-16 md:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-start">
@@ -355,6 +587,63 @@
     const mobileMenu = document.getElementById('mobileMenu');
     function toggleMenu(){ mobileMenu.classList.toggle('hidden'); }
     if (menuBtn){ menuBtn.addEventListener('click', toggleMenu); }
+    
+    // App Showcase Carousel
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.getElementById('carousel');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const indicators = document.querySelectorAll('#carousel-indicators button');
+      
+      let currentIndex = 0;
+      const itemCount = document.querySelectorAll('.carousel-item').length;
+      
+      function updateCarousel() {
+        // Update transform to show current slide
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+          if (index === currentIndex) {
+            indicator.classList.remove('bg-lg-line');
+            indicator.classList.add('bg-lg-neon');
+          } else {
+            indicator.classList.remove('bg-lg-neon');
+            indicator.classList.add('bg-lg-line');
+          }
+        });
+      }
+      
+      // Next button click
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % itemCount;
+          updateCarousel();
+        });
+      }
+      
+      // Previous button click
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+          updateCarousel();
+        });
+      }
+      
+      // Indicator clicks
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          currentIndex = index;
+          updateCarousel();
+        });
+      });
+      
+      // Auto-advance carousel every 5 seconds
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % itemCount;
+        updateCarousel();
+      }, 5000);
+    });
   </script>
 </body>
 </html>
