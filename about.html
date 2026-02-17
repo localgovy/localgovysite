@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+  
+  <title>About Us - LocalGovy</title>
+  <meta name="description" content="Learn about LocalGovy, founded by Noah Khan. A Canadian company supporting municipal app implementation across all provinces."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            lg: {
+              bg: '#070A0A',
+              card: '#0E1413',
+              line: '#19211F',
+              neon: '#00E676',
+              neon2: '#65FFDA',
+              text: '#E6F7F2',
+              muted: '#9FB7B1'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(101,255,218,0.15), 0 0 30px rgba(0,230,118,0.12)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .grid-gradient { background: radial-gradient(1200px 400px at 50% -10%, rgba(101,255,218,0.14), rgba(7,10,10,0)); }
+    .noise { background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'.9\' numOctaves=\'2\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23n)\' opacity=\'.03\'/></svg>'); }
+  </style>
+</head>
+<body class="bg-lg-bg text-lg-text font-inter antialiased selection:bg-lg-neon/30">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-backdrop-blur:bg-lg-bg/70 bg-lg-bg/70 border-b border-lg-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center py-3">
+        <img src="/lg_logo.png" alt="LocalGovy" class="w-48 md:w-64 brightness-125" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="/index.html" class="hover:text-white">Home</a>
+        <a href="/about.html" class="text-white">About</a>
+        <a href="/index.html#features" class="hover:text-white">Features</a>
+        <a href="/index.html#pricing" class="hover:text-white">Pricing</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="mailto:noah@localgovy.com?subject=LocalGovy%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20using%20LocalGovy%20services%20for%20my%20town.%0A%0AThank%20you!" class="px-4 py-2 rounded-xl bg-lg-neon text-black font-medium hover:shadow-glow transition">Book a demo</a>
+      </div>
+      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#E6F7F2" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-lg-line bg-lg-bg">
+      <nav class="px-4 py-3 flex flex-col gap-3">
+        <a onclick="toggleMenu()" href="/index.html" class="py-2">Home</a>
+        <a onclick="toggleMenu()" href="/about.html" class="py-2">About</a>
+        <a onclick="toggleMenu()" href="/index.html#features" class="py-2">Features</a>
+        <a onclick="toggleMenu()" href="/index.html#pricing" class="py-2">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Hero -->
+  <section class="relative overflow-hidden">
+    <div class="grid-gradient absolute inset-0 noise"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+          About LocalGovy
+        </h1>
+        <p class="mt-6 text-xl text-lg-muted">Connecting communities across Canada with innovative municipal technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="py-16 md:py-24 border-t border-lg-line">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      
+      <!-- Company Story -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+        <div class="space-y-4 text-lg text-lg-muted leading-relaxed">
+          <p>LocalGovy originated in Massachusetts with a vision to transform how municipalities communicate with their residents. What began as an innovative idea has evolved into a comprehensive platform serving communities across Canada.</p>
+          <p>Today, LocalGovy is a fully Canadian company based in Aurora, Ontario, supporting implementation in all provinces. We're committed to helping towns and cities across Canada strengthen their connection with residents through modern, accessible technology.</p>
+        </div>
+      </div>
+
+      <!-- Founder Section -->
+      <div class="p-8 md:p-12 rounded-3xl bg-lg-card border border-lg-line shadow-glow">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold text-lg-neon mb-2">Noah Khan</h2>
+            <p class="text-lg text-lg-muted mb-4">CEO & Founder</p>
+            <div class="space-y-4 text-lg-muted leading-relaxed">
+              <p>Noah Khan founded LocalGovy with a mission to make municipal services more accessible and engaging for all residents. His vision combines cutting-edge technology with a deep understanding of community needs.</p>
+              <p>Under Noah's leadership, LocalGovy has grown from its Massachusetts roots into a proud Canadian company, now serving municipalities across all provinces from our headquarters in Aurora, Ontario.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission & Values -->
+      <div class="mt-16">
+        <h2 class="text-3xl font-bold mb-8 text-center">Our Mission</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+            <div class="text-lg-neon text-xl font-bold mb-3">🇨🇦 Canadian-Focused</div>
+            <p class="text-sm text-lg-muted">Proudly serving municipalities across all Canadian provinces with solutions designed for Canadian communities.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+            <div class="text-lg-neon text-xl font-bold mb-3">🤝 Community-First</div>
+            <p class="text-sm text-lg-muted">We believe strong communities are built on clear communication and meaningful engagement between residents and local government.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+            <div class="text-lg-neon text-xl font-bold mb-3">💡 Innovation</div>
+            <p class="text-sm text-lg-muted">Leveraging the latest technology to create intuitive, powerful tools that make municipal services accessible to everyone.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="mt-16 p-8 rounded-3xl bg-lg-card border border-lg-line text-center">
+        <h2 class="text-2xl font-bold mb-4">Find Us</h2>
+        <p class="text-lg text-lg-muted">Based in Aurora, Ontario, Canada</p>
+        <p class="text-lg text-lg-muted mt-2">Serving municipalities across all Canadian provinces</p>
+        <div class="mt-6">
+          <a href="mailto:noah@localgovy.com" class="inline-block px-6 py-3 rounded-2xl bg-lg-neon text-black font-semibold hover:shadow-glow transition">Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="border-t border-lg-line py-10 text-center text-sm text-lg-muted">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div>© <span id="year"></span> LocalGovy. All rights reserved.</div>
+      <div class="mt-2">Based in Aurora, Ontario, Canada</div>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    function toggleMenu() {
+      if (mobileMenu) mobileMenu.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
