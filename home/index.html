@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+  
+  <title>LocalGovy - Towns Made Simple</title>
+  <meta name="description" content="LocalGovy is a one‑stop town app: official news, school updates, business directory, polls and a 24/7 FAQ chatbot. Built for municipalities. Attractive unit economics for investors."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            lg: {
+              bg: '#070A0A',
+              card: '#0E1413',
+              line: '#19211F',
+              neon: '#00E676',
+              neon2: '#65FFDA',
+              text: '#E6F7F2',
+              muted: '#9FB7B1'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(101,255,218,0.15), 0 0 30px rgba(0,230,118,0.12)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Open Graph / X Cards -->
+  <meta property="og:title" content="LocalGovy — Connect Towns, Residents & Local Business"/>
+  <meta property="og:description" content="A modern municipal app: news, school updates, business directory, polls and a 24/7 FAQ chatbot."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/og-image.png"/>
+  <meta property="og:url" content="https://localgovy.example"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="LocalGovy — One App for Your Town"/>
+  <meta name="twitter:description" content="Launch a branded town app in weeks, not months."/>
+  <meta name="twitter:image" content="/og-image.png"/>
+
+  <!-- JSON-LD: Organization + SoftwareApplication + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LocalGovy",
+    "url": "https://localgovy.example",
+    "logo": "https://localgovy.example/logo.png",
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LocalGovy",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "100",
+      "priceCurrency": "USD",
+      "category": "municipal-subscription"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LocalGovy",
+    "url": "https://localgovy.example",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://localgovy.example/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <style>
+    /* Fine‑tuned visuals */
+    .grid-gradient { background: radial-gradient(1200px 400px at 50% -10%, rgba(101,255,218,0.14), rgba(7,10,10,0)); }
+    .ring-underline { box-shadow: inset 0 -2px 0 0 #00E676; }
+    .noise { background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'.9\' numOctaves=\'2\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23n)\' opacity=\'.03\'/></svg>'); }
+  </style>
+</head>
+<body class="bg-lg-bg text-lg-text font-inter antialiased selection:bg-lg-neon/30">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-backdrop-blur:bg-lg-bg/70 bg-lg-bg/70 border-b border-lg-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/home" class="flex items-center py-3">
+        <img src="/lg_logo.png" alt="LocalGovy" class="w-48 md:w-64 brightness-125" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="/home#features" class="hover:text-white">Features</a>
+        <a href="/home#pricing" class="hover:text-white">Pricing</a>
+        <a href="/home#faq" class="hover:text-white">FAQ</a>
+        <a href="/about" class="hover:text-white">About</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="mailto:noah@localgovy.com?subject=LocalGovy%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20using%20LocalGovy%20services%20for%20my%20town.%0A%0AThank%20you!" class="px-4 py-2 rounded-xl bg-lg-neon text-black font-medium hover:shadow-glow transition">Book a demo</a>
+      </div>
+      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#E6F7F2" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-lg-line bg-lg-bg">
+      <nav class="px-4 py-3 flex flex-col gap-3">
+        <a onclick="toggleMenu()" href="/home#features" class="py-2">Features</a>
+        <a onclick="toggleMenu()" href="/home#pricing" class="py-2">Pricing</a>
+        <a onclick="toggleMenu()" href="/home#faq" class="py-2">FAQ</a>
+        <a onclick="toggleMenu()" href="/about" class="py-2">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="grid-gradient absolute inset-0 noise"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <div class="grid md:grid-cols-2 items-center gap-10">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lg-neon2/90 bg-lg-card/40 border border-lg-line px-3 py-1 rounded-full">Your Community, Connected</div>
+          <h1 class="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+            Everything your <span class="ring-underline">residents</span> need in one app
+          </h1>
+          <p class="mt-5 text-lg text-lg-muted max-w-xl">A fully branded mobile app for your town featuring news, events, business directory, community polls, school updates, and an AI-powered assistant available 24/7. Canada-Based.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:noah@localgovy.com?subject=LocalGovy%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20using%20LocalGovy%20services%20for%20my%20town.%0A%0AThank%20you!" class="px-5 py-3 rounded-2xl bg-lg-neon text-black font-semibold hover:shadow-glow">Book a demo</a>
+          </div>
+            <div class="mt-6 flex items-center gap-6 text-xs text-lg-muted">
+              <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-lg-neon"></span> Canadian-built and Canadian-focused</div>
+              <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-lg-neon"></span> iOS & Android</div>
+            </div>
+        </div>
+        
+        <!-- App Demo in Hero Section -->
+        <div class="relative">
+          <!-- Enhanced gradient glow -->
+          <div class="absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-lg-neon/20 via-lg-neon2/15 to-transparent blur-3xl"></div>
+          <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-lg-neon/10 to-lg-neon2/10 blur-2xl"></div>
+          
+          <div class="relative rounded-[2rem] bg-lg-card border-2 border-lg-neon/30 p-6 shadow-glow">
+            <!-- App Screenshots Carousel -->
+            <div class="relative">
+              <!-- Carousel Navigation -->
+              <div class="absolute top-1/2 -translate-y-1/2 left-2 z-10">
+                <button id="prevBtn" class="p-2 rounded-full bg-lg-card border-2 border-lg-neon/40 text-lg-text hover:bg-lg-line hover:border-lg-neon transition-all shadow-lg">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="absolute top-1/2 -translate-y-1/2 right-2 z-10">
+                <button id="nextBtn" class="p-2 rounded-full bg-lg-card border-2 border-lg-neon/40 text-lg-text hover:bg-lg-line hover:border-lg-neon transition-all shadow-lg">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              
+              <!-- Carousel Container -->
+              <div class="carousel-container overflow-hidden">
+                <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                  <!-- Screen 1: Snow Day Likelihood -->
+                  <div class="carousel-item min-w-full">
+                    <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
+                      <!-- Enhanced phone frame with bold border and gradient -->
+                      <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lg-neon/30 to-lg-neon2/30 blur-xl"></div>
+                      <div class="relative device-frame rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] border-lg-neon/50 shadow-2xl overflow-hidden ring-2 ring-lg-neon/20">
+                        <img src="IMG_7892.jpg" alt="Snow Day Likelihood Screen" class="w-full h-auto" />
+                      </div>
+                      <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Screen 2: School Announcements -->
+                  <div class="carousel-item min-w-full">
+                    <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
+                      <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lg-neon/30 to-lg-neon2/30 blur-xl"></div>
+                      <div class="relative device-frame rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] border-lg-neon/50 shadow-2xl overflow-hidden ring-2 ring-lg-neon/20">
+                        <img src="IMG_7893.jpg" alt="School Announcements Screen" class="w-full h-auto" />
+                      </div>
+                      <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Screen 3: Gardner Chat -->
+                  <div class="carousel-item min-w-full">
+                    <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
+                      <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lg-neon/30 to-lg-neon2/30 blur-xl"></div>
+                      <div class="relative device-frame rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] border-lg-neon/50 shadow-2xl overflow-hidden ring-2 ring-lg-neon/20">
+                        <img src="IMG_7894.jpg" alt="Gardner Chat Screen" class="w-full h-auto" />
+                      </div>
+                      <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Screen 4: Local Events -->
+                  <div class="carousel-item min-w-full">
+                    <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
+                      <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lg-neon/30 to-lg-neon2/30 blur-xl"></div>
+                      <div class="relative device-frame rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] border-lg-neon/50 shadow-2xl overflow-hidden ring-2 ring-lg-neon/20">
+                        <img src="IMG_7895.jpg" alt="Local Events Screen" class="w-full h-auto" />
+                      </div>
+                      <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Screen 5: Business Directory -->
+                  <div class="carousel-item min-w-full">
+                    <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
+                      <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lg-neon/30 to-lg-neon2/30 blur-xl"></div>
+                      <div class="relative device-frame rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] border-lg-neon/50 shadow-2xl overflow-hidden ring-2 ring-lg-neon/20">
+                        <img src="IMG_7896.jpg" alt="Business Directory Screen" class="w-full h-auto" />
+                      </div>
+                      <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Screen 6: Community Poll -->
+                  <div class="carousel-item min-w-full">
+                    <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
+                      <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lg-neon/30 to-lg-neon2/30 blur-xl"></div>
+                      <div class="relative device-frame rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] border-lg-neon/50 shadow-2xl overflow-hidden ring-2 ring-lg-neon/20">
+                        <img src="IMG_7897.jpg" alt="Community Poll Screen" class="w-full h-auto" />
+                      </div>
+                      <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Screen 7: Home News -->
+                  <div class="carousel-item min-w-full">
+                    <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
+                      <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lg-neon/30 to-lg-neon2/30 blur-xl"></div>
+                      <div class="relative device-frame rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] border-lg-neon/50 shadow-2xl overflow-hidden ring-2 ring-lg-neon/20">
+                        <img src="IMG_7898.jpg" alt="Home News Screen" class="w-full h-auto" />
+                      </div>
+                      <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Screen 8: Quick Links -->
+                  <div class="carousel-item min-w-full">
+                    <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
+                      <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lg-neon/30 to-lg-neon2/30 blur-xl"></div>
+                      <div class="relative device-frame rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] border-lg-neon/50 shadow-2xl overflow-hidden ring-2 ring-lg-neon/20">
+                        <img src="IMG_7899.jpg" alt="Quick Links Screen" class="w-full h-auto" />
+                      </div>
+                      <div class="device-notch absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Carousel Indicators -->
+              <div class="flex justify-center mt-4">
+                <div class="flex gap-2" id="carousel-indicators">
+                  <button class="w-1.5 h-1.5 rounded-full bg-lg-neon" data-index="0"></button>
+                  <button class="w-1.5 h-1.5 rounded-full bg-lg-line" data-index="1"></button>
+                  <button class="w-1.5 h-1.5 rounded-full bg-lg-line" data-index="2"></button>
+                  <button class="w-1.5 h-1.5 rounded-full bg-lg-line" data-index="3"></button>
+                  <button class="w-1.5 h-1.5 rounded-full bg-lg-line" data-index="4"></button>
+                  <button class="w-1.5 h-1.5 rounded-full bg-lg-line" data-index="5"></button>
+                  <button class="w-1.5 h-1.5 rounded-full bg-lg-line" data-index="6"></button>
+                  <button class="w-1.5 h-1.5 rounded-full bg-lg-line" data-index="7"></button>
+                </div>
+              </div>
+              
+              <!-- Gardner Attribution -->
+              <div class="mt-3 text-center">
+                <p class="text-xs text-lg-muted italic">Custom build for the City of Gardner, MA</p>
+              </div>
+            </div>
+            
+              <div class="mt-4 p-4 rounded-xl bg-gradient-to-r from-lg-neon/10 to-lg-neon2/10 border border-lg-neon/30">
+                <div class="flex items-center justify-center gap-3">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="opacity-60">
+                    <path d="M17.25 10.5V18.75C17.25 19.9926 16.2426 21 15 21H5.25C4.00736 21 3 19.9926 3 18.75V9C3 7.75736 4.00736 6.75 5.25 6.75H7.5M17.25 10.5V6C17.25 4.75736 16.2426 3.75 15 3.75H12M17.25 10.5H19.5C20.7426 10.5 21.75 11.5074 21.75 12.75V18.75C21.75 19.9926 20.7426 21 19.5 21H15M7.5 6.75V3.75H12M7.5 6.75H12M12 3.75V6.75" stroke="#65FFDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div class="text-sm text-lg-neon2 font-semibold">Available on iOS & Android</div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-16 md:py-24 border-t border-lg-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Comprehensive Features for Your Community</h2>
+        <p class="mt-3 text-lg-muted max-w-2xl mx-auto">Everything you need to keep residents informed, engaged, and connected.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">News & Announcements</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">Share official updates from town hall with push notifications. Keep residents informed about important community news and events.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">School Updates</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">Integrated school announcements including closures, schedule changes, and important dates. Features snow day likelihood predictions.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">Business Directory</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">Searchable directory of local businesses with categories and contact info to support your local economy.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">Community Events</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">Calendar of local events with filters for government meetings, school activities, and community gatherings. Never miss an important event.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">Community Polls</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">Gather resident feedback on important community decisions. Create polls and surveys to increase civic engagement.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">AI Assistant</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">24/7 virtual assistant trained on your town's information. Answers common questions instantly, reducing staff workload.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">Quick Links</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">Direct access to essential municipal services: permits, licenses, bill payments, utilities, and more.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">Native Mobile Apps</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">Available on both iOS and Android. Fully branded with your town's colors, logo, and identity.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
+          <div class="flex items-center gap-3 mb-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+              <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="text-lg font-semibold">Push Notifications</div>
+          </div>
+          <p class="mt-2 text-sm text-lg-muted">Send urgent alerts and important updates directly to residents' phones. Perfect for emergencies and time-sensitive announcements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Simple, Transparent Pricing</h2>
+        <p class="mt-3 text-lg-muted max-w-2xl mx-auto">Affordable pricing designed for municipalities of all sizes.</p>
+      </div>
+      
+      <div class="mt-8 flex justify-center">
+        <div class="p-10 rounded-3xl bg-lg-card border-2 border-lg-neon/30 shadow-glow max-w-2xl w-full">
+          <div class="text-center">
+            <div class="text-sm uppercase tracking-widest text-lg-neon2">Complete Platform</div>
+            <div class="mt-4 text-5xl font-extrabold">$200<span class="text-base font-semibold text-lg-muted">/month</span></div>
+            <div class="text-sm text-lg-muted">Starting price, 1 month free, then billed annually</div>
+          </div>
+          
+          <div class="mt-8 p-6 rounded-2xl bg-lg-bg/50 border border-lg-line">
+            <h3 class="text-lg font-semibold text-center mb-4">Everything Included:</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <ul class="space-y-3 text-sm text-lg-muted">
+                <li>✓ Fully branded iOS & Android apps</li>
+                <li>✓ News & announcements</li>
+                <li>✓ School updates & closures</li>
+                <li>✓ Business directory</li>
+                <li>✓ Community events calendar</li>
+              </ul>
+              <ul class="space-y-3 text-sm text-lg-muted">
+                <li>✓ Community polls & surveys</li>
+                <li>✓ 24/7 AI-powered assistant</li>
+                <li>✓ Unlimited push notifications</li>
+                <li>✓ Easy-to-use admin CMS</li>
+                <li>✓ Training & ongoing support</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <a href="mailto:noah@localgovy.com?subject=LocalGovy%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20using%20LocalGovy%20services%20for%20my%20town.%0A%0AThank%20you!" class="inline-block px-5 py-3 rounded-2xl bg-lg-neon text-black font-semibold w-full text-center hover:shadow-glow transition">Schedule a Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="py-16 md:py-24 border-t border-lg-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Why Towns Choose LocalGovy</h2>
+        <p class="mt-3 text-lg-muted max-w-2xl mx-auto">Transform how you communicate with residents and strengthen your community.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-3xl bg-lg-card border border-lg-line shadow-glow">
+          <h3 class="text-xl font-bold text-lg-neon">Increase Civic Engagement</h3>
+          <ul class="mt-5 space-y-3 text-sm leading-6 text-lg-muted">
+            <li>• Push notifications ensure residents receive important updates instantly</li>
+            <li>• Community polls make it easy to gather resident feedback</li>
+            <li>• Event calendar increases attendance at local meetings and activities</li>
+            <li>• 24/7 AI assistant provides instant answers to common questions</li>
+          </ul>
+        </div>
+        
+        <div class="p-8 rounded-3xl bg-lg-card border border-lg-line shadow-glow">
+          <h3 class="text-xl font-bold text-lg-neon">Reduce Staff Workload</h3>
+          <ul class="mt-5 space-y-3 text-sm leading-6 text-lg-muted">
+            <li>• AI-powered chatbot handles routine inquiries automatically</li>
+            <li>• Reduce phone calls and email questions with self-service information</li>
+            <li>• Easy content management system - no technical skills required</li>
+            <li>• One platform for all communications eliminates fragmented systems</li>
+          </ul>
+        </div>
+        
+        <div class="p-8 rounded-3xl bg-lg-card border border-lg-line shadow-glow">
+          <h3 class="text-xl font-bold text-lg-neon">Support Local Business</h3>
+          <ul class="mt-5 space-y-3 text-sm leading-6 text-lg-muted">
+            <li>• Searchable directory connects residents with local services</li>
+            <li>• Featured listings highlight key local businesses</li>
+            <li>• Promote local events and special offers</li>
+            <li>• Strengthen the local economy by keeping spending in town</li>
+          </ul>
+        </div>
+        
+        <div class="p-8 rounded-3xl bg-lg-card border border-lg-line shadow-glow">
+          <h3 class="text-xl font-bold text-lg-neon">Quick & Easy Implementation</h3>
+          <ul class="mt-5 space-y-3 text-sm leading-6 text-lg-muted">
+            <li>• Launch in weeks, not months</li>
+            <li>• Fully branded with your town's colors, logo, and identity</li>
+            <li>• Available on iOS and Android from day one</li>
+            <li>• Comprehensive training and ongoing support included</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a href="mailto:noah@localgovy.com?subject=LocalGovy%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20using%20LocalGovy%20services%20for%20my%20town.%0A%0AThank%20you!" class="inline-block px-6 py-3 rounded-2xl bg-lg-neon text-black font-semibold hover:shadow-glow">Schedule a Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 md:py-24 border-t border-lg-line">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
+        <p class="mt-3 text-lg-muted">Everything you need to know about LocalGovy</p>
+      </div>
+      
+      <div class="mt-8 divide-y divide-lg-line">
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">How long does it take to launch?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">Typically 2-4 weeks from start to launch. This includes app branding with your town's colors and logo, content setup, staff training, and App Store/Google Play submissions.</p>
+        </details>
+        
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Do we need technical expertise to manage the app?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">No technical skills required! Our easy-to-use content management system allows your staff to post news, update events, and manage the app without any coding or technical knowledge. We provide comprehensive training and ongoing support.</p>
+        </details>
+        
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">How does the AI assistant work?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">The AI assistant is trained on your town's specific information including hours, services, policies, and FAQs. It provides instant, accurate answers to common resident questions 24/7, significantly reducing phone calls and emails to your staff.</p>
+        </details>
+        
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Can we customize the app for our town?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">Yes! The app is fully branded with your town's name, logo, colors, and identity. It appears as your own branded app in the App Store and Google Play.</p>
+        </details>
+        
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">What about data privacy and security?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">We take security seriously. All data is transmitted over HTTPS, we follow industry-standard security practices, and no personal information is required for most features. We're privacy-first by design.</p>
+        </details>
+        
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Can local businesses be featured in the directory?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">Yes! The business directory is free for all local businesses. Optional sponsored listings are available for businesses that want enhanced visibility, providing additional revenue for your town.</p>
+        </details>
+        
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">What kind of support do you provide?</span>
+            <svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9FB7B1" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lg-muted">We provide comprehensive onboarding and training for your staff, along with ongoing technical support. Our team is available to help with any questions or issues that arise.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="demo" class="py-16 md:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold">Transform Your Community Engagement</h2>
+      <p class="mt-3 text-lg-muted">See how LocalGovy can help you better serve your residents. Schedule a personalized demo today.</p>
+      <div class="mt-6 flex justify-center">
+        <a href="mailto:noah@localgovy.com?subject=LocalGovy%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20using%20LocalGovy%20services%20for%20my%20town.%0A%0AThank%20you!" class="px-6 py-3 rounded-2xl bg-lg-neon text-black font-semibold hover:shadow-glow transition">Schedule Your Demo</a>
+      </div>
+      <p class="mt-4 text-sm text-lg-muted">Questions? Email us at <a href="mailto:noah@localgovy.com" class="text-lg-neon2 hover:underline">noah@localgovy.com</a></p>
+    </div>
+  </section>
+
+  <footer class="border-t border-lg-line py-10 text-center text-sm text-lg-muted">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div>© <span id="year"></span> LocalGovy. All rights reserved.</div>
+      <div class="mt-2">Based in Aurora, Ontario, Canada</div>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function toggleMenu(){ mobileMenu.classList.toggle('hidden'); }
+    if (menuBtn){ menuBtn.addEventListener('click', toggleMenu); }
+    
+    // App Showcase Carousel
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.getElementById('carousel');
+      const carouselContainer = carousel?.closest('.carousel-container');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const indicators = document.querySelectorAll('#carousel-indicators button');
+      
+      let currentIndex = 0;
+      const itemCount = document.querySelectorAll('.carousel-item').length;
+      let autoAdvanceInterval = null;
+      let userInteracting = false;
+      
+      function updateCarousel() {
+        // Update transform to show current slide
+        if (carousel) {
+          carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+          if (index === currentIndex) {
+            indicator.classList.remove('bg-lg-line');
+            indicator.classList.add('bg-lg-neon');
+          } else {
+            indicator.classList.remove('bg-lg-neon');
+            indicator.classList.add('bg-lg-line');
+          }
+        });
+      }
+      
+      function startAutoAdvance() {
+        // Clear existing interval
+        if (autoAdvanceInterval) {
+          clearInterval(autoAdvanceInterval);
+        }
+        
+        // Only start if user is not interacting
+        if (!userInteracting) {
+          autoAdvanceInterval = setInterval(() => {
+            if (!userInteracting) {
+              currentIndex = (currentIndex + 1) % itemCount;
+              updateCarousel();
+            }
+          }, 6000); // Increased to 6 seconds for better user experience
+        }
+      }
+      
+      function pauseAutoAdvance() {
+        userInteracting = true;
+        if (autoAdvanceInterval) {
+          clearInterval(autoAdvanceInterval);
+          autoAdvanceInterval = null;
+        }
+        
+        // Resume auto-advance after 10 seconds of inactivity
+        setTimeout(() => {
+          userInteracting = false;
+          startAutoAdvance();
+        }, 10000);
+      }
+      
+      // Next button click
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % itemCount;
+          updateCarousel();
+          pauseAutoAdvance();
+        });
+      }
+      
+      // Previous button click
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+          updateCarousel();
+          pauseAutoAdvance();
+        });
+      }
+      
+      // Indicator clicks
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          currentIndex = index;
+          updateCarousel();
+          pauseAutoAdvance();
+        });
+      });
+      
+      // Pause auto-advance on hover
+      if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => {
+          pauseAutoAdvance();
+        });
+        
+        carouselContainer.addEventListener('mouseleave', () => {
+          // Resume after leaving, but still respect the delay
+          setTimeout(() => {
+            if (!userInteracting) {
+              startAutoAdvance();
+            }
+          }, 2000);
+        });
+      }
+      
+      // Start auto-advance initially
+      startAutoAdvance();
+    });
+  </script>
+</body>
+</html>
