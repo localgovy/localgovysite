@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+
+  <title>LocalFaith — Modern Apps & Websites for Faith Communities</title>
+  <meta name="description" content="LocalFaith gives churches, mandirs, gurdwaras, mosques, synagogues, and temples a modern mobile app, custom website, donation system, event hub, media library, and communication platform — all in one place." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            lf: {
+              bg:    '#08070A',
+              card:  '#110F17',
+              line:  '#1E1A28',
+              gold:  '#F0A500',
+              gold2: '#FFD166',
+              text:  '#F5F0FF',
+              muted: '#A89FC0'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(240,165,0,0.15), 0 0 30px rgba(240,165,0,0.12)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .grid-gradient { background: radial-gradient(1200px 400px at 50% -10%, rgba(240,165,0,0.12), rgba(8,7,10,0)); }
+    .ring-underline { box-shadow: inset 0 -2px 0 0 #F0A500; }
+    .noise { background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'.9\' numOctaves=\'2\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23n)\' opacity=\'.03\'/></svg>'); }
+  </style>
+</head>
+<body class="bg-lf-bg text-lf-text font-inter antialiased selection:bg-lf-gold/30">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-backdrop-blur:bg-lf-bg/70 bg-lf-bg/70 border-b border-lf-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/localfaith" class="flex items-center gap-2 py-3">
+        <span class="text-2xl font-extrabold tracking-tight">Local<span class="text-lf-gold">Faith</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="/localfaith#platform" class="hover:text-white transition">Platform</a>
+        <a href="/localfaith#communities" class="hover:text-white transition">Communities</a>
+        <a href="/localfaith#pricing" class="hover:text-white transition">Pricing</a>
+        <a href="/localfaith#faq" class="hover:text-white transition">FAQ</a>
+        <a href="/localgovy" class="text-lf-muted hover:text-white transition">Municipalities</a>
+        <a href="/" class="text-lf-muted hover:text-white transition">← Home</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="mailto:noah@localgovy.com?subject=LocalFaith%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalFaith%20for%20my%20faith%20community.%0A%0AThank%20you!" class="px-4 py-2 rounded-xl bg-lf-gold text-black font-medium hover:shadow-glow transition">Book a Demo</a>
+      </div>
+      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#F5F0FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-lf-line bg-lf-bg">
+      <nav class="px-4 py-3 flex flex-col gap-3">
+        <a onclick="toggleMenu()" href="/localfaith#platform" class="py-2">Platform</a>
+        <a onclick="toggleMenu()" href="/localfaith#communities" class="py-2">Communities</a>
+        <a onclick="toggleMenu()" href="/localfaith#pricing" class="py-2">Pricing</a>
+        <a onclick="toggleMenu()" href="/localfaith#faq" class="py-2">FAQ</a>
+        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-lf-muted">Municipalities</a>
+        <a onclick="toggleMenu()" href="/" class="py-2 text-lf-muted">← Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="grid-gradient absolute inset-0 noise"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold2/90 bg-lf-card/40 border border-lf-line px-3 py-1 rounded-full">Modern Digital Infrastructure for Faith Communities</div>
+        <h1 class="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+          Modern Apps and Websites for <span class="ring-underline">Faith Communities</span>
+        </h1>
+        <p class="mt-6 text-lg text-lf-muted max-w-2xl">LocalFaith gives churches, mandirs, gurdwaras, mosques, synagogues, and temples a modern mobile app, custom website, donation system, event hub, media library, and communication platform — all in one place.</p>
+        <p class="mt-4 text-lf-muted max-w-2xl">The infrastructure is universal. The experience is built around your faith community.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="mailto:noah@localgovy.com?subject=LocalFaith%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalFaith%20for%20my%20faith%20community.%0A%0AThank%20you!" class="px-5 py-3 rounded-2xl bg-lf-gold text-black font-semibold hover:shadow-glow transition">Book a Demo</a>
+          <a href="#platform" class="px-5 py-3 rounded-2xl border border-lf-line text-lf-text hover:border-lf-gold/50 transition">See What's Included</a>
+        </div>
+        <div class="mt-6 flex items-center gap-6 text-xs text-lf-muted">
+          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-lf-gold"></span> Canadian-built and Canadian-focused</div>
+          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-lf-gold"></span> iOS & Android</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supporting Text Banner -->
+  <section class="border-y border-lf-line bg-lf-card/40">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 text-center">
+      <p class="text-lg text-lf-muted leading-relaxed">Your community should not have to search through outdated websites, scattered social media posts, group chats, PDFs, and disconnected donation links just to stay connected.</p>
+      <p class="mt-4 text-lg font-medium text-lf-text">LocalFaith brings your app, website, giving, events, livestreams, announcements, forms, and community updates into one simple digital home.</p>
+    </div>
+  </section>
+
+  <!-- Platform Section -->
+  <section id="platform" class="py-16 md:py-24 border-b border-lf-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">App. Website. Giving. Events. Media. Communication. <span class="text-lf-gold">All in One Place.</span></h2>
+        <p class="mt-4 text-lf-muted max-w-2xl mx-auto">Faith organizations already have strong communities. LocalFaith gives them the digital infrastructure to serve those communities better.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="font-semibold text-lf-text mb-2">Branded Mobile App</div>
+          <p class="text-sm text-lf-muted">A fully branded iOS & Android app built around your institution's services, events, and community.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="font-semibold text-lf-text mb-2">Custom Website</div>
+          <p class="text-sm text-lf-muted">A modern website designed for your organization, connected to the same system as your app.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="font-semibold text-lf-text mb-2">Giving & Donations</div>
+          <p class="text-sm text-lf-muted">Accept donations, recurring giving, tithes, seva, zakat, dasvandh, and campaign contributions.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="font-semibold text-lf-text mb-2">Events & Registration</div>
+          <p class="text-sm text-lf-muted">Promote events, collect RSVPs, manage registrations, and send reminders.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="font-semibold text-lf-text mb-2">Media & Livestreams</div>
+          <p class="text-sm text-lf-muted">Share sermons, kirtan, pujas, lectures, livestreams, and archived content in one media hub.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="font-semibold text-lf-text mb-2">Forms & Workflows</div>
+          <p class="text-sm text-lf-muted">Collect prayer requests, seva signups, puja bookings, volunteer applications, and more.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="font-semibold text-lf-text mb-2">Push Notifications</div>
+          <p class="text-sm text-lf-muted">Send important updates directly to your community's phones instantly.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="font-semibold text-lf-text mb-2">Admin Dashboard</div>
+          <p class="text-sm text-lf-muted">Manage your app, website, events, forms, announcements, and media from one simple place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-card/40 border border-lf-line px-3 py-1 rounded-full mb-5">The Problem</div>
+          <h2 class="text-3xl font-bold">Most Faith Organizations Are Running on Too Many Disconnected Tools</h2>
+          <p class="mt-4 text-lf-muted">Many communities rely on a mix of tools that eventually creates confusion for members, visitors, donors, volunteers, and staff.</p>
+          <ul class="mt-6 space-y-2 text-sm text-lf-muted">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> An outdated website</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> Facebook or Instagram posts</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> YouTube livestreams</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> WhatsApp groups</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> Google Forms and manual event registration</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> Separate donation links</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> PDFs, bulletins, and email newsletters</li>
+          </ul>
+        </div>
+        <div class="p-8 rounded-3xl bg-lf-card border border-lf-line shadow-glow">
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-bg/60 border border-lf-line px-3 py-1 rounded-full mb-5">The Solution</div>
+          <h3 class="text-2xl font-bold">One Digital Home for Your Whole Community</h3>
+          <p class="mt-3 text-lf-muted text-sm">LocalFaith replaces that scattered experience. Your members and visitors get one clear place to:</p>
+          <ul class="mt-4 space-y-2 text-sm text-lf-muted">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> See upcoming services, prayers, programs, or events</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Donate or support a specific fund</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Watch livestreams or past media</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Register for events and classes</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Submit forms or requests</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Sign up to volunteer</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Receive important announcements</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Stay connected throughout the week</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faith Communities -->
+  <section id="communities" class="py-16 md:py-24 border-t border-lf-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-card/40 border border-lf-line px-3 py-1 rounded-full mb-5">Built for Every Faith</div>
+        <h2 class="text-3xl font-bold">Built for Every Faith Community, <span class="text-lf-gold">Customized for Yours</span></h2>
+        <p class="mt-4 text-lf-muted max-w-2xl mx-auto">LocalFaith is not a one-size-fits-all religious app. Every faith organization has different language, traditions, programs, giving needs, and community rhythms.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="text-2xl mb-3">✝️</div>
+          <h3 class="text-lg font-bold text-lf-gold mb-2">For Churches</h3>
+          <p class="text-sm text-lf-muted">Modern church apps and websites for sermons, giving, events, small groups, Plan a Visit, livestreams, volunteer signups, prayer requests, and weekly announcements.</p>
+        </div>
+        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="text-2xl mb-3">🪔</div>
+          <h3 class="text-lg font-bold text-lf-gold mb-2">For Mandirs & Hindu Temples</h3>
+          <p class="text-sm text-lf-muted">Modern mandir apps and websites for puja times, aarti schedules, festivals, seva, donations, priest booking requests, classes, livestreams, and community announcements.</p>
+        </div>
+        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="text-2xl mb-3">🟠</div>
+          <h3 class="text-lg font-bold text-lf-gold mb-2">For Gurdwaras</h3>
+          <p class="text-sm text-lf-muted">Modern gurdwara apps and websites for kirtan livestreams, program schedules, langar seva, dasvandh, Gurpurab events, Punjabi school, youth programs, and sangat announcements.</p>
+        </div>
+        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="text-2xl mb-3">☪️</div>
+          <h3 class="text-lg font-bold text-lf-gold mb-2">For Mosques & Masjids</h3>
+          <p class="text-sm text-lf-muted">Modern masjid apps and websites for prayer times, Jummah updates, Ramadan programs, zakat, donations, classes, youth programs, livestreams, and community announcements.</p>
+        </div>
+        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="text-2xl mb-3">✡️</div>
+          <h3 class="text-lg font-bold text-lf-gold mb-2">For Synagogues</h3>
+          <p class="text-sm text-lf-muted">Modern synagogue apps and websites for Shabbat times, High Holidays, donations, religious school, yahrzeit information, events, livestreams, and volunteer coordination.</p>
+        </div>
+        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
+          <div class="text-2xl mb-3">🕌</div>
+          <h3 class="text-lg font-bold text-lf-gold mb-2">For All Faith Organizations</h3>
+          <p class="text-sm text-lf-muted">The infrastructure is shared. The experience is built around your institution's language, traditions, programs, giving needs, and community rhythms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Now -->
+  <section class="py-16 md:py-24 border-t border-lf-line">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="p-10 rounded-3xl bg-lf-card border border-lf-line shadow-glow">
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-bg/60 border border-lf-line px-3 py-1 rounded-full mb-6">Why Now</div>
+        <h2 class="text-2xl font-bold">Faith Communities Need Modern Digital Infrastructure</h2>
+        <p class="mt-4 text-lf-muted leading-relaxed">People expect fast access to updates, events, giving, media, and communication from their phones. That expectation now applies to faith communities too.</p>
+        <p class="mt-4 text-lf-muted leading-relaxed">Canada's religious landscape makes a multi-faith platform especially relevant. Statistics Canada reported that from 2001 to 2021, the share of Canadians reporting Muslim, Hindu, or Sikh affiliation more than doubled — Hindu affiliation rose from 1.0% to 2.3%, and Sikh affiliation rose from 0.9% to 2.1%.</p>
+        <p class="mt-4 text-lf-muted leading-relaxed">That growth is especially significant in Ontario and the GTA, where many Hindu and Sikh communities are large, active, event-driven, donation-driven, and deeply community-oriented.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- App + Website Together -->
+  <section class="py-16 md:py-24 border-t border-lf-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-card/40 border border-lf-line px-3 py-1 rounded-full mb-5">Website Strategy</div>
+          <h2 class="text-3xl font-bold">Your App and Website <span class="text-lf-gold">Work Together</span></h2>
+          <p class="mt-4 text-lf-muted leading-relaxed">LocalFaith is not just an app vendor and not just a website builder. Your mobile app and website are designed as one connected digital system.</p>
+          <p class="mt-4 text-lf-muted leading-relaxed">Your community gets a consistent experience whether they are on their phone, tablet, or computer. Your team also avoids managing separate tools for every update.</p>
+          <div class="mt-6 p-5 rounded-2xl bg-lf-card border border-lf-gold/30">
+            <p class="text-lf-gold font-semibold text-lg">Update once. Publish everywhere.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl bg-lf-card border border-lf-line text-center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-lf-gold mx-auto mb-3"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="text-sm font-semibold">Mobile App</div>
+            <div class="text-xs text-lf-muted mt-1">iOS & Android</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-lf-card border border-lf-line text-center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-lf-gold mx-auto mb-3"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="text-sm font-semibold">Website</div>
+            <div class="text-xs text-lf-muted mt-1">Modern & custom</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-lf-card border border-lf-line text-center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-lf-gold mx-auto mb-3"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="text-sm font-semibold">Giving</div>
+            <div class="text-xs text-lf-muted mt-1">All giving types</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-lf-card border border-lf-line text-center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-lf-gold mx-auto mb-3"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="text-sm font-semibold">Communication</div>
+            <div class="text-xs text-lf-muted mt-1">Push & newsletters</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 md:py-24 border-t border-lf-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Simple Monthly Packages</h2>
+        <p class="mt-3 text-lf-muted max-w-xl mx-auto">Affordable pricing for faith organizations of all sizes.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Starter -->
+        <div class="p-8 rounded-3xl bg-lf-card border border-lf-line flex flex-col">
+          <div class="text-xs uppercase tracking-widest text-lf-gold2">Starter</div>
+          <div class="mt-3 text-4xl font-extrabold">$70<span class="text-base font-semibold text-lf-muted">/mo</span></div>
+          <p class="mt-2 text-sm text-lf-muted">For smaller organizations that need a modern website and essential digital tools.</p>
+          <ul class="mt-6 space-y-2 text-sm text-lf-muted flex-1">
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Custom website</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Donations</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Forms</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Events</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Media</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Hosting & support</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Annual refresh</li>
+          </ul>
+          <a href="mailto:noah@localgovy.com?subject=LocalFaith%20Starter%20Package&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20the%20LocalFaith%20Starter%20package.%0A%0AThank%20you!" class="mt-8 block text-center px-5 py-3 rounded-2xl border border-lf-line hover:border-lf-gold/50 text-sm font-medium transition">Get Started</a>
+        </div>
+
+        <!-- Platform -->
+        <div class="p-8 rounded-3xl bg-lf-card border-2 border-lf-gold/40 shadow-glow flex flex-col relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-lf-gold text-black text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
+          <div class="text-xs uppercase tracking-widest text-lf-gold2">LocalFaith Platform</div>
+          <div class="mt-3 text-4xl font-extrabold">$200<span class="text-base font-semibold text-lf-muted">/mo</span></div>
+          <p class="mt-2 text-sm text-lf-muted">The core all-in-one package for most faith organizations.</p>
+          <ul class="mt-6 space-y-2 text-sm text-lf-muted flex-1">
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Branded mobile app</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Custom website redesign</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Push notifications</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Events & registrations</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Donations</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Media & livestreams</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Forms & workflows</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Admin dashboard</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Engagement tools</li>
+          </ul>
+          <a href="mailto:noah@localgovy.com?subject=LocalFaith%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalFaith%20for%20my%20faith%20community.%0A%0AThank%20you!" class="mt-8 block text-center px-5 py-3 rounded-2xl bg-lf-gold text-black font-semibold hover:shadow-glow transition">Book a Demo</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="p-8 rounded-3xl bg-lf-card border border-lf-line flex flex-col">
+          <div class="text-xs uppercase tracking-widest text-lf-gold2">Premium</div>
+          <div class="mt-3 text-4xl font-extrabold">$400<span class="text-base font-semibold text-lf-muted">+/mo</span></div>
+          <p class="mt-2 text-sm text-lf-muted">For larger institutions, multi-location organizations, or communities with complex needs.</p>
+          <ul class="mt-6 space-y-2 text-sm text-lf-muted flex-1">
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Everything in Platform</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Multi-location support</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Advanced permissions</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Ministry systems</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Facility management</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Custom workflows</li>
+            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Priority support</li>
+          </ul>
+          <a href="mailto:noah@localgovy.com?subject=LocalFaith%20Premium%20Package&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20the%20LocalFaith%20Premium%20package.%0A%0AThank%20you!" class="mt-8 block text-center px-5 py-3 rounded-2xl border border-lf-line hover:border-lf-gold/50 text-sm font-medium transition">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-16 md:py-24 border-t border-lf-line">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">A Simple Launch Process</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-2xl bg-lf-gold/10 border border-lf-gold/30 flex items-center justify-center text-lf-gold font-bold text-lg mx-auto mb-4">1</div>
+          <h3 class="font-semibold mb-2">We Learn Your Community</h3>
+          <p class="text-sm text-lf-muted">We review your current website, tools, events, giving setup, media, and communication process.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-2xl bg-lf-gold/10 border border-lf-gold/30 flex items-center justify-center text-lf-gold font-bold text-lg mx-auto mb-4">2</div>
+          <h3 class="font-semibold mb-2">We Build Your App & Website</h3>
+          <p class="text-sm text-lf-muted">We create a branded app and modern website around your institution's actual services, programs, and traditions.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-2xl bg-lf-gold/10 border border-lf-gold/30 flex items-center justify-center text-lf-gold font-bold text-lg mx-auto mb-4">3</div>
+          <h3 class="font-semibold mb-2">We Connect Your Core Tools</h3>
+          <p class="text-sm text-lf-muted">We organize your donations, events, media, forms, and announcements into one connected system.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-2xl bg-lf-gold/10 border border-lf-gold/30 flex items-center justify-center text-lf-gold font-bold text-lg mx-auto mb-4">4</div>
+          <h3 class="font-semibold mb-2">You Launch With Support</h3>
+          <p class="text-sm text-lf-muted">We help you go live, train your team, and support your community as they begin using it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 md:py-24 border-t border-lf-line">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
+      </div>
+      <div class="divide-y divide-lf-line">
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Is LocalFaith only for churches?</span>
+            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lf-muted">No. LocalFaith is built for churches, mandirs, gurdwaras, mosques, synagogues, temples, and other faith-based organizations.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Is every app the same?</span>
+            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lf-muted">No. The infrastructure is shared, but the experience is customized. A mandir app should not feel like a church app. Each version is built around the institution's language, events, giving needs, traditions, and community.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Do we need to replace our current tools?</span>
+            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lf-muted">Not always. LocalFaith can connect with or organize around the tools you already use. Over time, we can help simplify your digital setup.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Do you build the website too?</span>
+            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lf-muted">Yes. The main LocalFaith platform includes a custom website redesign so your app and website work together as one connected system.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Can we send push notifications?</span>
+            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lf-muted">Yes. LocalFaith allows your organization to send important updates directly through the mobile app to your community's phones.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Can we accept donations?</span>
+            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lf-muted">Yes. LocalFaith supports donation and giving flows, including recurring giving, special funds, campaigns, and faith-specific giving categories like seva, zakat, dasvandh, and tithes.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="cursor-pointer flex items-center justify-between">
+            <span class="font-medium">Can we manage events?</span>
+            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-lf-muted">Yes. You can promote events, collect RSVPs or registrations, send reminders, and keep your community updated.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 border-t border-lf-line">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold">Give Your Community One Place to Connect</h2>
+      <p class="mt-4 text-lf-muted max-w-xl mx-auto">Your members should not have to search through scattered links, old websites, group chats, and social media posts to stay involved. LocalFaith gives your faith community a modern app and website built around the way you actually serve people.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="mailto:noah@localgovy.com?subject=LocalFaith%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalFaith%20for%20my%20faith%20community.%0A%0AThank%20you!" class="px-6 py-3 rounded-2xl bg-lf-gold text-black font-semibold hover:shadow-glow transition">Book a Demo</a>
+        <a href="mailto:noah@localgovy.com?subject=LocalFaith%20Sample%20App%20Request&body=Hi%20Noah%2C%0A%0AI'd%20like%20to%20see%20a%20sample%20app%20for%20my%20faith%20community.%0A%0AThank%20you!" class="px-6 py-3 rounded-2xl border border-lf-line hover:border-lf-gold/50 font-medium transition">Request a Sample App</a>
+      </div>
+      <p class="mt-5 text-sm text-lf-muted">Questions? Email <a href="mailto:noah@localgovy.com" class="text-lf-gold2 hover:underline">noah@localgovy.com</a></p>
+    </div>
+  </section>
+
+  <footer class="border-t border-lf-line py-10 text-center text-sm text-lf-muted">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-center gap-6 mb-4 text-xs">
+        <a href="/" class="hover:text-lf-text transition">Home</a>
+        <a href="/localgovy" class="hover:text-lf-text transition">For Municipalities</a>
+        <a href="/localfaith" class="hover:text-lf-text transition">For Faith Communities</a>
+        <a href="/about.html" class="hover:text-lf-text transition">About</a>
+      </div>
+      <div class="text-lf-text font-semibold mb-1">LocalFaith</div>
+      <div class="text-lf-muted">Modern apps and websites for faith communities.</div>
+      <div class="mt-2 text-xs">App. Website. Giving. Events. Media. Communication. All in one place.</div>
+      <div class="mt-4 text-xs">A product of <a href="/" class="hover:text-lf-text transition">LocalGovy</a> · Based in Aurora, Ontario, Canada · © <span id="year"></span> All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function toggleMenu() { mobileMenu.classList.toggle('hidden'); }
+    if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+  </script>
+</body>
+</html>
