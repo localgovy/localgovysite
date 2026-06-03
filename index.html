@@ -11,7 +11,7 @@
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
   <title>LocalGovy — Digital Infrastructure for Every Community</title>
-  <meta name="description" content="LocalGovy builds modern digital infrastructure for communities — from municipalities to faith organizations. One platform. Every institution." />
+  <meta name="description" content="LocalGovy builds modern digital infrastructure for communities — municipalities, businesses, and religious institutions. One platform. Every institution." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,8 +35,7 @@
             }
           },
           boxShadow: {
-            glow:      '0 0 0 1px rgba(101,255,218,0.15), 0 0 30px rgba(0,230,118,0.12)',
-            'glow-gold': '0 0 0 1px rgba(240,165,0,0.15), 0 0 30px rgba(240,165,0,0.12)'
+            glow: '0 0 0 1px rgba(101,255,218,0.15), 0 0 30px rgba(0,230,118,0.12)',
           }
         }
       }
@@ -57,8 +56,9 @@
         <img src="/lg_logo.png" alt="LocalGovy" class="w-48 md:w-64 brightness-125" width="512" height="512" fetchpriority="high" />
       </a>
       <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="/localgovy" class="hover:text-white transition">For Municipalities</a>
-        <a href="/localfaith" class="hover:text-white transition">For Religious Communities</a>
+        <a href="/localgovy" class="hover:text-white transition">Municipalities</a>
+        <a href="/localbiz" class="hover:text-white transition">Businesses</a>
+        <span class="text-lg-muted cursor-default">Religious <span class="text-xs bg-lg-card border border-lg-line px-1.5 py-0.5 rounded-full ml-1">Soon</span></span>
         <a href="/about.html" class="hover:text-white transition">About</a>
       </nav>
       <div class="hidden md:flex items-center gap-3">
@@ -69,9 +69,10 @@
       </button>
     </div>
     <div id="mobileMenu" class="md:hidden hidden border-t border-lg-line bg-lg-bg">
-      <nav class="px-4 py-3 flex flex-col gap-3">
-        <a onclick="toggleMenu()" href="/localgovy" class="py-2">For Municipalities</a>
-        <a onclick="toggleMenu()" href="/localfaith" class="py-2">For Religious Communities</a>
+      <nav class="px-4 py-3 flex flex-col gap-3 text-sm">
+        <a onclick="toggleMenu()" href="/localgovy" class="py-2">Municipalities</a>
+        <a onclick="toggleMenu()" href="/localbiz" class="py-2">Businesses</a>
+        <span class="py-2 text-lg-muted">Religious Communities <span class="text-xs bg-lg-card border border-lg-line px-1.5 py-0.5 rounded-full ml-1">Soon</span></span>
         <a onclick="toggleMenu()" href="/about.html" class="py-2">About</a>
       </nav>
     </div>
@@ -86,11 +87,10 @@
         <h1 class="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
           Digital infrastructure for <span class="ring-underline">every community</span>
         </h1>
-        <p class="mt-6 text-lg text-lg-muted max-w-2xl">LocalGovy builds modern apps, websites, and communication platforms for the institutions that serve people — municipalities, towns, and religious communities.</p>
-        <p class="mt-3 text-lg-muted max-w-2xl">The infrastructure is universal. The experience is built around your institution.</p>
+        <p class="mt-6 text-lg text-lg-text/80 max-w-2xl">Modern apps, websites, and communication tools for every institution that serves people — municipalities, businesses, and religious communities.</p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="/localgovy" class="px-5 py-3 rounded-2xl bg-lg-neon text-black font-semibold hover:shadow-glow transition">For Municipalities</a>
-          <a href="/localfaith" class="px-5 py-3 rounded-2xl border border-lg-line hover:border-lg-neon/50 text-lg-text transition">For Religious Communities</a>
+          <a href="/localbiz" class="px-5 py-3 rounded-2xl border border-lg-line hover:border-lg-neon/50 text-lg-text transition">For Businesses</a>
         </div>
       </div>
     </div>
@@ -101,63 +101,84 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
         <h2 class="text-3xl font-bold">Our Products</h2>
-        <p class="mt-3 text-lg-muted max-w-xl mx-auto">Purpose-built digital platforms for the communities and institutions that bring people together.</p>
+        <p class="mt-3 text-lg-text/70 max-w-xl mx-auto">Purpose-built platforms for the institutions that bring communities together.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
         <!-- LocalGovy Card -->
-        <a href="/localgovy" class="group block p-10 rounded-3xl bg-lg-card border border-lg-line hover:border-lg-neon/40 hover:shadow-glow transition-all">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 rounded-2xl bg-lg-neon/10 flex items-center justify-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
+        <a href="/localgovy" class="group block p-8 rounded-3xl bg-lg-card border border-lg-line hover:border-lg-neon/40 hover:shadow-glow transition-all">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-11 h-11 rounded-2xl bg-lg-neon/10 flex items-center justify-center flex-shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lg-neon">
                 <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div>
-              <div class="text-xl font-bold">LocalGovy</div>
+              <div class="text-lg font-bold">LocalGovy</div>
               <div class="text-xs text-lg-neon uppercase tracking-widest">For Municipalities</div>
             </div>
           </div>
-          <p class="text-lg-muted leading-relaxed">A fully branded mobile app for towns and cities featuring official news, school updates, business directory, community polls, events, and a 24/7 virtual assistant.</p>
-          <ul class="mt-6 space-y-2 text-sm text-lg-muted">
+          <p class="text-lg-text/70 text-sm leading-relaxed">Branded mobile app for towns and cities — news, events, polls, business directory, school updates, and 24/7 virtual assistant.</p>
+          <ul class="mt-5 space-y-2 text-sm text-lg-text/60">
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lg-neon flex-shrink-0"></span> iOS & Android app</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lg-neon flex-shrink-0"></span> News & announcements</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lg-neon flex-shrink-0"></span> Community polls & events</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lg-neon flex-shrink-0"></span> Business directory</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lg-neon flex-shrink-0"></span> 24/7 virtual assistant</li>
           </ul>
-          <div class="mt-8 flex items-center gap-2 text-lg-neon text-sm font-medium group-hover:gap-3 transition-all">
+          <div class="mt-7 flex items-center gap-2 text-lg-neon text-sm font-semibold group-hover:gap-3 transition-all">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
 
-        <!-- LocalFaith Card -->
-        <a href="/localfaith" class="group block p-10 rounded-3xl bg-[#110F17] border border-[#1E1A28] hover:border-[#F0A500]/40 transition-all" style="box-shadow: none;" onmouseover="this.style.boxShadow='0 0 0 1px rgba(240,165,0,0.15), 0 0 30px rgba(240,165,0,0.12)'" onmouseout="this.style.boxShadow='none'">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background: rgba(240,165,0,0.10)">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:#F0A500">
+        <!-- LocalBiz Card -->
+        <a href="/localbiz" class="group block p-8 rounded-3xl bg-lg-card border border-lg-line hover:border-[#3B82F6]/40 transition-all" style="box-shadow:none" onmouseover="this.style.boxShadow='0 0 0 1px rgba(59,130,246,0.15), 0 0 30px rgba(59,130,246,0.12)'" onmouseout="this.style.boxShadow='none'">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:rgba(59,130,246,0.10)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6">
+                <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-lg font-bold">LocalBiz</div>
+              <div class="text-xs uppercase tracking-widest" style="color:#3B82F6">For Businesses</div>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed" style="color:#9FB7B1">Branded digital presence for local businesses — app, website, promotions, loyalty tools, and direct customer communication.</p>
+          <ul class="mt-5 space-y-2 text-sm" style="color:#8CA5B0">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Branded app & website</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Promotions & offers</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Events & bookings</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Push notifications</li>
+          </ul>
+          <div class="mt-7 flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all" style="color:#3B82F6">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </a>
+
+        <!-- LocalFaith Card — Coming Soon -->
+        <div class="relative block p-8 rounded-3xl bg-lg-card/50 border border-lg-line/50 opacity-60 cursor-default select-none">
+          <div class="absolute top-4 right-4 bg-lg-card border border-lg-line text-lg-muted text-xs font-medium px-2.5 py-1 rounded-full">Coming Soon</div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:rgba(240,165,0,0.08)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#F0A500">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div>
-              <div class="text-xl font-bold">LocalFaith</div>
+              <div class="text-lg font-bold">LocalFaith</div>
               <div class="text-xs uppercase tracking-widest" style="color:#F0A500">For Religious Communities</div>
             </div>
           </div>
-          <p style="color:#A89FC0" class="leading-relaxed">A modern mobile app, custom website, donation system, event hub, media library, and communication platform for churches, mandirs, gurdwaras, mosques, synagogues, and temples.</p>
-          <ul class="mt-6 space-y-2 text-sm" style="color:#A89FC0">
+          <p class="text-sm leading-relaxed" style="color:#A89FC0">App, website, donations, events, media, and communication tools — built for churches, mandirs, gurdwaras, mosques, synagogues, and temples.</p>
+          <ul class="mt-5 space-y-2 text-sm" style="color:#8A8298">
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#F0A500"></span> App & custom website</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#F0A500"></span> Giving & donations</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#F0A500"></span> Events & registrations</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#F0A500"></span> Livestreams & media</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#F0A500"></span> Events & media</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#F0A500"></span> All faiths supported</li>
           </ul>
-          <div class="mt-8 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all" style="color:#F0A500">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
+        </div>
 
       </div>
     </div>
@@ -167,20 +188,19 @@
   <section class="py-16 md:py-24 border-t border-lg-line">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl font-bold">One Mission. Every Institution.</h2>
-      <p class="mt-5 text-lg text-lg-muted leading-relaxed">Communities — whether a town, a church, a gurdwara, or a mosque — face the same fundamental challenge: their members are scattered across too many disconnected tools. Old websites. Group chats. Social posts. Separate donation links. Spreadsheets.</p>
-      <p class="mt-4 text-lg text-lg-muted leading-relaxed">LocalGovy's mission is to replace that scattered experience with one connected digital home — purpose-built for each type of institution, powered by shared infrastructure.</p>
+      <p class="mt-5 text-lg text-lg-text/75 max-w-2xl mx-auto leading-relaxed">Every community — towns, businesses, religious institutions — struggles with the same problem: members scattered across too many disconnected tools. LocalGovy replaces that with one connected digital home, purpose-built for each institution.</p>
       <div class="mt-10 grid md:grid-cols-3 gap-6 text-left">
         <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
-          <div class="text-lg-neon font-bold text-lg mb-2">Purpose-Built</div>
-          <p class="text-sm text-lg-muted">Every product is designed around the specific needs of its institution — not repurposed generic software.</p>
+          <div class="text-lg-neon font-bold text-base mb-2">Purpose-Built</div>
+          <p class="text-sm text-lg-text/65">Designed around the specific needs of each institution — not generic software repurposed to fit.</p>
         </div>
         <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
-          <div class="text-lg-neon font-bold text-lg mb-2">Shared Infrastructure</div>
-          <p class="text-sm text-lg-muted">Apps, websites, notifications, events, forms, and admin tools — built once, adapted to every context.</p>
+          <div class="text-lg-neon font-bold text-base mb-2">Shared Infrastructure</div>
+          <p class="text-sm text-lg-text/65">Apps, websites, notifications, events, and admin tools — built once, adapted to every context.</p>
         </div>
         <div class="p-6 rounded-2xl bg-lg-card border border-lg-line">
-          <div class="text-lg-neon font-bold text-lg mb-2">Canadian-Focused</div>
-          <p class="text-sm text-lg-muted">Built in Aurora, Ontario. Designed for Canadian communities and the institutions that serve them.</p>
+          <div class="text-lg-neon font-bold text-base mb-2">Canadian-Focused</div>
+          <p class="text-sm text-lg-text/65">Built in Aurora, Ontario, for Canadian communities and the institutions that serve them.</p>
         </div>
       </div>
     </div>
@@ -190,19 +210,19 @@
   <section class="py-16 md:py-20 border-t border-lg-line">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-2xl font-bold">Not sure where to start?</h2>
-      <p class="mt-3 text-lg-muted">Tell us about your organization and we'll point you in the right direction.</p>
+      <p class="mt-3 text-lg-text/70">Tell us about your organization and we'll point you in the right direction.</p>
       <div class="mt-6">
         <a href="mailto:noah@localgovy.com?subject=LocalGovy%20Inquiry&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20LocalGovy.%0A%0AOrganization%20type%3A%20%0A%0AThank%20you!" class="px-6 py-3 rounded-2xl bg-lg-neon text-black font-semibold hover:shadow-glow transition">Get in Touch</a>
       </div>
-      <p class="mt-4 text-sm text-lg-muted">Or email directly at <a href="mailto:noah@localgovy.com" class="text-lg-neon2 hover:underline">noah@localgovy.com</a></p>
+      <p class="mt-4 text-sm text-lg-text/50">Email us at <a href="mailto:noah@localgovy.com" class="text-lg-neon2 hover:underline">noah@localgovy.com</a></p>
     </div>
   </section>
 
   <footer class="border-t border-lg-line py-10 text-center text-sm text-lg-muted">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex justify-center gap-6 mb-4 text-xs">
-        <a href="/localgovy" class="hover:text-lg-text transition">For Municipalities</a>
-        <a href="/localfaith" class="hover:text-lg-text transition">For Religious Communities</a>
+        <a href="/localgovy" class="hover:text-lg-text transition">Municipalities</a>
+        <a href="/localbiz" class="hover:text-lg-text transition">Businesses</a>
         <a href="/about.html" class="hover:text-lg-text transition">About</a>
       </div>
       <div>© <span id="year"></span> LocalGovy. All rights reserved.</div>
