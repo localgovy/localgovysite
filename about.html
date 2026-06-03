@@ -53,9 +53,10 @@
         <img src="/lg_logo.png" alt="LocalGovy" class="w-48 md:w-64 brightness-125" width="512" height="512" />
       </a>
       <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="/localgovy" class="hover:text-white">Municipalities</a>
-        <a href="/localbiz" class="hover:text-white">Businesses</a>
-        <a href="/about.html" class="text-white">About</a>
+        <a href="/localgovy" class="text-lg-muted hover:text-white transition">Municipalities</a>
+        <a href="/localbiz" class="text-lg-muted hover:text-white transition">Businesses</a>
+        <span class="text-lg-muted/50 cursor-default">Religious <span class="text-xs bg-lg-card border border-lg-line px-1.5 py-0.5 rounded-full ml-1">Soon</span></span>
+        <a href="/about.html" class="text-white font-medium transition">About</a>
       </nav>
       <div class="hidden md:flex items-center gap-3">
         <a href="mailto:noah@localgovy.com?subject=LocalGovy%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20using%20LocalGovy%20services%20for%20my%20town.%0A%0AThank%20you!" class="px-4 py-2 rounded-xl bg-lg-neon text-black font-medium hover:shadow-glow transition">Book a demo</a>
@@ -65,10 +66,11 @@
       </button>
     </div>
     <div id="mobileMenu" class="md:hidden hidden border-t border-lg-line bg-lg-bg">
-      <nav class="px-4 py-3 flex flex-col gap-3">
-        <a onclick="toggleMenu()" href="/localgovy" class="py-2">Municipalities</a>
-        <a onclick="toggleMenu()" href="/localbiz" class="py-2">Businesses</a>
-        <a onclick="toggleMenu()" href="/about.html" class="py-2">About</a>
+      <nav class="px-4 py-3 flex flex-col gap-3 text-sm">
+        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-lg-muted">Municipalities</a>
+        <a onclick="toggleMenu()" href="/localbiz" class="py-2 text-lg-muted">Businesses</a>
+        <span class="py-2 text-lg-muted/50">Religious <span class="text-xs bg-lg-card border border-lg-line px-1.5 py-0.5 rounded-full ml-1">Soon</span></span>
+        <a onclick="toggleMenu()" href="/about.html" class="py-2 text-white font-medium">About</a>
       </nav>
     </div>
   </header>
