@@ -33,26 +33,39 @@
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 bg-brand text-paper/90 border-b border-black/10">
+  <!-- ===== HEADER ===== -->
+  <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center py-3"><img src="/lg_logo.png" alt="LocalGovy" class="w-44 md:w-56 brightness-125" width="512" height="512" /></a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="/localbiz" class="text-paper/75 hover:text-paper transition">Businesses</a>
-        <a href="/localfaith" class="text-paper/75 hover:text-paper transition">Faith</a>
-        <a href="/localgovy" class="text-paper/75 hover:text-paper transition">Municipalities</a>
-        <a href="/about" class="text-paper font-semibold underline underline-offset-8 decoration-gold decoration-2">About</a>
+      <a href="/" class="flex items-center py-3"><img src="/lg_logo.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="512" height="512" /></a>
+      <nav class="hidden md:flex items-center gap-7 text-[0.95rem] font-medium">
+        <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 text-paper/80 hover:text-paper transition py-6">Templates
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="transition group-hover:rotate-180"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block">
+            <div class="mt-1 w-80 rounded-2xl bg-surface border border-line shadow-soft p-2 text-ink">
+              <a href="/localbiz" class="flex items-start gap-3 rounded-xl p-3 hover:bg-paper transition"><span class="mt-0.5 w-9 h-9 rounded-lg bg-brand/8 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="block font-semibold text-brand">Retail &amp; Ordering</span><span class="block text-xs text-sub">Shops, cafés, dispensaries</span></span></a>
+              <a href="/localfaith" class="flex items-start gap-3 rounded-xl p-3 hover:bg-paper transition"><span class="mt-0.5 w-9 h-9 rounded-lg bg-brand/8 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M12 3l7 4v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V7l7-4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="block font-semibold text-brand">Faith &amp; Community</span><span class="block text-xs text-sub">Mosques, temples, churches</span></span></a>
+              <a href="/localgovy" class="flex items-start gap-3 rounded-xl p-3 hover:bg-paper transition"><span class="mt-0.5 w-9 h-9 rounded-lg bg-brand/8 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="block font-semibold text-brand">Municipalities</span><span class="block text-xs text-sub">Towns &amp; cities</span></span></a>
+              <div class="mt-1 px-3 py-2 text-xs text-sub border-t border-line">More templates added regularly.</div>
+            </div>
+          </div>
+        </div>
+        <a href="/about" class="text-paper font-semibold">About</a>
       </nav>
-      <div class="hidden md:flex items-center gap-3"><a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Demo%20Request&body=Hi%20Noah%2C%0A%0AI'd%20like%20to%20book%20a%20demo.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a></div>
+      <div class="hidden md:flex items-center gap-3"><a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Demo%20Request&body=Hi%20Noah%2C%0A%0AI'd%20like%20to%20book%20a%20demo.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a></div>
       <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#F6F3EC" stroke-width="1.5" stroke-linecap="round"/></svg></button>
     </div>
     <div id="mobileMenu" class="md:hidden hidden border-t border-black/10 bg-brand">
-      <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
-        <a onclick="toggleMenu()" href="/localbiz" class="py-2 text-paper/80">Businesses</a>
-        <a onclick="toggleMenu()" href="/localfaith" class="py-2 text-paper/80">Faith</a>
-        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-paper/80">Municipalities</a>
-        <a onclick="toggleMenu()" href="/about" class="py-2 text-paper font-semibold">About</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Demo%20Request" target="_blank" rel="noopener" class="mt-2 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
+      <nav class="px-4 py-3 flex flex-col text-sm font-medium">
+        <a onclick="toggleMenu()" href="/" class="py-2.5 text-paper/85">Home</a>
+        <div class="py-2 text-xs uppercase tracking-[0.15em] text-paper/40">Templates</div>
+        <a onclick="toggleMenu()" href="/localbiz" class="py-2.5 pl-3 text-paper/85">Retail &amp; Ordering</a>
+        <a onclick="toggleMenu()" href="/localfaith" class="py-2.5 pl-3 text-paper/85">Faith &amp; Community</a>
+        <a onclick="toggleMenu()" href="/localgovy" class="py-2.5 pl-3 text-paper/85">Municipalities</a>
+        <a onclick="toggleMenu()" href="/about" class="py-2.5 text-paper font-semibold border-t border-white/10 mt-1 pt-3">About</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Demo%20Request" target="_blank" rel="noopener" class="mt-3 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
       </nav>
     </div>
   </header>
