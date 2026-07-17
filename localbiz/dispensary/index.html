@@ -10,230 +10,129 @@
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
-  <title>Dispensary Showcase — LocalBiz Retail Apps</title>
-  <meta name="description" content="See how LocalBiz powers a full retail storefront app for dispensaries — product catalog, THC/CBD details, cart, checkout, and more." />
+  <title>Dispensary App Showcase — LocalGovy Retail Apps</title>
+  <meta name="description" content="See how LocalGovy powers a full retail storefront app for dispensaries — product catalog, THC/CBD details, cart, checkout, and an admin dashboard. Book a demo." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/dispensary-showcase.jpg" fetchpriority="high" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'system-ui', 'sans-serif'] },
-          colors: {
-            lb: {
-              bg:    '#070A0F',
-              card:  '#0D1117',
-              line:  '#1A2030',
-              blue:  '#3B82F6',
-              blue2: '#93C5FD',
-              text:  '#EFF6FF',
-              muted: '#94A3B8'
-            }
-          },
-          boxShadow: {
-            glow: '0 0 0 1px rgba(59,130,246,0.15), 0 0 30px rgba(59,130,246,0.12)'
-          }
-        }
-      }
+      theme: { extend: {
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'], serif: ['Fraunces','Georgia','serif'] },
+        colors: { paper:'#F6F3EC', surface:'#FFFFFF', ink:'#16201B', sub:'#586158', brand:'#123B2C', brand2:'#1E5A42', gold:'#B4832E', gold2:'#CFA24B', line:'#E7E0D2' },
+        boxShadow: { card:'0 1px 2px rgba(20,32,27,0.04), 0 12px 32px -12px rgba(20,32,27,0.18)', soft:'0 1px 2px rgba(20,32,27,0.05), 0 20px 50px -20px rgba(20,32,27,0.22)' }
+      } }
     }
   </script>
   <style>
-    .grid-gradient { background: radial-gradient(1200px 400px at 50% -10%, rgba(59,130,246,0.10), rgba(7,10,15,0)); }
-    .ring-underline { box-shadow: inset 0 -2px 0 0 #3B82F6; }
-    .noise { background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'.9\' numOctaves=\'2\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23n)\' opacity=\'.03\'/></svg>'); }
+    html { scroll-behavior: smooth; }
+    .u-gold { background-image: linear-gradient(transparent 62%, rgba(180,131,46,0.28) 62%); }
+    .phone { box-shadow: 0 30px 60px -25px rgba(20,32,27,0.45); }
   </style>
 </head>
-<body class="bg-lb-bg text-lb-text font-inter antialiased selection:bg-lb-blue/30">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
 
   <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur supports-backdrop-blur:bg-lb-bg/70 bg-lb-bg/70 border-b border-lb-line">
+  <header class="sticky top-0 z-40 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center py-3">
-        <img src="/lg_logo.png" alt="LocalGovy" class="w-48 md:w-64 brightness-125" width="512" height="512" />
-      </a>
+      <a href="/" class="flex items-center py-3"><img src="/lg_logo.png" alt="LocalGovy" class="w-44 md:w-56 brightness-125" width="512" height="512" /></a>
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="/localgovy" class="text-white/75 hover:text-white transition">Municipalities</a>
-        <a href="/localbiz" class="text-white font-semibold underline underline-offset-4 decoration-[#3B82F6]/60 transition">Businesses</a>
-        <span class="text-white/30 cursor-default">Religious <span class="text-xs bg-lb-card border border-lb-line px-1.5 py-0.5 rounded-full ml-1">Soon</span></span>
-        <a href="/about" class="text-white/75 hover:text-white transition">About</a>
+        <a href="/localbiz" class="text-paper font-semibold underline underline-offset-8 decoration-gold decoration-2">Businesses</a>
+        <a href="/localfaith" class="text-paper/75 hover:text-paper transition">Faith</a>
+        <a href="/localgovy" class="text-paper/75 hover:text-paper transition">Municipalities</a>
+        <a href="/about" class="text-paper/75 hover:text-paper transition">About</a>
       </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalBiz%20Dispensary%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20a%20LocalBiz%20retail%2Fdispensary%20app.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl text-black font-medium hover:shadow-glow transition" style="background:#3B82F6">Book a Demo</a>
-      </div>
-      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#EFF6FF" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
+      <div class="hidden md:flex items-center gap-3"><a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Dispensary%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20a%20retail%2Fdispensary%20app.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a></div>
+      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#F6F3EC" stroke-width="1.5" stroke-linecap="round"/></svg></button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-lb-line bg-lb-bg">
-      <nav class="px-4 py-3 flex flex-col gap-3 text-sm font-medium">
-        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-white/75">Municipalities</a>
-        <a onclick="toggleMenu()" href="/localbiz" class="py-2 text-white font-semibold">Businesses</a>
-        <span class="py-2 text-white/30">Religious <span class="text-xs bg-lb-card border border-lb-line px-1.5 py-0.5 rounded-full ml-1">Soon</span></span>
-        <a onclick="toggleMenu()" href="/about" class="py-2 text-white/75">About</a>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-black/10 bg-brand">
+      <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+        <a onclick="toggleMenu()" href="/localbiz" class="py-2 text-paper font-semibold">Businesses</a>
+        <a onclick="toggleMenu()" href="/localfaith" class="py-2 text-paper/80">Faith</a>
+        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-paper/80">Municipalities</a>
+        <a onclick="toggleMenu()" href="/about" class="py-2 text-paper/80">About</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Dispensary%20App%20Demo%20Request" target="_blank" rel="noopener" class="mt-2 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
       </nav>
     </div>
   </header>
 
   <!-- Breadcrumb -->
-  <div class="border-b border-lb-line bg-lb-card/30">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-lb-muted flex items-center gap-2">
-      <a href="/localbiz" class="hover:text-lb-text transition">Businesses</a>
-      <span>/</span>
-      <span class="text-lb-text">Dispensary Showcase</span>
-    </div>
-  </div>
+  <div class="bg-white/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><a href="/localbiz" class="hover:text-brand transition">Businesses</a><span>/</span><span class="text-brand">Dispensary Showcase</span></div></div>
 
-  <!-- Hero / Showcase -->
-  <section class="relative overflow-hidden py-16 md:py-24">
-    <div class="grid-gradient absolute inset-0 noise pointer-events-none"></div>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 items-center gap-10">
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lb-blue2/90 bg-lb-card/40 border border-lb-line px-3 py-1 rounded-full">Retail Spotlight</div>
-          <h1 class="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
-            A branded ordering app for <span class="ring-underline">dispensaries</span> & retailers
-          </h1>
-          <p class="mt-5 text-lg text-lb-text/80 max-w-xl">LocalBiz can power a full retail storefront right inside your app — built here for a cannabis dispensary, but ready for any shop with a product catalog. Customers browse, search, and order without ever leaving your brand.</p>
-
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-brand bg-white border border-line px-3 py-1.5 rounded-full shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Retail Showcase</div>
+          <h1 class="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-brand">A branded ordering app for <span class="u-gold">dispensaries</span> &amp; retailers</h1>
+          <p class="mt-6 text-lg text-sub max-w-xl leading-relaxed">A full retail storefront right inside your app — built here for a cannabis dispensary, but ready for any shop with a product catalog. Customers browse, search, and order without ever leaving your brand.</p>
           <div class="mt-8 grid sm:grid-cols-2 gap-4">
-            <div class="p-4 rounded-2xl bg-lb-card border border-lb-line">
-              <div class="font-semibold text-sm mb-1" style="color:#93C5FD">Full Product Catalog</div>
-              <p class="text-xs text-lb-muted">Browse by category — flower, pre-rolls, vape, edibles, and more — with live search and filters.</p>
-            </div>
-            <div class="p-4 rounded-2xl bg-lb-card border border-lb-line">
-              <div class="font-semibold text-sm mb-1" style="color:#93C5FD">Potency & Product Details</div>
-              <p class="text-xs text-lb-muted">Show THC/CBD percentages, strain type, weight, and pricing at a glance on every listing.</p>
-            </div>
-            <div class="p-4 rounded-2xl bg-lb-card border border-lb-line">
-              <div class="font-semibold text-sm mb-1" style="color:#93C5FD">Cart, Checkout & Orders</div>
-              <p class="text-xs text-lb-muted">Customers build a cart, check out, and track order history — all inside your own branded app.</p>
-            </div>
-            <div class="p-4 rounded-2xl bg-lb-card border border-lb-line">
-              <div class="font-semibold text-sm mb-1" style="color:#93C5FD">Deals & Trending Searches</div>
-              <p class="text-xs text-lb-muted">Highlight sales, curated collections, and trending products to drive bigger baskets.</p>
-            </div>
+            <div class="p-4 rounded-2xl bg-white border border-line shadow-card"><div class="font-semibold text-sm text-brand">Full Product Catalog</div><p class="mt-1 text-xs text-sub">Browse by category with live search and filters.</p></div>
+            <div class="p-4 rounded-2xl bg-white border border-line shadow-card"><div class="font-semibold text-sm text-brand">Potency &amp; Product Details</div><p class="mt-1 text-xs text-sub">THC/CBD, strain type, weight, and pricing at a glance.</p></div>
+            <div class="p-4 rounded-2xl bg-white border border-line shadow-card"><div class="font-semibold text-sm text-brand">Cart, Checkout &amp; Orders</div><p class="mt-1 text-xs text-sub">Build a cart, check out, and track order history.</p></div>
+            <div class="p-4 rounded-2xl bg-white border border-line shadow-card"><div class="font-semibold text-sm text-brand">Deals &amp; Trending</div><p class="mt-1 text-xs text-sub">Highlight sales and curated collections to lift baskets.</p></div>
           </div>
-
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalBiz%20Dispensary%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20a%20LocalBiz%20retail%2Fdispensary%20app.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl text-black font-semibold transition hover:shadow-glow" style="background:#3B82F6">Book a Demo</a>
-            <a href="/localbiz" class="px-5 py-3 rounded-2xl border border-lb-line hover:border-lb-blue/50 text-lb-text transition">Back to Businesses</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Dispensary%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20a%20retail%2Fdispensary%20app.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition shadow-card">Book a Demo</a>
+            <a href="/localbiz" class="px-6 py-3.5 rounded-full bg-white border border-line font-semibold hover:border-brand/40 transition">Back to Businesses</a>
           </div>
         </div>
-
-        <!-- Phone mockup -->
-        <div class="relative">
-          <div class="absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-lb-blue/20 via-lb-blue2/15 to-transparent blur-3xl"></div>
-          <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-lb-blue/10 to-lb-blue2/10 blur-2xl"></div>
-
-          <div class="relative rounded-[2rem] bg-lb-card border-2 p-6 shadow-glow" style="border-color:rgba(59,130,246,0.3)">
-            <div class="device-wrapper relative mx-auto" style="max-width: 280px;">
-              <div class="absolute -inset-2 rounded-[40px] bg-gradient-to-br from-lb-blue/30 to-lb-blue2/30 blur-xl"></div>
-              <div class="relative rounded-[36px] bg-gradient-to-br from-gray-900 to-black border-[6px] shadow-2xl overflow-hidden ring-2" style="border-color:rgba(59,130,246,0.5); box-shadow: 0 0 0 2px rgba(59,130,246,0.2)">
-                <img src="/dispensary-showcase.jpg" alt="LocalBiz dispensary retail app showing The Apothecary product shop screen" class="w-full h-auto" width="471" height="1024" fetchpriority="high" />
-              </div>
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-10"></div>
-            </div>
-
-            <div class="mt-4 text-center">
-              <p class="text-xs text-lb-muted italic">Sample build: "The Apothecary" curated dispensary shop</p>
-            </div>
-
-            <div class="mt-4 p-4 rounded-xl border" style="background:rgba(59,130,246,0.08); border-color:rgba(59,130,246,0.3)">
-              <div class="flex items-center justify-center gap-3">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="opacity-60">
-                  <path d="M17.25 10.5V18.75C17.25 19.9926 16.2426 21 15 21H5.25C4.00736 21 3 19.9926 3 18.75V9C3 7.75736 4.00736 6.75 5.25 6.75H7.5M17.25 10.5V6C17.25 4.75736 16.2426 3.75 15 3.75H12M17.25 10.5H19.5C20.7426 10.5 21.75 11.5074 21.75 12.75V18.75C21.75 19.9926 20.7426 21 19.5 21H15M7.5 6.75V3.75H12M7.5 6.75H12M12 3.75V6.75" stroke="#93C5FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="text-sm font-semibold" style="color:#93C5FD">Available on iOS & Android</div>
-              </div>
-            </div>
+        <div class="flex justify-center">
+          <div class="w-full max-w-[300px]">
+            <div class="rounded-[2.4rem] overflow-hidden bg-black border border-black/10 phone"><img src="/dispensary-showcase.jpg" alt="The Apothecary dispensary shop screen" class="w-full h-auto" fetchpriority="high" /></div>
+            <p class="mt-4 text-center text-xs text-sub italic">Sample build: “The Apothecary” curated dispensary shop · iOS &amp; Android</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why It Works for Regulated Retail -->
-  <section class="py-16 md:py-24 border-t border-lb-line">
+  <!-- Built for compliant retail -->
+  <section class="py-16 md:py-24 bg-white border-y border-line">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Built for <span class="ring-underline">Compliant Retail</span></h2>
-        <p class="mt-3 text-lb-muted max-w-xl mx-auto">Dispensaries need more than a generic storefront. Here's what makes LocalBiz fit for regulated retail.</p>
-      </div>
-
+      <div class="text-center max-w-2xl mx-auto mb-12"><div class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">Purpose-built</div><h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">Made for regulated retail</h2><p class="mt-4 text-sub">Dispensaries need more than a generic storefront. Here's what makes it fit.</p></div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Age-Gated Access</div>
-          <p class="text-sm text-lb-muted">Require age verification before customers can browse or order, keeping your storefront compliant.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Potency & Strain Data</div>
-          <p class="text-sm text-lb-muted">THC/CBD percentages, strain type (Indica, Sativa, Hybrid, CBD), and weight shown clearly on every product.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Search & Filters</div>
-          <p class="text-sm text-lb-muted">Customers filter by category, effect, THC level, and price — with trending search suggestions built in.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Cart & Checkout</div>
-          <p class="text-sm text-lb-muted">A familiar add-to-cart flow with order history and tracking, all inside your own branded app.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Deals & Promotions</div>
-          <p class="text-sm text-lb-muted">Feature flash sales, mix-and-match bundles, and curated collections to drive repeat visits.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Store Locator</div>
-          <p class="text-sm text-lb-muted">Point customers to the right storefront if you operate across multiple locations.</p>
-        </div>
+        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-semibold text-brand">Age-Gated Access</h3><p class="mt-2 text-sm text-sub">Require age verification before customers browse or order, keeping your storefront compliant.</p></div>
+        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-semibold text-brand">Potency &amp; Strain Data</h3><p class="mt-2 text-sm text-sub">THC/CBD percentages, strain type, and weight shown clearly on every product.</p></div>
+        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-semibold text-brand">Search &amp; Filters</h3><p class="mt-2 text-sm text-sub">Filter by category, effect, THC level, and price — with trending suggestions built in.</p></div>
+        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-semibold text-brand">Cart &amp; Checkout</h3><p class="mt-2 text-sm text-sub">A familiar add-to-cart flow with order history and tracking inside your branded app.</p></div>
+        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-semibold text-brand">Deals &amp; Promotions</h3><p class="mt-2 text-sm text-sub">Feature flash sales, bundles, and curated collections to drive repeat visits.</p></div>
+        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-semibold text-brand">Admin Dashboard</h3><p class="mt-2 text-sm text-sub">Manage products, pricing, inventory, and promotions from one simple dashboard.</p></div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 md:py-24 border-t border-lb-line">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold">Ready to build your <span class="ring-underline">retail app</span>?</h2>
-      <p class="mt-4 text-lb-text/70 max-w-xl mx-auto">Whether it's a dispensary or any other product-based business, LocalBiz can bring your storefront into your customers' pockets.</p>
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalBiz%20Dispensary%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20a%20LocalBiz%20retail%2Fdispensary%20app.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-6 py-3 rounded-2xl text-black font-semibold transition hover:shadow-glow" style="background:#3B82F6">Book a Demo</a>
-        <a href="/localbiz" class="px-6 py-3 rounded-2xl border border-lb-line hover:border-lb-blue/50 text-lb-text transition">Back to Businesses</a>
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-brand text-paper px-6 py-14 md:px-16 md:py-20 text-center relative overflow-hidden shadow-soft">
+        <div class="absolute inset-0 opacity-40" style="background: radial-gradient(600px 300px at 50% -20%, rgba(207,162,75,0.25), transparent 70%);"></div>
+        <div class="relative">
+          <h2 class="font-serif text-3xl md:text-4xl">Ready to build your retail app?</h2>
+          <p class="mt-4 text-paper/80 max-w-xl mx-auto">Whether it's a dispensary or any product-based business, we'll bring your storefront into your customers' pockets.</p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Dispensary%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20a%20retail%2Fdispensary%20app.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a>
+            <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 rounded-full bg-white/10 border border-white/20 text-paper font-semibold hover:bg-white/15 transition">Email us</a>
+          </div>
+          <p class="mt-6 text-sm text-paper/60"><a href="mailto:noah@localgovy.com" class="text-gold2 hover:underline">noah@localgovy.com</a></p>
+        </div>
       </div>
-      <p class="mt-5 text-sm text-lb-muted">Questions? Email <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com" target="_blank" rel="noopener" class="hover:underline" style="color:#93C5FD">noah@localgovy.com</a></p>
     </div>
   </section>
 
-  <footer class="border-t border-lb-line py-10 text-center text-sm text-lb-muted">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-center gap-6 mb-4 text-xs">
-        <a href="/" class="hover:text-lb-text transition">Home</a>
-        <a href="/localgovy" class="hover:text-lb-text transition">For Municipalities</a>
-        <a href="/localbiz" class="hover:text-lb-text transition">For Businesses</a>
-        <a href="/about" class="hover:text-lb-text transition">About</a>
+  <!-- Footer -->
+  <footer class="bg-brand text-paper/70 border-t border-black/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
+        <div><img src="/lg_logo.png" alt="LocalGovy" class="w-44 brightness-125" width="512" height="512" /><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Templates</div><ul class="space-y-2 text-sm"><li><a href="/localbiz" class="hover:text-paper transition">Businesses &amp; Retail</a></li><li><a href="/localfaith" class="hover:text-paper transition">Faith &amp; Community</a></li><li><a href="/localgovy" class="hover:text-paper transition">Municipalities</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li></ul></div>
       </div>
-      <div class="text-lb-text font-semibold mb-1">LocalBiz</div>
-      <div>A product of <a href="/" class="hover:text-lb-text transition">LocalGovy</a> · Based in Toronto, Ontario, Canada · Serving Canada & the US · © <span id="year"></span> All rights reserved.</div>
+      <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>
     </div>
   </footer>
 

@@ -10,363 +10,212 @@
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
-  <title>LocalBiz — Branded Mobile Apps for Local Businesses</title>
-  <meta name="description" content="LocalBiz gives local businesses a branded mobile app with promotions, events, loyalty tools, and direct customer communication — starting at $200/month." />
+  <title>Business App Template — LocalGovy for Local Businesses</title>
+  <meta name="description" content="A fully branded mobile app for your local business — in-app ordering, bookings, promotions, loyalty, and push notifications. See a live retail example and book a demo." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/dispensary-showcase.jpg" fetchpriority="high" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'system-ui', 'sans-serif'] },
-          colors: {
-            lb: {
-              bg:    '#070A0F',
-              card:  '#0D1117',
-              line:  '#1A2030',
-              blue:  '#3B82F6',
-              blue2: '#93C5FD',
-              text:  '#EFF6FF',
-              muted: '#94A3B8'
-            }
-          },
-          boxShadow: {
-            glow: '0 0 0 1px rgba(59,130,246,0.15), 0 0 30px rgba(59,130,246,0.12)'
-          }
-        }
-      }
+      theme: { extend: {
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'], serif: ['Fraunces','Georgia','serif'] },
+        colors: { paper:'#F6F3EC', surface:'#FFFFFF', ink:'#16201B', sub:'#586158', brand:'#123B2C', brand2:'#1E5A42', gold:'#B4832E', gold2:'#CFA24B', line:'#E7E0D2' },
+        boxShadow: { card:'0 1px 2px rgba(20,32,27,0.04), 0 12px 32px -12px rgba(20,32,27,0.18)', soft:'0 1px 2px rgba(20,32,27,0.05), 0 20px 50px -20px rgba(20,32,27,0.22)' }
+      } }
     }
   </script>
   <style>
-    .grid-gradient { background: radial-gradient(1200px 400px at 50% -10%, rgba(59,130,246,0.10), rgba(7,10,15,0)); }
-    .ring-underline { box-shadow: inset 0 -2px 0 0 #3B82F6; }
-    .noise { background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'.9\' numOctaves=\'2\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23n)\' opacity=\'.03\'/></svg>'); }
+    html { scroll-behavior: smooth; }
+    .u-gold { background-image: linear-gradient(transparent 62%, rgba(180,131,46,0.28) 62%); }
+    .phone { box-shadow: 0 30px 60px -25px rgba(20,32,27,0.45); }
   </style>
 </head>
-<body class="bg-lb-bg text-lb-text font-inter antialiased selection:bg-lb-blue/30">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
 
   <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur supports-backdrop-blur:bg-lb-bg/70 bg-lb-bg/70 border-b border-lb-line">
+  <header class="sticky top-0 z-40 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center py-3">
-        <img src="/lg_logo.png" alt="LocalGovy" class="w-48 md:w-64 brightness-125" width="512" height="512" />
-      </a>
+      <a href="/" class="flex items-center py-3"><img src="/lg_logo.png" alt="LocalGovy" class="w-44 md:w-56 brightness-125" width="512" height="512" /></a>
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="/localgovy" class="text-white/75 hover:text-white transition">Municipalities</a>
-        <a href="/localbiz" class="text-white font-semibold underline underline-offset-4 decoration-[#3B82F6]/60 transition">Businesses</a>
-        <span class="text-white/30 cursor-default">Religious <span class="text-xs bg-lb-card border border-lb-line px-1.5 py-0.5 rounded-full ml-1">Soon</span></span>
-        <a href="/about" class="text-white/75 hover:text-white transition">About</a>
+        <a href="/localbiz" class="text-paper font-semibold underline underline-offset-8 decoration-gold decoration-2">Businesses</a>
+        <a href="/localfaith" class="text-paper/75 hover:text-paper transition">Faith</a>
+        <a href="/localgovy" class="text-paper/75 hover:text-paper transition">Municipalities</a>
+        <a href="/about" class="text-paper/75 hover:text-paper transition">About</a>
       </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalBiz%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalBiz%20for%20my%20business.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl text-black font-medium hover:shadow-glow transition" style="background:#3B82F6">Book a Demo</a>
-      </div>
-      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#EFF6FF" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
+      <div class="hidden md:flex items-center gap-3"><a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Business%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20an%20app%20for%20my%20business.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a></div>
+      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#F6F3EC" stroke-width="1.5" stroke-linecap="round"/></svg></button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-lb-line bg-lb-bg">
-      <nav class="px-4 py-3 flex flex-col gap-3 text-sm font-medium">
-        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-white/75">Municipalities</a>
-        <a onclick="toggleMenu()" href="/localbiz" class="py-2 text-white font-semibold">Businesses</a>
-        <span class="py-2 text-white/30">Religious <span class="text-xs bg-lb-card border border-lb-line px-1.5 py-0.5 rounded-full ml-1">Soon</span></span>
-        <a onclick="toggleMenu()" href="/about" class="py-2 text-white/75">About</a>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-black/10 bg-brand">
+      <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+        <a onclick="toggleMenu()" href="/localbiz" class="py-2 text-paper font-semibold">Businesses</a>
+        <a onclick="toggleMenu()" href="/localfaith" class="py-2 text-paper/80">Faith</a>
+        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-paper/80">Municipalities</a>
+        <a onclick="toggleMenu()" href="/about" class="py-2 text-paper/80">About</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Business%20App%20Demo%20Request" target="_blank" rel="noopener" class="mt-2 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
       </nav>
     </div>
   </header>
 
+  <!-- Breadcrumb -->
+  <div class="bg-white/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><span class="text-brand">Businesses</span></div></div>
+
   <!-- Hero -->
   <section class="relative overflow-hidden">
-    <div class="grid-gradient absolute inset-0 noise pointer-events-none"></div>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lb-blue2/90 bg-lb-card/40 border border-lb-line px-3 py-1 rounded-full">Branded Mobile Apps for Local Business</div>
-        <h1 class="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
-          Your business in your customers' <span class="ring-underline">pockets</span>
-        </h1>
-        <p class="mt-6 text-lg text-lb-text/80 max-w-2xl">LocalBiz gives local businesses a fully branded mobile app — with promotions, events, loyalty tools, push notifications, and direct customer communication built in.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalBiz%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalBiz%20for%20my%20business.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl text-black font-semibold transition hover:shadow-glow" style="background:#3B82F6">Book a Demo</a>
-          <a href="#platform" class="px-5 py-3 rounded-2xl border border-lb-line hover:border-lb-blue/50 text-lb-text transition">See What's Included</a>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <div class="grid lg:grid-cols-[1.05fr_1fr] gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-brand bg-white border border-line px-3 py-1.5 rounded-full shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Business Template</div>
+          <h1 class="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-brand">Your business in your customers' <span class="u-gold">pockets</span></h1>
+          <p class="mt-6 text-lg text-sub max-w-xl leading-relaxed">A fully branded mobile app with in-app ordering, bookings, promotions, loyalty, and push notifications — so you capture more orders and keep customers coming back.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Business%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20an%20app%20for%20my%20business.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition shadow-card">Book a Demo</a>
+            <a href="/localbiz/dispensary" class="px-6 py-3.5 rounded-full bg-white border border-line font-semibold hover:border-brand/40 transition">See a live example</a>
+          </div>
+          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-sub">
+            <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> iOS &amp; Android</div>
+            <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Starting at $200/mo</div>
+          </div>
         </div>
-        <div class="mt-6 flex items-center gap-6 text-xs text-lb-muted">
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full" style="background:#3B82F6"></span> Canadian-built · Serving Canada & the US</div>
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full" style="background:#3B82F6"></span> iOS & Android</div>
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full" style="background:#3B82F6"></span> Starting at $200/mo</div>
+        <div class="flex justify-center">
+          <div class="w-full max-w-[280px] rounded-[2.2rem] overflow-hidden bg-black border border-black/10 phone"><img src="/dispensary-showcase.jpg" alt="Branded retail ordering app" class="w-full h-auto" fetchpriority="high" /></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Problem -->
-  <section class="border-y border-lb-line bg-lb-card/40">
+  <!-- Problem statement -->
+  <section class="bg-white border-y border-line">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 text-center">
-      <p class="text-lg text-lb-text/75 leading-relaxed">Most local businesses rely on social media posts that disappear, Google profiles they don't control, and scattered links customers can't easily find.</p>
-      <p class="mt-4 text-lb-text/90 font-medium">LocalBiz gives you a branded app that lives on your customers' phones — so you communicate directly, without the algorithm.</p>
+      <p class="text-lg text-sub leading-relaxed">Most local businesses rely on social posts that disappear and links customers can't find.</p>
+      <p class="mt-3 text-lg font-medium text-brand">A branded app lives on your customers' phones — so you reach them directly, without the algorithm.</p>
     </div>
   </section>
 
-  <!-- Platform -->
-  <section id="platform" class="py-16 md:py-24 border-b border-lb-line">
+  <!-- Features -->
+  <section class="py-16 md:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">What's Included in the <span class="ring-underline">App</span></h2>
-        <p class="mt-3 text-lb-text/65 max-w-xl mx-auto">Everything your business needs to communicate directly with customers — in one branded app.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Branded Mobile App</div>
-          <p class="text-sm text-lb-muted">Your own app on the App Store and Google Play, branded with your business name, logo, and colours.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Promotions & Offers</div>
-          <p class="text-sm text-lb-muted">Publish deals, seasonal offers, and loyalty rewards directly inside your app.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Events & Bookings</div>
-          <p class="text-sm text-lb-muted">Promote events, accept reservations, and manage bookings in one place.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Push Notifications</div>
-          <p class="text-sm text-lb-muted">Send updates, promotions, and reminders directly to your customers' phones.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Customer Communication</div>
-          <p class="text-sm text-lb-muted">Announcements, updates, and newsletters — without relying on social media algorithms.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Forms & Inquiries</div>
-          <p class="text-sm text-lb-muted">Collect contact requests, quote inquiries, feedback, and more — no third-party tools needed.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Admin Dashboard</div>
-          <p class="text-sm text-lb-muted">Manage your app, promotions, events, and content from one simple dashboard.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Customer Retention</div>
-          <p class="text-sm text-lb-muted">Loyalty programs, reward points, and repeat-visit incentives that keep customers coming back.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">Brand Recognition</div>
-          <p class="text-sm text-lb-muted">Your logo on every customer's home screen — more visible than any social media profile or Google listing.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lb-card border border-lb-line">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(59,130,246,0.10)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="color:#3B82F6"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold mb-2">In-App Ordering</div>
-          <p class="text-sm text-lb-muted">Let customers place orders, make requests, or pre-order directly through the app — no third-party platform needed.</p>
-        </div>
+      <div class="max-w-2xl mb-12"><div class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">What's Included</div><h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">Everything your business needs in one app</h2></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">In-App Ordering</h3><p class="mt-2 text-sm text-sub">Let customers order, pre-order, or request directly — no third-party platform or commissions.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Events &amp; Bookings</h3><p class="mt-2 text-sm text-sub">Promote events, accept reservations, and manage bookings in one place.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Promotions &amp; Offers</h3><p class="mt-2 text-sm text-sub">Publish deals, seasonal offers, and loyalty rewards right inside your app.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Loyalty &amp; Retention</h3><p class="mt-2 text-sm text-sub">Reward points and repeat-visit incentives that keep customers coming back.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Push Notifications</h3><p class="mt-2 text-sm text-sub">Send updates, promos, and reminders straight to your customers' phones.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Forms &amp; Inquiries</h3><p class="mt-2 text-sm text-sub">Collect quotes, contact requests, and feedback — no extra tools needed.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Admin Dashboard</h3><p class="mt-2 text-sm text-sub">Manage products, promotions, events, and content from one simple place.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Brand Recognition</h3><p class="mt-2 text-sm text-sub">Your logo on every customer's home screen — more visible than any social profile.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Fully Branded App</h3><p class="mt-2 text-sm text-sub">Your own app on the App Store and Google Play with your name, logo, and colours.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Retail Spotlight Teaser -->
-  <section class="py-16 md:py-24 border-t border-lb-line">
+  <!-- Retail spotlight -->
+  <section class="py-16 md:py-24 bg-white border-y border-line">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <a href="/localbiz/dispensary" class="group block relative overflow-hidden rounded-3xl bg-lb-card border border-lb-line hover:border-lb-blue/50 transition p-8 md:p-10">
+      <a href="/localbiz/dispensary" class="group block rounded-3xl bg-paper border border-line p-8 md:p-10 hover:border-brand/40 transition shadow-card">
         <div class="grid md:grid-cols-[1fr_auto] items-center gap-6">
           <div>
-            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lb-blue2/90 bg-lb-bg/60 border border-lb-line px-3 py-1 rounded-full">Retail Spotlight</div>
-            <h2 class="mt-4 text-2xl md:text-3xl font-bold">See it in action: a <span class="ring-underline">dispensary</span> retail app</h2>
-            <p class="mt-3 text-lb-muted max-w-2xl">A full product catalog, cart, and checkout — built with LocalBiz for a cannabis dispensary as an example of what's possible for any retail storefront.</p>
+            <div class="text-xs uppercase tracking-[0.15em] text-gold font-semibold">Live Example</div>
+            <h2 class="mt-3 font-serif text-2xl md:text-3xl text-brand">See it in action: a dispensary retail app</h2>
+            <p class="mt-3 text-sub max-w-2xl">A full product catalog, cart, and checkout — built for a cannabis dispensary as an example of what's possible for any retail storefront.</p>
           </div>
-          <div class="flex md:justify-end">
-            <span class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl text-black font-semibold transition group-hover:shadow-glow whitespace-nowrap" style="background:#3B82F6">
-              View Showcase
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="transition group-hover:translate-x-0.5"><path d="M5 12h14M13 6l6 6-6 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
+          <span class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand text-paper font-semibold group-hover:bg-brand2 transition whitespace-nowrap">View showcase <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="transition group-hover:translate-x-0.5"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </a>
     </div>
   </section>
 
-  <!-- Who It's For -->
+  <!-- Who it's for + Pricing -->
   <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold">Built for Any <span class="ring-underline">Local Business</span></h2>
-          <p class="mt-4 text-lb-text/70 leading-relaxed">If you have regular customers and want to reach them directly — this is for you.</p>
-          <ul class="mt-6 space-y-2 text-sm text-lb-muted">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Restaurants & cafes</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Retail stores</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Salons & spas</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Fitness studios & gyms</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Service businesses</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Entertainment & events venues</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#3B82F6"></span> Any local business with a regular customer base</li>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-serif text-3xl md:text-4xl text-brand">Built for any local business</h2>
+        <p class="mt-4 text-sub leading-relaxed">If you have regular customers and want to reach them directly, this is for you.</p>
+        <ul class="mt-6 grid sm:grid-cols-2 gap-y-2.5 gap-x-4 text-sm text-ink/80">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Restaurants &amp; cafés</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Retail &amp; dispensaries</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Salons &amp; spas</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Fitness studios &amp; gyms</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Service businesses</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Events &amp; venues</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl bg-brand text-paper p-8 md:p-10 shadow-soft relative overflow-hidden">
+        <div class="absolute inset-0 opacity-40" style="background: radial-gradient(500px 260px at 80% -20%, rgba(207,162,75,0.25), transparent 70%);"></div>
+        <div class="relative">
+          <div class="text-xs uppercase tracking-[0.2em] text-gold2 font-semibold">One simple plan · Starting at</div>
+          <div class="mt-2 font-serif text-5xl">$200<span class="text-lg text-paper/70 font-sans">/month</span></div>
+          <div class="mt-1 text-sm text-paper/70">Billed annually · 1 month free</div>
+          <ul class="mt-6 space-y-2.5 text-sm text-paper/85">
+            <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Fully branded iOS &amp; Android app</li>
+            <li class="flex items-center gap-2"><span class="text-gold2">✓</span> In-app ordering &amp; bookings</li>
+            <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Loyalty &amp; retention tools</li>
+            <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Push notifications &amp; promotions</li>
+            <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Admin dashboard</li>
+            <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Training &amp; ongoing support</li>
           </ul>
-        </div>
-        <div class="p-8 rounded-3xl bg-lb-card border border-lb-line shadow-glow">
-          <h3 class="text-xl font-bold mb-4">Your business on their home screen</h3>
-          <p class="text-lb-muted text-sm leading-relaxed">When a customer downloads your app, you have a direct line to them — no algorithm, no competing posts. Push a promotion, announce an event, or send a reminder and know it lands.</p>
-          <div class="mt-6 p-4 rounded-xl border font-semibold" style="border-color:rgba(59,130,246,0.3); color:#3B82F6">
-            Direct to your customers. No middleman.
-          </div>
+          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Business%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20an%20app%20for%20my%20business.%0A%0AThank%20you!" target="_blank" rel="noopener" class="mt-8 block text-center px-6 py-3.5 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="py-16 md:py-24 border-t border-lb-line">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold"><span class="ring-underline">Simple</span> Pricing</h2>
-        <p class="mt-3 text-lb-muted max-w-xl mx-auto">One plan. Everything included.</p>
-      </div>
-
-      <div class="flex justify-center">
-        <div class="p-10 rounded-3xl bg-lb-card border-2 max-w-md w-full" style="border-color:rgba(59,130,246,0.4); box-shadow:0 0 0 1px rgba(59,130,246,0.15), 0 0 30px rgba(59,130,246,0.12)">
-          <div class="text-center">
-            <div class="text-xs uppercase tracking-widest" style="color:#93C5FD">LocalBiz</div>
-            <div class="mt-1 text-sm text-lb-muted uppercase tracking-widest">Starting at</div>
-            <div class="mt-1 text-5xl font-extrabold">$200<span class="text-base font-semibold text-lb-muted">/month</span></div>
-            <div class="mt-2 text-sm text-lb-muted">Billed annually · 1 month free</div>
-          </div>
-          <ul class="mt-8 space-y-3 text-sm text-lb-muted">
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Fully branded iOS & Android app</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> In-app ordering</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Customer retention & loyalty tools</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Brand recognition — your logo on every home screen</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Push notifications</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Promotions & offers</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Events & bookings</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Customer communication</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Forms & inquiries</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Admin dashboard</li>
-            <li class="flex items-center gap-2"><span style="color:#3B82F6">✓</span> Training & ongoing support</li>
-          </ul>
-          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalBiz%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalBiz%20for%20my%20business.%0A%0AThank%20you!" target="_blank" rel="noopener" class="mt-8 block text-center px-5 py-3 rounded-2xl text-black font-semibold transition hover:shadow-glow" style="background:#3B82F6">Book a Demo</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="py-16 md:py-24 border-t border-lb-line">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">How It Works</h2>
-      </div>
-      <div class="grid md:grid-cols-4 gap-6">
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg mx-auto mb-4" style="background:rgba(59,130,246,0.10); border:1px solid rgba(59,130,246,0.30); color:#3B82F6">1</div>
-          <h3 class="font-semibold mb-2">We Learn Your Business</h3>
-          <p class="text-sm text-lb-muted">We review your current setup and how you communicate with customers.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg mx-auto mb-4" style="background:rgba(59,130,246,0.10); border:1px solid rgba(59,130,246,0.30); color:#3B82F6">2</div>
-          <h3 class="font-semibold mb-2">We Build Your App</h3>
-          <p class="text-sm text-lb-muted">We design and build a fully branded app around your business — your name, logo, and colours.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg mx-auto mb-4" style="background:rgba(59,130,246,0.10); border:1px solid rgba(59,130,246,0.30); color:#3B82F6">3</div>
-          <h3 class="font-semibold mb-2">We Connect Your Tools</h3>
-          <p class="text-sm text-lb-muted">Promotions, events, bookings, and communication — organized into one system.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg mx-auto mb-4" style="background:rgba(59,130,246,0.10); border:1px solid rgba(59,130,246,0.30); color:#3B82F6">4</div>
-          <h3 class="font-semibold mb-2">You Launch</h3>
-          <p class="text-sm text-lb-muted">We help you go live, get your app on the App Store and Google Play, and train your team.</p>
-        </div>
+  <!-- How it works -->
+  <section class="py-8 md:py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl md:text-4xl text-brand text-center mb-12">How it works</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><div class="text-4xl font-serif text-gold/70">01</div><h3 class="mt-3 font-semibold text-brand">We learn your business</h3><p class="mt-2 text-sm text-sub">We review how you sell and communicate with customers today.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><div class="text-4xl font-serif text-gold/70">02</div><h3 class="mt-3 font-semibold text-brand">We build your app</h3><p class="mt-2 text-sm text-sub">A fully branded app around your name, logo, and colours.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><div class="text-4xl font-serif text-gold/70">03</div><h3 class="mt-3 font-semibold text-brand">We connect your tools</h3><p class="mt-2 text-sm text-sub">Ordering, bookings, promos, and content in one system.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><div class="text-4xl font-serif text-gold/70">04</div><h3 class="mt-3 font-semibold text-brand">You launch</h3><p class="mt-2 text-sm text-sub">We publish to both stores and train your team.</p></div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-16 md:py-24 border-t border-lb-line">
+  <section class="py-16 md:py-24 bg-white border-y border-line">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
-      </div>
-      <div class="divide-y divide-lb-line">
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">What kind of businesses is this for?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#94A3B8" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lb-muted">Restaurants, retailers, salons, gyms, studios, service businesses, entertainment venues — any local business with regular customers.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Do I need my own app developer?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#94A3B8" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lb-muted">No. We build and maintain everything. You can manage all relevant content through a simple dashboard — no technical skills required.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Can I send promotions and deals to customers?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#94A3B8" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lb-muted">Yes. You can publish promotions, seasonal offers, and loyalty rewards directly to your app, and send push notifications to customers who have it installed.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">How long does it take to launch?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#94A3B8" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lb-muted">Typically 2–4 weeks from start to launch, including app design, content setup, and App Store/Google Play submission. During this time, you will pay nothing.</p>
-        </details>
+      <h2 class="font-serif text-3xl md:text-4xl text-brand text-center mb-10">Frequently asked questions</h2>
+      <div class="divide-y divide-line border-t border-b border-line">
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-medium text-brand">What kind of businesses is this for?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#586158" stroke-width="1.5"/></svg></summary><p class="mt-3 text-sm text-sub">Restaurants, retailers, dispensaries, salons, gyms, studios, and service businesses — any local business with regular customers.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-medium text-brand">Do I need my own developer?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#586158" stroke-width="1.5"/></svg></summary><p class="mt-3 text-sm text-sub">No. We build and maintain everything. You manage content through a simple dashboard — no technical skills required.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-medium text-brand">Can I send promotions to customers?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#586158" stroke-width="1.5"/></svg></summary><p class="mt-3 text-sm text-sub">Yes — publish promotions and loyalty rewards, and send push notifications to everyone who has your app installed.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-medium text-brand">How long does it take to launch?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#586158" stroke-width="1.5"/></svg></summary><p class="mt-3 text-sm text-sub">Typically 2–4 weeks, including design, content setup, and store submission. You pay nothing during this time.</p></details>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 md:py-24 border-t border-lb-line">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold">Your business on every customer's <span class="ring-underline">phone</span>.</h2>
-      <p class="mt-4 text-lb-text/70 max-w-xl mx-auto">No algorithms. No feed. A direct line to the people who matter most to your business.</p>
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalBiz%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalBiz%20for%20my%20business.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-6 py-3 rounded-2xl text-black font-semibold transition hover:shadow-glow" style="background:#3B82F6">Book a Demo</a>
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-brand text-paper px-6 py-14 md:px-16 md:py-20 text-center relative overflow-hidden shadow-soft">
+        <div class="absolute inset-0 opacity-40" style="background: radial-gradient(600px 300px at 50% -20%, rgba(207,162,75,0.25), transparent 70%);"></div>
+        <div class="relative">
+          <h2 class="font-serif text-3xl md:text-4xl">Your business on every customer's phone</h2>
+          <p class="mt-4 text-paper/80 max-w-xl mx-auto">No algorithms, no feed — just a direct line to the people who matter most.</p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Business%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20an%20app%20for%20my%20business.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a>
+            <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 rounded-full bg-white/10 border border-white/20 text-paper font-semibold hover:bg-white/15 transition">Email us</a>
+          </div>
+          <p class="mt-6 text-sm text-paper/60"><a href="mailto:noah@localgovy.com" class="text-gold2 hover:underline">noah@localgovy.com</a></p>
+        </div>
       </div>
-      <p class="mt-5 text-sm text-lb-muted">Questions? Email <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com" target="_blank" rel="noopener" class="hover:underline" style="color:#93C5FD">noah@localgovy.com</a></p>
     </div>
   </section>
 
-  <footer class="border-t border-lb-line py-10 text-center text-sm text-lb-muted">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-center gap-6 mb-4 text-xs">
-        <a href="/" class="hover:text-lb-text transition">Home</a>
-        <a href="/localgovy" class="hover:text-lb-text transition">For Municipalities</a>
-        <a href="/localbiz" class="hover:text-lb-text transition">For Businesses</a>
-        <a href="/about" class="hover:text-lb-text transition">About</a>
+  <!-- Footer -->
+  <footer class="bg-brand text-paper/70 border-t border-black/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
+        <div><img src="/lg_logo.png" alt="LocalGovy" class="w-44 brightness-125" width="512" height="512" /><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Templates</div><ul class="space-y-2 text-sm"><li><a href="/localbiz" class="hover:text-paper transition">Businesses &amp; Retail</a></li><li><a href="/localfaith" class="hover:text-paper transition">Faith &amp; Community</a></li><li><a href="/localgovy" class="hover:text-paper transition">Municipalities</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li></ul></div>
       </div>
-      <div class="text-lb-text font-semibold mb-1">LocalBiz</div>
-      <div>A product of <a href="/" class="hover:text-lb-text transition">LocalGovy</a> · Based in Toronto, Ontario, Canada · Serving Canada & the US · © <span id="year"></span> All rights reserved.</div>
+      <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>
     </div>
   </footer>
 

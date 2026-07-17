@@ -10,498 +10,209 @@
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
-  <title>LocalFaith — Modern Apps & Websites for Religious Communities</title>
-  <meta name="description" content="LocalFaith gives churches, mandirs, gurdwaras, mosques, synagogues, and temples a modern mobile app, custom website, donation system, event hub, media library, and communication platform — all in one place." />
+  <title>Faith &amp; Community App Template — LocalGovy</title>
+  <meta name="description" content="A beautiful, fully branded app and website for your faith community — prayer times, giving, events, media, and announcements in one place. Built for mosques and adaptable to temples, churches, and gurdwaras. Book a demo." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/mosque-showcase.png" fetchpriority="high" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'system-ui', 'sans-serif'] },
-          colors: {
-            lf: {
-              bg:    '#08070A',
-              card:  '#110F17',
-              line:  '#1E1A28',
-              gold:  '#F0A500',
-              gold2: '#FFD166',
-              text:  '#F5F0FF',
-              muted: '#A89FC0'
-            }
-          },
-          boxShadow: {
-            glow: '0 0 0 1px rgba(240,165,0,0.15), 0 0 30px rgba(240,165,0,0.12)'
-          }
-        }
-      }
+      theme: { extend: {
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'], serif: ['Fraunces','Georgia','serif'] },
+        colors: { paper:'#F6F3EC', surface:'#FFFFFF', ink:'#16201B', sub:'#586158', brand:'#123B2C', brand2:'#1E5A42', gold:'#B4832E', gold2:'#CFA24B', line:'#E7E0D2' },
+        boxShadow: { card:'0 1px 2px rgba(20,32,27,0.04), 0 12px 32px -12px rgba(20,32,27,0.18)', soft:'0 1px 2px rgba(20,32,27,0.05), 0 20px 50px -20px rgba(20,32,27,0.22)' }
+      } }
     }
   </script>
   <style>
-    .grid-gradient { background: radial-gradient(1200px 400px at 50% -10%, rgba(240,165,0,0.12), rgba(8,7,10,0)); }
-    .ring-underline { box-shadow: inset 0 -2px 0 0 #F0A500; }
-    .noise { background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'.9\' numOctaves=\'2\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23n)\' opacity=\'.03\'/></svg>'); }
+    html { scroll-behavior: smooth; }
+    .u-gold { background-image: linear-gradient(transparent 62%, rgba(180,131,46,0.28) 62%); }
+    .phone { box-shadow: 0 30px 60px -25px rgba(20,32,27,0.45); }
   </style>
 </head>
-<body class="bg-lf-bg text-lf-text font-inter antialiased selection:bg-lf-gold/30">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
 
   <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur supports-backdrop-blur:bg-lf-bg/70 bg-lf-bg/70 border-b border-lf-line">
+  <header class="sticky top-0 z-40 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center py-3">
-        <img src="/lg_logo.png" alt="LocalGovy" class="w-48 md:w-64 brightness-125" width="512" height="512" />
-      </a>
+      <a href="/" class="flex items-center py-3"><img src="/lg_logo.png" alt="LocalGovy" class="w-44 md:w-56 brightness-125" width="512" height="512" /></a>
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="/localgovy" class="text-white/75 hover:text-white transition">Municipalities</a>
-        <a href="/localbiz" class="text-white/75 hover:text-white transition">Businesses</a>
-        <a href="/localfaith" class="text-white font-semibold underline underline-offset-4 decoration-lf-gold/60 transition">Religious</a>
-        <a href="/about" class="text-white/75 hover:text-white transition">About</a>
+        <a href="/localbiz" class="text-paper/75 hover:text-paper transition">Businesses</a>
+        <a href="/localfaith" class="text-paper font-semibold underline underline-offset-8 decoration-gold decoration-2">Faith</a>
+        <a href="/localgovy" class="text-paper/75 hover:text-paper transition">Municipalities</a>
+        <a href="/about" class="text-paper/75 hover:text-paper transition">About</a>
       </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalFaith%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalFaith%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-lg-neon text-black font-medium hover:shadow-glow transition">Book a Demo</a>
-      </div>
-      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#F5F0FF" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
+      <div class="hidden md:flex items-center gap-3"><a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Faith%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20an%20app%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a></div>
+      <button class="md:hidden p-2" id="menuBtn" aria-label="Toggle menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#F6F3EC" stroke-width="1.5" stroke-linecap="round"/></svg></button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-lf-line bg-lf-bg">
-      <nav class="px-4 py-3 flex flex-col gap-3 text-sm font-medium">
-        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-white/75">Municipalities</a>
-        <a onclick="toggleMenu()" href="/localbiz" class="py-2 text-white/75">Businesses</a>
-        <a onclick="toggleMenu()" href="/localfaith" class="py-2 text-white font-semibold">Religious</a>
-        <a onclick="toggleMenu()" href="/about" class="py-2 text-white/75">About</a>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-black/10 bg-brand">
+      <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+        <a onclick="toggleMenu()" href="/localbiz" class="py-2 text-paper/80">Businesses</a>
+        <a onclick="toggleMenu()" href="/localfaith" class="py-2 text-paper font-semibold">Faith</a>
+        <a onclick="toggleMenu()" href="/localgovy" class="py-2 text-paper/80">Municipalities</a>
+        <a onclick="toggleMenu()" href="/about" class="py-2 text-paper/80">About</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Faith%20App%20Demo%20Request" target="_blank" rel="noopener" class="mt-2 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
       </nav>
     </div>
   </header>
 
+  <!-- Breadcrumb -->
+  <div class="bg-white/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><span class="text-brand">Faith &amp; Community</span></div></div>
+
   <!-- Hero -->
   <section class="relative overflow-hidden">
-    <div class="grid-gradient absolute inset-0 noise pointer-events-none"></div>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold2/90 bg-lf-card/40 border border-lf-line px-3 py-1 rounded-full">Modern Digital Infrastructure for Religious Communities</div>
-        <h1 class="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
-          Modern Apps and Websites for <span class="ring-underline">Religious Communities</span>
-        </h1>
-        <p class="mt-6 text-lg text-lf-muted max-w-2xl">One digital home for your religious community — app, website, giving, events, media, and communication, built around your institution's language, traditions, and needs.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalFaith%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalFaith%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl bg-lf-gold text-black font-semibold hover:shadow-glow transition">Book a Demo</a>
-          <a href="#platform" class="px-5 py-3 rounded-2xl border border-lf-line text-lf-text hover:border-lf-gold/50 transition">See What's Included</a>
-        </div>
-        <div class="mt-6 flex items-center gap-6 text-xs text-lf-muted">
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-lf-gold"></span> Canadian-built · Serving Canada & the US</div>
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-lf-gold"></span> iOS & Android</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Supporting Text Banner -->
-  <section class="border-y border-lf-line bg-lf-card/40">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8 text-center">
-      <p class="text-lg text-lf-muted">Your community shouldn't need to check four different apps, a WhatsApp group, and an outdated website just to find service times.</p>
-      <p class="mt-3 text-lg font-semibold text-lf-text">LocalFaith puts everything in one place.</p>
-    </div>
-  </section>
-
-  <!-- Platform Section -->
-  <section id="platform" class="py-16 md:py-24 border-b border-lf-line">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">App. Website. Giving. Events. Media. <span class="text-lf-gold">All in One Place.</span></h2>
-        <p class="mt-3 text-lf-muted max-w-xl mx-auto">Your community is strong. LocalFaith gives it the digital infrastructure it deserves.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold text-lf-text mb-2">Branded Mobile App</div>
-          <p class="text-sm text-lf-muted">A fully branded iOS & Android app built around your institution's services, events, and community.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold text-lf-text mb-2">Custom Website</div>
-          <p class="text-sm text-lf-muted">A modern website designed for your organization, connected to the same system as your app.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold text-lf-text mb-2">Giving & Donations</div>
-          <p class="text-sm text-lf-muted">Accept donations, recurring giving, tithes, seva, zakat, dasvandh, and campaign contributions.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold text-lf-text mb-2">Events & Registration</div>
-          <p class="text-sm text-lf-muted">Promote events, collect RSVPs, manage registrations, and send reminders.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold text-lf-text mb-2">Media & Livestreams</div>
-          <p class="text-sm text-lf-muted">Share sermons, kirtan, pujas, lectures, livestreams, and archived content in one media hub.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold text-lf-text mb-2">Forms & Workflows</div>
-          <p class="text-sm text-lf-muted">Collect prayer requests, seva signups, puja bookings, volunteer applications, and more.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold text-lf-text mb-2">Push Notifications</div>
-          <p class="text-sm text-lf-muted">Send important updates directly to your community's phones instantly.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="w-10 h-10 rounded-xl bg-lf-gold/10 flex items-center justify-center mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-lf-gold"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="font-semibold text-lf-text mb-2">Admin Dashboard</div>
-          <p class="text-sm text-lf-muted">Manage your app, website, events, forms, announcements, and media from one simple place.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Problem Section -->
-  <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <div class="grid lg:grid-cols-[1.05fr_1fr] gap-12 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-card/40 border border-lf-line px-3 py-1 rounded-full mb-5">The Problem</div>
-          <h2 class="text-3xl font-bold">Too Many Disconnected Tools</h2>
-          <p class="mt-4 text-lf-muted">Most communities are piecing things together — and it creates confusion for members, visitors, and volunteers alike.</p>
-          <ul class="mt-6 space-y-2 text-sm text-lf-muted">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> An outdated website</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> Facebook or Instagram posts</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> YouTube livestreams</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> WhatsApp groups</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> Google Forms and manual event registration</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> Separate donation links</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-muted flex-shrink-0"></span> PDFs, bulletins, and email newsletters</li>
-          </ul>
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-brand bg-white border border-line px-3 py-1.5 rounded-full shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Faith &amp; Community Template</div>
+          <h1 class="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-brand">One home for your whole <span class="u-gold">community</span></h1>
+          <p class="mt-6 text-lg text-sub max-w-xl leading-relaxed">Prayer &amp; iqamah times, announcements, events, giving, and livestreams — in one beautiful app and website. Built for mosques, and thoughtfully adapted for temples, churches, gurdwaras, and synagogues.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Faith%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20an%20app%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition shadow-card">Book a Demo</a>
+            <a href="#platform" class="px-6 py-3.5 rounded-full bg-white border border-line font-semibold hover:border-brand/40 transition">What's included</a>
+          </div>
+          <p class="mt-5 text-xs text-sub italic">Screen shown is a live mosque community app build.</p>
         </div>
-        <div class="p-8 rounded-3xl bg-lf-card border border-lf-line shadow-glow">
-          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-bg/60 border border-lf-line px-3 py-1 rounded-full mb-5">The Solution</div>
-          <h3 class="text-2xl font-bold">One Digital Home for Your Whole Community</h3>
-          <p class="mt-3 text-lf-muted text-sm">One clear place for everything:</p>
-          <ul class="mt-4 space-y-2 text-sm text-lf-muted">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> See upcoming services, prayers, programs, or events</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Donate or support a specific fund</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Watch livestreams or past media</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Register for events and classes</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Submit forms or requests</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Sign up to volunteer</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Receive important announcements</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lf-gold flex-shrink-0"></span> Stay connected throughout the week</li>
-          </ul>
+        <div class="flex justify-center">
+          <div class="w-full max-w-[280px] rounded-[2.2rem] overflow-hidden bg-black border border-black/10 phone"><img src="/mosque-showcase.png" alt="Mosque community app home screen with prayer times" class="w-full h-auto" fetchpriority="high" /></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Religious Communities -->
-  <section id="communities" class="py-16 md:py-24 border-t border-lf-line">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-card/40 border border-lf-line px-3 py-1 rounded-full mb-5">Built for Every Faith</div>
-        <h2 class="text-3xl font-bold">Built for Every Religious Community, <span class="text-lf-gold">Customized for Yours</span></h2>
-        <p class="mt-3 text-lf-muted max-w-xl mx-auto">The infrastructure is shared. The experience is built around your institution.</p>
-      </div>
+  <!-- Problem -->
+  <section class="bg-white border-y border-line">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 text-center">
+      <p class="text-lg text-sub leading-relaxed">Your community shouldn't need to check a website, a WhatsApp group, and three social accounts just to find service times.</p>
+      <p class="mt-3 text-lg font-medium text-brand">Everything belongs in one place — built around your traditions.</p>
+    </div>
+  </section>
 
+  <!-- Platform -->
+  <section id="platform" class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12"><div class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">What's Included</div><h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">App. Website. Giving. Events. Media.</h2><p class="mt-4 text-sub">Your community is strong. This gives it the digital home it deserves.</p></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Prayer &amp; Service Times</h3><p class="mt-2 text-sm text-sub">Prayer &amp; iqamah times, Jummah, aarti, or service schedules — always up to date.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Branded App &amp; Website</h3><p class="mt-2 text-sm text-sub">A fully branded iOS &amp; Android app plus a matching modern website.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Giving &amp; Donations</h3><p class="mt-2 text-sm text-sub">Recurring giving, campaigns, and faith-specific categories like zakat, seva, and tithes.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Events &amp; Registration</h3><p class="mt-2 text-sm text-sub">Promote events and classes, collect RSVPs, and send reminders.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Media &amp; Livestreams</h3><p class="mt-2 text-sm text-sub">Share sermons, kirtan, lectures, livestreams, and archived content in one hub.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Forms &amp; Workflows</h3><p class="mt-2 text-sm text-sub">Collect prayer requests, seva signups, bookings, and volunteer applications.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Push Notifications</h3><p class="mt-2 text-sm text-sub">Send important updates directly to your community's phones instantly.</p></div>
+        <div class="p-6 rounded-2xl bg-white border border-line shadow-card"><h3 class="font-semibold text-brand">Admin Dashboard</h3><p class="mt-2 text-sm text-sub">Manage times, events, forms, announcements, and media from one place.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Built for every faith -->
+  <section class="py-16 md:py-24 bg-white border-y border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12"><div class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">Every Community</div><h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">Built for every faith, customized for yours</h2><p class="mt-4 text-sub">The infrastructure is shared. The experience is built around your institution.</p></div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="text-2xl mb-3">✝️</div>
-          <h3 class="text-lg font-bold text-lf-gold mb-2">For Churches</h3>
-          <p class="text-sm text-lf-muted">Sermons, giving, events, small groups, Plan a Visit, livestreams, volunteer signups, and announcements.</p>
-        </div>
-        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="text-2xl mb-3">🪔</div>
-          <h3 class="text-lg font-bold text-lf-gold mb-2">For Mandirs & Hindu Temples</h3>
-          <p class="text-sm text-lf-muted">Puja times, aarti schedules, festivals, seva, donations, priest bookings, classes, and livestreams.</p>
-        </div>
-        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="text-2xl mb-3">🟠</div>
-          <h3 class="text-lg font-bold text-lf-gold mb-2">For Gurdwaras</h3>
-          <p class="text-sm text-lf-muted">Kirtan livestreams, langar seva, dasvandh, Gurpurab events, Punjabi school, youth programs, and sangat announcements.</p>
-        </div>
-        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="text-2xl mb-3">☪️</div>
-          <h3 class="text-lg font-bold text-lf-gold mb-2">For Mosques & Masjids</h3>
-          <p class="text-sm text-lf-muted">Prayer times, Jummah updates, Ramadan programs, zakat, donations, classes, youth programs, and livestreams.</p>
-        </div>
-        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="text-2xl mb-3">✡️</div>
-          <h3 class="text-lg font-bold text-lf-gold mb-2">For Synagogues</h3>
-          <p class="text-sm text-lf-muted">Shabbat times, High Holidays, donations, religious school, yahrzeit, events, livestreams, and volunteer coordination.</p>
-        </div>
-        <div class="p-7 rounded-2xl bg-lf-card border border-lf-line">
-          <div class="text-2xl mb-3">🕌</div>
-          <h3 class="text-lg font-bold text-lf-gold mb-2">For All Faith Organizations</h3>
-          <p class="text-sm text-lf-muted">The infrastructure is shared. The experience is built around your institution's language, traditions, programs, giving needs, and community rhythms.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Now -->
-  <section class="py-16 md:py-24 border-t border-lf-line">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <div class="p-10 rounded-3xl bg-lf-card border border-lf-line shadow-glow">
-        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-bg/60 border border-lf-line px-3 py-1 rounded-full mb-6">Why Now</div>
-        <h2 class="text-2xl font-bold">Your Members Expect App-First Access</h2>
-        <p class="mt-4 text-lf-muted leading-relaxed">People look for events, giving, and updates from their phones. That expectation now applies to religious communities too — and Canada's religious landscape is growing faster than ever.</p>
-        <div class="mt-6 grid md:grid-cols-2 gap-4">
-          <div class="p-5 rounded-2xl border border-lf-gold/30 bg-lf-bg/60 text-center">
-            <div class="text-3xl font-extrabold text-lf-gold">2×</div>
-            <div class="mt-1 text-sm text-lf-muted">Muslim, Hindu & Sikh affiliation in Canada — 2001 to 2021</div>
-          </div>
-          <div class="p-5 rounded-2xl border border-lf-gold/30 bg-lf-bg/60 text-center">
-            <div class="text-3xl font-extrabold text-lf-gold">GTA</div>
-            <div class="mt-1 text-sm text-lf-muted">Largest concentration of active, event-driven faith communities in Canada</div>
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-lf-muted text-center">Source: Statistics Canada, 2021 Census</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- App + Website Together -->
-  <section class="py-16 md:py-24 border-t border-lf-line">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-lf-gold/80 bg-lf-card/40 border border-lf-line px-3 py-1 rounded-full mb-5">Website Strategy</div>
-          <h2 class="text-3xl font-bold">Your App and Website <span class="text-lf-gold">Work Together</span></h2>
-          <p class="mt-4 text-lf-muted leading-relaxed">Your app and website are one connected system — consistent for your members on any device, and simple for your team to manage from one place.</p>
-          <div class="mt-6 p-5 rounded-2xl bg-lf-card border border-lf-gold/30">
-            <p class="text-lf-gold font-semibold text-lg">Update once. Publish everywhere.</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-5 rounded-2xl bg-lf-card border border-lf-line text-center">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-lf-gold mx-auto mb-3"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div class="text-sm font-semibold">Mobile App</div>
-            <div class="text-xs text-lf-muted mt-1">iOS & Android</div>
-          </div>
-          <div class="p-5 rounded-2xl bg-lf-card border border-lf-line text-center">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-lf-gold mx-auto mb-3"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div class="text-sm font-semibold">Website</div>
-            <div class="text-xs text-lf-muted mt-1">Modern & custom</div>
-          </div>
-          <div class="p-5 rounded-2xl bg-lf-card border border-lf-line text-center">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-lf-gold mx-auto mb-3"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div class="text-sm font-semibold">Giving</div>
-            <div class="text-xs text-lf-muted mt-1">All giving types</div>
-          </div>
-          <div class="p-5 rounded-2xl bg-lf-card border border-lf-line text-center">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-lf-gold mx-auto mb-3"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div class="text-sm font-semibold">Communication</div>
-            <div class="text-xs text-lf-muted mt-1">Push & newsletters</div>
-          </div>
-        </div>
+        <div class="p-7 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-serif text-lg text-brand">Mosques &amp; Masjids</h3><p class="mt-2 text-sm text-sub">Prayer times, Jummah, Ramadan programs, zakat, donations, classes, and livestreams.</p></div>
+        <div class="p-7 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-serif text-lg text-brand">Mandirs &amp; Hindu Temples</h3><p class="mt-2 text-sm text-sub">Puja &amp; aarti schedules, festivals, seva, donations, priest bookings, and livestreams.</p></div>
+        <div class="p-7 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-serif text-lg text-brand">Churches</h3><p class="mt-2 text-sm text-sub">Sermons, giving, events, small groups, Plan a Visit, livestreams, and volunteer signups.</p></div>
+        <div class="p-7 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-serif text-lg text-brand">Gurdwaras</h3><p class="mt-2 text-sm text-sub">Kirtan livestreams, langar seva, dasvandh, Gurpurab events, and sangat announcements.</p></div>
+        <div class="p-7 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-serif text-lg text-brand">Synagogues</h3><p class="mt-2 text-sm text-sub">Shabbat times, High Holidays, donations, religious school, and volunteer coordination.</p></div>
+        <div class="p-7 rounded-2xl bg-paper border border-line shadow-card"><h3 class="font-serif text-lg text-brand">All Faith Organizations</h3><p class="mt-2 text-sm text-sub">Built around your language, traditions, programs, giving needs, and community rhythms.</p></div>
       </div>
     </div>
   </section>
 
   <!-- Pricing -->
-  <section id="pricing" class="py-16 md:py-24 border-t border-lf-line">
+  <section class="py-16 md:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Simple Monthly Packages</h2>
-        <p class="mt-3 text-lf-muted max-w-xl mx-auto">Affordable pricing for faith organizations of all sizes.</p>
-      </div>
-
+      <div class="text-center mb-12"><h2 class="font-serif text-3xl md:text-4xl text-brand">Simple monthly packages</h2><p class="mt-3 text-sub">Affordable pricing for faith organizations of all sizes.</p></div>
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <!-- Starter -->
-        <div class="p-8 rounded-3xl bg-lf-card border border-lf-line flex flex-col">
-          <div class="text-xs uppercase tracking-widest text-lf-gold2">Starter</div>
-          <div class="text-xs text-lf-muted mt-2">Starting at</div>
-          <div class="mt-0.5 text-4xl font-extrabold">$70<span class="text-base font-semibold text-lf-muted">/mo</span></div>
-          <p class="mt-2 text-sm text-lf-muted">For smaller organizations that need a modern website and essential digital tools.</p>
-          <ul class="mt-6 space-y-2 text-sm text-lf-muted flex-1">
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Custom website</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Donations</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Forms</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Events</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Media</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Hosting & support</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Annual refresh</li>
+        <div class="p-8 rounded-3xl bg-white border border-line shadow-card flex flex-col">
+          <div class="text-xs uppercase tracking-[0.18em] text-gold font-semibold">Starter</div>
+          <div class="mt-2 font-serif text-4xl text-brand">$70<span class="text-base text-sub font-sans">/mo</span></div>
+          <p class="mt-2 text-sm text-sub">A modern website and essential digital tools for smaller organizations.</p>
+          <ul class="mt-6 space-y-2 text-sm text-ink/80 flex-1">
+            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Custom website</li>
+            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Donations &amp; forms</li>
+            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Events &amp; media</li>
+            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Hosting &amp; support</li>
           </ul>
-          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalFaith%20Starter%20Package&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20the%20LocalFaith%20Starter%20package.%0A%0AThank%20you!" target="_blank" rel="noopener" class="mt-8 block text-center px-5 py-3 rounded-2xl border border-lf-line hover:border-lf-gold/50 text-sm font-medium transition">Get Started</a>
+          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Faith%20Starter%20Package&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20the%20Starter%20package.%0A%0AThank%20you!" target="_blank" rel="noopener" class="mt-8 block text-center px-5 py-3 rounded-full bg-white border border-line font-semibold hover:border-brand/40 transition">Get started</a>
         </div>
-
-        <!-- Platform -->
-        <div class="p-8 rounded-3xl bg-lf-card border-2 border-lf-gold/40 shadow-glow flex flex-col relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-lf-gold text-black text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
-          <div class="text-xs uppercase tracking-widest text-lf-gold2">LocalFaith Platform</div>
-          <div class="text-xs text-lf-muted mt-2">Starting at</div>
-          <div class="mt-0.5 text-4xl font-extrabold">$200<span class="text-base font-semibold text-lf-muted">/mo</span></div>
-          <p class="mt-2 text-sm text-lf-muted">The core all-in-one package for most faith organizations.</p>
-          <ul class="mt-6 space-y-2 text-sm text-lf-muted flex-1">
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Branded mobile app</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Custom website redesign</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Push notifications</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Events & registrations</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Donations</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Media & livestreams</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Forms & workflows</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Admin dashboard</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Engagement tools</li>
+        <div class="p-8 rounded-3xl bg-brand text-paper shadow-soft flex flex-col relative overflow-hidden">
+          <div class="absolute inset-0 opacity-40" style="background: radial-gradient(400px 220px at 80% -10%, rgba(207,162,75,0.25), transparent 70%);"></div>
+          <div class="relative flex flex-col flex-1">
+            <div class="inline-flex self-start items-center gap-1 text-xs font-bold bg-gold text-white px-2.5 py-1 rounded-full">Most Popular</div>
+            <div class="mt-4 text-xs uppercase tracking-[0.18em] text-gold2 font-semibold">Complete Platform</div>
+            <div class="mt-2 font-serif text-4xl">$200<span class="text-base text-paper/70 font-sans">/mo</span></div>
+            <p class="mt-2 text-sm text-paper/80">The all-in-one package for most faith communities.</p>
+            <ul class="mt-6 space-y-2 text-sm text-paper/85 flex-1">
+              <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Branded mobile app</li>
+              <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Custom website</li>
+              <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Push notifications</li>
+              <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Events, giving &amp; media</li>
+              <li class="flex items-center gap-2"><span class="text-gold2">✓</span> Forms &amp; admin dashboard</li>
+            </ul>
+            <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Faith%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20an%20app%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="mt-8 block text-center px-5 py-3 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a>
+          </div>
+        </div>
+        <div class="p-8 rounded-3xl bg-white border border-line shadow-card flex flex-col">
+          <div class="text-xs uppercase tracking-[0.18em] text-gold font-semibold">Premium</div>
+          <div class="mt-2 font-serif text-4xl text-brand">$400<span class="text-base text-sub font-sans">/mo</span></div>
+          <p class="mt-2 text-sm text-sub">For larger or multi-location institutions with complex needs.</p>
+          <ul class="mt-6 space-y-2 text-sm text-ink/80 flex-1">
+            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Everything in Platform</li>
+            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Multi-location support</li>
+            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Advanced permissions</li>
+            <li class="flex items-center gap-2"><span class="text-gold">✓</span> Custom workflows &amp; priority support</li>
           </ul>
-          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalFaith%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalFaith%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="mt-8 block text-center px-5 py-3 rounded-2xl bg-lf-gold text-black font-semibold hover:shadow-glow transition">Book a Demo</a>
-        </div>
-
-        <!-- Premium -->
-        <div class="p-8 rounded-3xl bg-lf-card border border-lf-line flex flex-col">
-          <div class="text-xs uppercase tracking-widest text-lf-gold2">Premium</div>
-          <div class="text-xs text-lf-muted mt-2">Starting at</div>
-          <div class="mt-0.5 text-4xl font-extrabold">$400<span class="text-base font-semibold text-lf-muted">/mo</span></div>
-          <p class="mt-2 text-sm text-lf-muted">For larger institutions, multi-location organizations, or communities with complex needs.</p>
-          <ul class="mt-6 space-y-2 text-sm text-lf-muted flex-1">
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Everything in Platform</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Multi-location support</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Advanced permissions</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Ministry systems</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Facility management</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Custom workflows</li>
-            <li class="flex items-center gap-2"><span class="text-lf-gold">✓</span> Priority support</li>
-          </ul>
-          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalFaith%20Premium%20Package&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20the%20LocalFaith%20Premium%20package.%0A%0AThank%20you!" target="_blank" rel="noopener" class="mt-8 block text-center px-5 py-3 rounded-2xl border border-lf-line hover:border-lf-gold/50 text-sm font-medium transition">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="py-16 md:py-24 border-t border-lf-line">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">A Simple Launch Process</h2>
-      </div>
-      <div class="grid md:grid-cols-4 gap-6">
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl bg-lf-gold/10 border border-lf-gold/30 flex items-center justify-center text-lf-gold font-bold text-lg mx-auto mb-4">1</div>
-          <h3 class="font-semibold mb-2">We Learn Your Community</h3>
-          <p class="text-sm text-lf-muted">We review your current website, tools, events, giving setup, media, and communication process.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl bg-lf-gold/10 border border-lf-gold/30 flex items-center justify-center text-lf-gold font-bold text-lg mx-auto mb-4">2</div>
-          <h3 class="font-semibold mb-2">We Build Your App & Website</h3>
-          <p class="text-sm text-lf-muted">We create a branded app and modern website around your institution's actual services, programs, and traditions.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl bg-lf-gold/10 border border-lf-gold/30 flex items-center justify-center text-lf-gold font-bold text-lg mx-auto mb-4">3</div>
-          <h3 class="font-semibold mb-2">We Connect Your Core Tools</h3>
-          <p class="text-sm text-lf-muted">We organize your donations, events, media, forms, and announcements into one connected system.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl bg-lf-gold/10 border border-lf-gold/30 flex items-center justify-center text-lf-gold font-bold text-lg mx-auto mb-4">4</div>
-          <h3 class="font-semibold mb-2">You Launch With Support</h3>
-          <p class="text-sm text-lf-muted">We help you go live, train your team, and support your community as they begin using it.</p>
+          <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Faith%20Premium%20Package&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20the%20Premium%20package.%0A%0AThank%20you!" target="_blank" rel="noopener" class="mt-8 block text-center px-5 py-3 rounded-full bg-white border border-line font-semibold hover:border-brand/40 transition">Contact us</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-16 md:py-24 border-t border-lf-line">
+  <section class="py-16 md:py-24 bg-white border-y border-line">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
-      </div>
-      <div class="divide-y divide-lf-line">
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Is LocalFaith only for churches?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lf-muted">No. LocalFaith is built for churches, mandirs, gurdwaras, mosques, synagogues, temples, and other faith-based organizations.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Is every app the same?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lf-muted">No. The infrastructure is shared, but the experience is customized. A mandir app should not feel like a church app. Each version is built around the institution's language, events, giving needs, traditions, and community.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Do we need to replace our current tools?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lf-muted">Not always. LocalFaith can connect with or organize around the tools you already use. Over time, we can help simplify your digital setup.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Do you build the website too?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lf-muted">Yes. The main LocalFaith platform includes a custom website redesign so your app and website work together as one connected system.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Can we send push notifications?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lf-muted">Yes. LocalFaith allows your organization to send important updates directly through the mobile app to your community's phones.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Can we accept donations?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lf-muted">Yes. LocalFaith supports donation and giving flows, including recurring giving, special funds, campaigns, and faith-specific giving categories like seva, zakat, dasvandh, and tithes.</p>
-        </details>
-        <details class="group py-4">
-          <summary class="cursor-pointer flex items-center justify-between">
-            <span class="font-medium">Can we manage events?</span>
-            <svg class="transition group-open:rotate-180 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#A89FC0" stroke-width="1.5"/></svg>
-          </summary>
-          <p class="mt-3 text-sm text-lf-muted">Yes. You can promote events, collect RSVPs or registrations, send reminders, and keep your community updated.</p>
-        </details>
+      <h2 class="font-serif text-3xl md:text-4xl text-brand text-center mb-10">Frequently asked questions</h2>
+      <div class="divide-y divide-line border-t border-b border-line">
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-medium text-brand">Is every app the same?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#586158" stroke-width="1.5"/></svg></summary><p class="mt-3 text-sm text-sub">No. The infrastructure is shared, but the experience is customized. A mosque app shouldn't feel like a church app — each is built around the institution's language, events, and traditions.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-medium text-brand">Do you build the website too?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#586158" stroke-width="1.5"/></svg></summary><p class="mt-3 text-sm text-sub">Yes. The Complete Platform includes a custom website so your app and website work together as one connected system.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-medium text-brand">Can we accept donations?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#586158" stroke-width="1.5"/></svg></summary><p class="mt-3 text-sm text-sub">Yes — including recurring giving, campaigns, and faith-specific categories like seva, zakat, dasvandh, and tithes.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-medium text-brand">Can we send push notifications?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#586158" stroke-width="1.5"/></svg></summary><p class="mt-3 text-sm text-sub">Yes. Send important updates directly through the mobile app to your community's phones.</p></details>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 md:py-24 border-t border-lf-line">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold">Give Your Community One Place to Connect</h2>
-      <p class="mt-4 text-lf-muted max-w-xl mx-auto">Your members shouldn't have to dig through scattered links and group chats to stay involved. LocalFaith puts everything in one place — built around your community.</p>
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalFaith%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20LocalFaith%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-6 py-3 rounded-2xl bg-lf-gold text-black font-semibold hover:shadow-glow transition">Book a Demo</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=LocalFaith%20Sample%20App%20Request&body=Hi%20Noah%2C%0A%0AI'd%20like%20to%20see%20a%20sample%20app%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-6 py-3 rounded-2xl border border-lf-line hover:border-lf-gold/50 font-medium transition">Request a Sample App</a>
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-brand text-paper px-6 py-14 md:px-16 md:py-20 text-center relative overflow-hidden shadow-soft">
+        <div class="absolute inset-0 opacity-40" style="background: radial-gradient(600px 300px at 50% -20%, rgba(207,162,75,0.25), transparent 70%);"></div>
+        <div class="relative">
+          <h2 class="font-serif text-3xl md:text-4xl">Give your community one place to connect</h2>
+          <p class="mt-4 text-paper/80 max-w-xl mx-auto">Book a demo and we'll show you a live app tailored to your community.</p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com&su=Faith%20App%20Demo%20Request&body=Hi%20Noah%2C%0A%0AI'm%20interested%20in%20an%20app%20for%20my%20faith%20community.%0A%0AThank%20you!" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a>
+            <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 rounded-full bg-white/10 border border-white/20 text-paper font-semibold hover:bg-white/15 transition">Email us</a>
+          </div>
+          <p class="mt-6 text-sm text-paper/60"><a href="mailto:noah@localgovy.com" class="text-gold2 hover:underline">noah@localgovy.com</a></p>
+        </div>
       </div>
-      <p class="mt-5 text-sm text-lf-muted">Questions? Email <a href="https://mail.google.com/mail/?view=cm&to=noah%40localgovy.com" target="_blank" rel="noopener" class="text-lf-gold2 hover:underline">noah@localgovy.com</a></p>
     </div>
   </section>
 
-  <footer class="border-t border-lf-line py-10 text-center text-sm text-lf-muted">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-center gap-6 mb-4 text-xs">
-        <a href="/" class="hover:text-lf-text transition">Home</a>
-        <a href="/localgovy" class="hover:text-lf-text transition">For Municipalities</a>
-        <a href="/localfaith" class="hover:text-lf-text transition">For Religious Communities</a>
-        <a href="/about" class="hover:text-lf-text transition">About</a>
+  <!-- Footer -->
+  <footer class="bg-brand text-paper/70 border-t border-black/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
+        <div><img src="/lg_logo.png" alt="LocalGovy" class="w-44 brightness-125" width="512" height="512" /><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Templates</div><ul class="space-y-2 text-sm"><li><a href="/localbiz" class="hover:text-paper transition">Businesses &amp; Retail</a></li><li><a href="/localfaith" class="hover:text-paper transition">Faith &amp; Community</a></li><li><a href="/localgovy" class="hover:text-paper transition">Municipalities</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li></ul></div>
       </div>
-      <div class="text-lf-text font-semibold mb-1">LocalFaith</div>
-      <div class="text-lf-muted">Modern apps and websites for religious communities.</div>
-      <div class="mt-2 text-xs">App. Website. Giving. Events. Media. Communication. All in one place.</div>
-      <div class="mt-4 text-xs">A product of <a href="/" class="hover:text-lf-text transition">LocalGovy</a> · Based in Toronto, Ontario, Canada · Serving Canada & the US · © <span id="year"></span> All rights reserved.</div>
+      <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>
     </div>
   </footer>
 
