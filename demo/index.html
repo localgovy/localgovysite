@@ -241,8 +241,9 @@
           <h2 class="font-serif text-2xl md:text-3xl text-brand">Review &amp; send</h2>
           <p class="mt-2 text-sub">Here's what we'll receive. Hit send and we'll be in touch fast.</p>
           <div id="reviewBox" class="mt-6 space-y-3 text-sm"></div>
-          <div class="mt-6 p-4 rounded-xl bg-brand/5 border border-brand/15 text-sm text-ink/80">
-            <strong class="font-semibold text-brand">What happens next:</strong> we'll email you within 48 hours with a live, branded demo app link built around your answers.
+          <div class="mt-6 p-4 rounded-xl bg-brand/5 border border-brand/15 text-sm text-ink/80 space-y-2">
+            <div><strong class="font-semibold text-brand">What happens next:</strong> we'll email you within 48 hours with a live, branded demo app link built around your answers.</div>
+            <div>Just <strong class="font-semibold text-brand">reply to that email</strong> with a time and whether you'd prefer to meet remotely or in person — we'll take it from there.</div>
           </div>
         </div>
 
@@ -369,6 +370,7 @@
         `Style notes: ${val('brandStyle')}`,
         `Main goal: ${val('goals')}`,
         `Timeline: ${val('timeline')}`, '',
+        `Please reply with the demo link when ready, and let me know a good time to meet — I'm open to remote or in person.`, '',
         `Thank you!`
       ].join('\n');
 
