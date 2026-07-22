@@ -180,24 +180,33 @@
     .phone { box-shadow: 0 30px 60px -25px rgba(20,32,27,0.45); }
 
     @keyframes hero-rise {
-      from { transform: translateY(14px); opacity: 0.92; }
-      to { transform: translateY(0); opacity: 1; }
+      from { transform: translate3d(0, 12px, 0); opacity: 0.96; }
+      to { transform: translate3d(0, 0, 0); opacity: 1; }
     }
     @keyframes hero-float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(0, -6px, 0); }
     }
     @keyframes hero-glow {
-      0%, 100% { opacity: 0.55; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.04); }
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.72; }
     }
     .hero-copy { animation: hero-rise 0.7s ease-out both; }
     .hero-visual { animation: hero-rise 0.85s 0.08s ease-out both; }
     .hero-device {
-      animation: hero-float 7s ease-in-out 1s infinite;
-      filter: drop-shadow(0 36px 48px rgba(18, 59, 44, 0.28));
+      /* Shadow stays on a static layer so the float doesn't re-paint filters every frame */
+      filter: drop-shadow(0 28px 40px rgba(18, 59, 44, 0.22));
     }
-    .hero-glow { animation: hero-glow 8s ease-in-out infinite; }
+    .hero-device-float {
+      animation: hero-float 9s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.6s infinite;
+      will-change: transform;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+    .hero-glow {
+      animation: hero-glow 10s ease-in-out infinite;
+      will-change: opacity;
+    }
     .device-shell {
       border-radius: 2.35rem;
       background: linear-gradient(165deg, #2a2a2a 0%, #0c0c0c 45%, #1a1a1a 100%);
@@ -222,7 +231,7 @@
       z-index: 2;
     }
     @media (prefers-reduced-motion: reduce) {
-      .hero-copy, .hero-visual, .hero-device, .hero-glow { animation: none; }
+      .hero-copy, .hero-visual, .hero-device-float, .hero-glow { animation: none; }
     }
   </style>
 </head>
@@ -311,10 +320,12 @@
         <div class="hero-visual relative flex flex-col items-center">
           <div class="hero-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[42%] w-[min(100%,20rem)] h-[20rem] -z-10 rounded-full blur-3xl" style="background: radial-gradient(circle, rgba(30,90,66,0.28) 0%, rgba(207,162,75,0.12) 42%, transparent 70%);" aria-hidden="true"></div>
           <div class="hero-device w-[min(100%,16.25rem)] sm:w-[17rem]">
-            <div class="device-shell">
-              <div class="device-screen">
-                <span class="device-notch" aria-hidden="true"></span>
-                <img src="/dispensary-showcase.jpg" alt="Example LocalGovy retail ordering app on iPhone" class="w-full h-auto block" width="750" height="1624" fetchpriority="high" />
+            <div class="hero-device-float">
+              <div class="device-shell">
+                <div class="device-screen">
+                  <span class="device-notch" aria-hidden="true"></span>
+                  <img src="/dispensary-showcase.jpg" alt="Example LocalGovy retail ordering app on iPhone" class="w-full h-auto block" width="750" height="1624" fetchpriority="high" />
+                </div>
               </div>
             </div>
           </div>
