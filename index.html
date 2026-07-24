@@ -245,6 +245,8 @@
     @media (prefers-reduced-motion: reduce) {
       .hero-copy, .hero-visual { animation: none; }
     }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
@@ -312,7 +314,7 @@
           <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-brand bg-surface/90 border border-line px-3 py-1.5 rounded-full shadow-sm font-semibold backdrop-blur-sm">
             <span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Idea to demo in 48 hours
           </div>
-          <h1 class="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-600 leading-[1.03] tracking-tight text-brand">
+          <h1 class="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.03] tracking-tight text-brand">
             Custom apps that turn visitors into <span class="u-gold">customers</span>.
           </h1>
           <p class="mt-6 text-lg md:text-xl text-ink/80 max-w-xl leading-relaxed">
@@ -357,7 +359,7 @@
 
   <!-- ===== TRUST STRIP ===== -->
   <section class="border-y border-line bg-surface/60">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-7 md:py-8">
       <div class="flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-sm font-semibold text-brand/85">
         <span>Retail Businesses</span><span class="text-line">•</span>
         <span>Religious Institutions</span><span class="text-line">•</span>
@@ -372,17 +374,17 @@
   <section class="py-16 md:py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-7 rounded-2xl bg-surface border border-line shadow-card">
+        <div class="p-7 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft">
           <div class="w-11 h-11 rounded-xl bg-brand/8 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 class="font-serif text-xl text-brand">Take more orders</h3>
           <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Catalogs, carts, checkout, bookings, and donations built in — so you <strong class="font-semibold text-ink">capture demand instead of losing it</strong>.</p>
         </div>
-        <div class="p-7 rounded-2xl bg-surface border border-line shadow-card">
+        <div class="p-7 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft">
           <div class="w-11 h-11 rounded-xl bg-brand/8 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 class="font-serif text-xl text-brand">Reach people directly</h3>
           <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Push notifications land on the home screen — <strong class="font-semibold text-ink">no algorithms, no ad spend</strong>.</p>
         </div>
-        <div class="p-7 rounded-2xl bg-surface border border-line shadow-card">
+        <div class="p-7 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft">
           <div class="w-11 h-11 rounded-xl bg-brand/8 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M12 3l8.5 4.9v8.2L12 21l-8.5-4.9V7.9L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12l8.5-4.9M12 12v9M12 12L3.5 7.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 class="font-serif text-xl text-brand">Built to be yours</h3>
           <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Your name, logo, and colours — running <strong class="font-semibold text-ink">your real menu, services, and workflows</strong>, not a cosmetic skin.</p>
@@ -480,10 +482,10 @@
         <h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">Demo in 48 hours. Live in 2 weeks.</h2>
       </div>
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card"><div class="text-4xl font-serif text-gold/70">01</div><h3 class="mt-3 font-semibold text-brand">You answer a few questions</h3><p class="mt-2 text-sm text-ink/75">Your business, your goals, your brand — under a minute.</p></div>
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card"><div class="text-4xl font-serif text-gold/70">02</div><h3 class="mt-3 font-semibold text-brand"><strong class="text-brand">Demo in 48 hours</strong></h3><p class="mt-2 text-sm text-ink/75">We implement <strong class="font-semibold text-ink">your menu, services, and workflows</strong> — with your name, logo, and colours.</p></div>
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card"><div class="text-4xl font-serif text-gold/70">03</div><h3 class="mt-3 font-semibold text-brand">We connect your tools</h3><p class="mt-2 text-sm text-ink/75">Ordering, bookings, and content in one dashboard.</p></div>
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card"><div class="text-4xl font-serif text-gold/70">04</div><h3 class="mt-3 font-semibold text-brand"><strong class="text-brand">Live in 2 weeks</strong></h3><p class="mt-2 text-sm text-ink/75">We publish to both app stores and train your team.</p></div>
+        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><div class="text-4xl font-serif text-gold">01</div><h3 class="mt-3 font-semibold text-brand">You answer a few questions</h3><p class="mt-2 text-sm text-ink/75">Your business, your goals, your brand — under a minute.</p></div>
+        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><div class="text-4xl font-serif text-gold">02</div><h3 class="mt-3 font-semibold text-brand"><strong class="text-brand">Demo in 48 hours</strong></h3><p class="mt-2 text-sm text-ink/75">We implement <strong class="font-semibold text-ink">your menu, services, and workflows</strong> — with your name, logo, and colours.</p></div>
+        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><div class="text-4xl font-serif text-gold">03</div><h3 class="mt-3 font-semibold text-brand">We connect your tools</h3><p class="mt-2 text-sm text-ink/75">Ordering, bookings, and content in one dashboard.</p></div>
+        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><div class="text-4xl font-serif text-gold">04</div><h3 class="mt-3 font-semibold text-brand"><strong class="text-brand">Live in 2 weeks</strong></h3><p class="mt-2 text-sm text-ink/75">We publish to both app stores and train your team.</p></div>
       </div>
       <div class="mt-10 text-center">
         <a href="/demo/" class="inline-flex px-6 py-3 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition">Book a Demo</a>
@@ -496,10 +498,10 @@
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <h2 class="font-serif text-3xl md:text-4xl text-brand text-center mb-10">Common questions</h2>
       <div class="divide-y divide-line border-t border-b border-line">
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand">How much does an app cost?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Fully branded apps <strong>start at $150/month</strong> for retail, religious institutions, and municipalities.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand">How fast can I see a demo?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">You'll get a <strong>branded demo within 48 hours</strong>. Most apps are fully deployed within 2 weeks.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand">What do I get?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">A fully branded iOS &amp; Android app built around <strong>your real menu, services, and workflows</strong> — plus training and ongoing support.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand">Who is this for?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Canadian retail, religious institutions, and municipalities — plus organizations across the US.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">How much does an app cost?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Fully branded apps <strong>start at $150/month</strong> for retail, religious institutions, and municipalities.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">How fast can I see a demo?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">You'll get a <strong>branded demo within 48 hours</strong>. Most apps are fully deployed within 2 weeks.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">What do I get?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">A fully branded iOS &amp; Android app built around <strong>your real menu, services, and workflows</strong> — plus training and ongoing support.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">Who is this for?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Canadian retail, religious institutions, and municipalities — plus organizations across the US.</p></details>
       </div>
       <div class="mt-8 text-center">
         <a href="/demo/" class="inline-flex px-6 py-3 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a>
