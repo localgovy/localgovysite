@@ -1,0 +1,2 @@
+{"sessionId":"ffd82e","runId":"pre-fix","hypothesisId":"A","location":"demo/index.html:submit-entry","message":"Form submit fired","data":{"action":"https://formspree.io/f/mrenyeoy","actionIncludesMrenyeoy":true,"formValid":true},"timestamp":1785007388634}
+{"sessionId":"ffd82e","runId":"pre-fix","hypothesisId":"A","location":"demo/index.html:placeholder-guard","message":"Blocked by mrenyeoy placeholder guard","data":{"action":"https://formspree.io/f/mrenyeoy"},"timestamp":1785007388636}
