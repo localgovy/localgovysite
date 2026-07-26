@@ -175,37 +175,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="/lg_logo.png" />
-  <link rel="preload" as="image" href="/mosque-showcase.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            serif: ['Fraunces', 'Georgia', 'serif']
-          },
-          colors: {
-            paper:   '#F6F3EC',
-            surface: '#FFFFFF',
-            ink:     '#16201B',
-            sub:     '#48514A',
-            brand:   '#123B2C',
-            brand2:  '#1E5A42',
-            gold:    '#B4832E',
-            gold2:   '#CFA24B',
-            line:    '#E7E0D2'
-          },
-          boxShadow: {
-            card: '0 1px 2px rgba(20,32,27,0.04), 0 12px 32px -12px rgba(20,32,27,0.18)',
-            soft: '0 1px 2px rgba(20,32,27,0.05), 0 20px 50px -20px rgba(20,32,27,0.22)'
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/mosque-showcase.webp" type="image/webp" fetchpriority="high" />
+  <link rel="stylesheet" href="/assets/site.css" />
   <style>
     html { scroll-behavior: smooth; }
     .u-gold { background-image: linear-gradient(transparent 62%, rgba(180,131,46,0.30) 62%); }
@@ -255,7 +227,7 @@
   <!-- ===== HEADER (shared across all pages) ===== -->
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center py-3"><img src="/lg_logo.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="512" height="512" fetchpriority="high" /></a>
+      <a href="/" class="flex items-center py-3"><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></a>
       <nav class="hidden md:flex items-center gap-7 text-[0.95rem] font-medium">
         <a href="/" class="text-paper font-semibold">Home</a>
         <div class="relative group">
@@ -344,7 +316,7 @@
             <div class="device-shell">
               <div class="device-screen">
                 <span class="device-notch" aria-hidden="true"></span>
-                <img src="/mosque-showcase.png" alt="Example LocalGovy mosque and faith community app on iPhone" class="w-full h-auto block" width="471" height="1024" fetchpriority="high" />
+                <picture><source type="image/webp" srcset="/mosque-showcase.webp" /><img src="/mosque-showcase.png" alt="Example LocalGovy mosque and faith community app on iPhone" class="w-full h-auto block" width="471" height="1024" fetchpriority="high" /></picture>
               </div>
             </div>
           </div>
@@ -412,7 +384,7 @@
         <!-- Retail -->
         <a href="/localbiz/" class="group flex flex-col rounded-3xl border border-line bg-paper overflow-hidden hover:shadow-soft hover:border-brand/40 transition">
           <div class="p-6 pb-0 flex justify-center">
-            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><img src="/dispensary-showcase.jpg" alt="Local business app ordering example for Canadian retail" class="w-full h-auto" loading="lazy" /></div>
+            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><picture><source type="image/webp" srcset="/dispensary-showcase.webp" /><img src="/dispensary-showcase.jpg" alt="Local business app ordering example for Canadian retail" class="w-full h-auto" width="471" height="1024" loading="lazy" decoding="async" /></picture></div>
           </div>
           <div class="p-6 flex flex-col flex-1">
             <div class="text-xs uppercase tracking-[0.14em] text-gold font-bold">Retail &amp; Ordering</div>
@@ -430,7 +402,7 @@
         <!-- Faith -->
         <a href="/localfaith/" class="group flex flex-col rounded-3xl border border-line bg-paper overflow-hidden hover:shadow-soft hover:border-brand/40 transition">
           <div class="p-6 pb-0 flex justify-center">
-            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><img src="/mosque-showcase.png" alt="Mosque and religious institution community app" class="w-full h-auto" loading="lazy" /></div>
+            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><picture><source type="image/webp" srcset="/mosque-showcase.webp" /><img src="/mosque-showcase.png" alt="Mosque and religious institution community app" class="w-full h-auto" width="471" height="1024" loading="lazy" decoding="async" /></picture></div>
           </div>
           <div class="p-6 flex flex-col flex-1">
             <div class="text-xs uppercase tracking-[0.14em] text-gold font-bold">Faith &amp; Community</div>
@@ -448,7 +420,7 @@
         <!-- Municipality -->
         <a href="/localgovy/" class="group flex flex-col rounded-3xl border border-line bg-paper overflow-hidden hover:shadow-soft hover:border-brand/40 transition">
           <div class="p-6 pb-0 flex justify-center">
-            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><img src="/IMG_7894.jpg" alt="Local government mobile app business directory for towns" class="w-full h-auto" loading="lazy" /></div>
+            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><picture><source type="image/webp" srcset="/IMG_7894.webp" /><img src="/IMG_7894.jpg" alt="Local government mobile app business directory for towns" class="w-full h-auto" width="540" height="1122" loading="lazy" decoding="async" /></picture></div>
           </div>
           <div class="p-6 flex flex-col flex-1">
             <div class="text-xs uppercase tracking-[0.14em] text-gold font-bold">Municipalities</div>
@@ -534,7 +506,7 @@
   <footer class="bg-brand text-paper/70 border-t border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
-        <div><img src="/lg_logo.png" alt="LocalGovy" class="w-44 brightness-125" width="512" height="512" /><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Idea to demo in 48 hours — deployed in 2 weeks.</p></div>
+        <div><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Idea to demo in 48 hours — deployed in 2 weeks.</p></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Templates</div><ul class="space-y-2 text-sm"><li><a href="/localbiz/" class="hover:text-paper transition">Retail &amp; Ordering</a></li><li><a href="/localfaith/" class="hover:text-paper transition">Faith &amp; Community</a></li><li><a href="/localgovy/" class="hover:text-paper transition">Municipalities</a></li></ul></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/" class="hover:text-paper transition">Book a Demo</a></li></ul></div>
       </div>
