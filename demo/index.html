@@ -58,10 +58,10 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css" />
+  <link rel="preload" as="font" href="/assets/fonts/inter-latin.woff2" type="font/woff2" crossorigin />
+  <link rel="preload" as="font" href="/assets/fonts/fraunces-latin.woff2" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/fonts.css" />
+<link rel="stylesheet" href="/assets/site.css" />
   <style>
     html { scroll-behavior: smooth; }
     .choice-card input { position: absolute; opacity: 0; pointer-events: none; }
@@ -77,7 +77,7 @@
   <!-- ===== HEADER ===== -->
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
-      <a href="/" class="flex items-center py-3 flex-shrink-0"><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></a>
+      <a href="/" class="flex items-center py-3 flex-shrink-0"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
       <nav class="hidden md:flex items-center gap-7 text-[0.95rem] font-medium">
         <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
         <div class="relative group">
@@ -264,7 +264,7 @@
   <footer class="bg-brand text-paper/70 border-t border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
-        <div><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Idea to demo in 48 hours — deployed in 2 weeks.</p></div>
+        <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Idea to demo in 48 hours — deployed in 2 weeks.</p></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Templates</div><ul class="space-y-2 text-sm"><li><a href="/localbiz/" class="hover:text-paper transition">Retail &amp; Ordering</a></li><li><a href="/localfaith/" class="hover:text-paper transition">Faith &amp; Community</a></li><li><a href="/localgovy/" class="hover:text-paper transition">Municipalities</a></li></ul></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/" class="hover:text-paper transition">Book a Demo</a></li></ul></div>
       </div>
