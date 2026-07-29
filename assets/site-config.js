@@ -6,7 +6,7 @@
  */
 window.LG = {
   email: 'noah@localgovy.com',
-  phoneDisplay: '',
-  phoneHref: '',
-  ga4: ''
+  phoneDisplay: '(978) 493-3736',
+  phoneHref: 'tel:+19784933736',
+  ga4: 'G-ZGY68NEY5N'
 };
