@@ -84,7 +84,7 @@
   <link rel="stylesheet" href="/assets/site.css" />
 <style>
     html { scroll-behavior: smooth; }
-    .u-gold { background-image: linear-gradient(transparent 62%, rgba(180,131,46,0.30) 62%); }
+    .u-gold { background-image: linear-gradient(transparent 62%, rgba(138,100,32,0.30) 62%); }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
@@ -151,7 +151,7 @@
       <p class="mt-6 text-lg text-sub max-w-2xl mx-auto leading-relaxed">We design, build, and run mobile apps for <strong class="font-semibold text-brand">Canadian retail</strong>, <strong class="font-semibold text-brand">religious institutions</strong>, and <strong class="font-semibold text-brand">municipalities</strong>, from our office in Toronto.</p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm font-semibold text-brand">
         <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Idea to demo in 48 hours</div>
-        <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Deployed customers in 2 weeks</div>
+        <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Typical launch in about 2 weeks</div>
       </div>
     </div>
   </section>
@@ -164,6 +164,7 @@
         <div class="mt-5 space-y-4 text-sub leading-relaxed">
           <p>A custom mobile app has traditionally meant a quote in the tens of thousands, a six-month timeline, and a developer you have to call every time a price changes. For a café, a mosque, or a town of four thousand people, that has never been realistic.</p>
           <p>So the same organizations end up scattered across a website nobody updates, a Facebook page most people don't see, and a payment link that belongs to someone else. LocalGovy exists to close that gap: a genuinely branded app, built on a foundation we've already tested and hardened, for $150 a month.</p>
+          <p>We're early. We're taking on a small number of <strong class="font-semibold text-brand">founding partners</strong> in Ontario — organizations that get a fully built app, hands-on support, and a voice in how the product develops. In return we ask for feedback and permission to use the work as a reference.</p>
           <p>We do the design, the build, the app store submissions, and the maintenance afterwards. You get a dashboard and a person to email. There's no build fee, and you don't pay until your app is live.</p>
           <p>Every app runs on <strong class="font-semibold text-brand">your real menu, service times, or departments</strong> from day one, not placeholder content. That's what makes it genuinely yours, and it's how we get every app approved and published under your own name.</p>
         </div>
@@ -211,12 +212,14 @@
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
         <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Templates</div><ul class="space-y-2 text-sm"><li><a href="/localbiz/" class="hover:text-paper transition">Retail &amp; Ordering</a></li><li><a href="/localfaith/" class="hover:text-paper transition">Faith &amp; Community</a></li><li><a href="/localgovy/" class="hover:text-paper transition">Municipalities</a></li></ul></div>
-        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/" class="hover:text-paper transition">Book a Demo</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li data-lg-phone hidden><a href="#" class="hover:text-paper transition">Phone</a></li><li><a href="/demo/" class="hover:text-paper transition">Book a Demo</a></li></ul></div>
       </div>
       <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>
     </div>
   </footer>
 
+  <script src="/assets/site-config.js"></script>
+  <script src="/assets/tracking.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     const menuBtn = document.getElementById('menuBtn');

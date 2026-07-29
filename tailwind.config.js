@@ -21,8 +21,9 @@ module.exports = {
         sub: '#48514A',
         brand: '#123B2C',
         brand2: '#1E5A42',
-        gold: '#B4832E',
-        gold2: '#CFA24B',
+        // Darker golds pass WCAG AA for small text on paper and white-on-gold buttons
+        gold: '#8A6420',
+        gold2: '#A07828',
         line: '#E7E0D2',
       },
       boxShadow: {
