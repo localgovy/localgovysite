@@ -154,14 +154,13 @@
         <div class="mx-auto w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h2 class="mt-5 font-serif text-3xl text-brand">Request received</h2>
         <p class="mt-3 text-ink/80 leading-relaxed max-w-md mx-auto">Thanks — we've got your details. You'll get a <strong class="font-semibold text-ink">working demo in your branding within 48 hours</strong> at the email you provided.</p>
+        <p id="thankYouRef" class="hidden mt-2 text-xs text-sub mono"></p>
         <p class="mt-3 text-sm text-sub leading-relaxed max-w-md mx-auto">Questions in the meantime? Write <a href="mailto:noah@localgovy.com" class="text-brand font-semibold hover:underline">noah@localgovy.com</a><span data-lg-phone hidden> or call <a href="#" class="text-brand font-semibold hover:underline">us</a></span>.</p>
         <a href="/" class="mt-8 inline-flex px-6 py-3 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition">Back to home</a>
       </div>
 
-      <!-- Submissions go to noah@localgovy.com via FormSubmit (confirm the first email FormSubmit sends you). -->
-      <form id="demoForm" action="https://formsubmit.co/ajax/noah@localgovy.com" method="POST" class="rounded-3xl bg-surface border border-line shadow-card p-6 md:p-10">
-        <input type="hidden" name="_subject" value="LocalGovy demo request" />
-        <input type="hidden" name="_template" value="table" />
+      <!-- Submissions create a factory job via Supabase intake Edge (see assets/site-config.js). -->
+      <form id="demoForm" method="POST" class="rounded-3xl bg-surface border border-line shadow-card p-6 md:p-10">
         <input type="text" name="_gotcha" value="" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
         <h2 class="font-serif text-2xl md:text-3xl text-brand">What kind of app do you need?</h2>
         <p class="mt-2 text-sub">Pick the closest match. We'll tailor everything from there.</p>
@@ -293,8 +292,10 @@
 
     const form = document.getElementById('demoForm');
     const thankYou = document.getElementById('thankYou');
+    const thankYouRef = document.getElementById('thankYouRef');
     const formError = document.getElementById('formError');
     const submitBtn = document.getElementById('submitBtn');
+    const cfg = window.LG || {};
 
     function val(name) {
       const checked = form.querySelector(`[name="${name}"]:checked`);
@@ -308,16 +309,59 @@
       formError.classList.remove('hidden');
     }
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      formError.classList.add('hidden');
-      formError.textContent = '';
+    /** Map UI audience → factory booking templateType (retail | municipal | dispensary). */
+    function factoryTemplateType() {
+      const checked = form.querySelector('input[name="templateType"]:checked');
+      const dataType = (checked && checked.getAttribute('data-type')) || 'retail';
+      if (dataType === 'municipality') return 'municipal';
+      if (dataType === 'retail') return 'dispensary';
+      // faith / other — factory retail vertical until a faith template exists
+      return 'retail';
+    }
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+    function normalizeSite(raw) {
+      if (!raw) return undefined;
+      const trimmed = raw.trim();
+      if (!trimmed) return undefined;
+      if (/^https?:\/\//i.test(trimmed)) return trimmed;
+      return `https://${trimmed}`;
+    }
 
+    function normalizePhone(raw) {
+      if (!raw) return undefined;
+      const digits = raw.replace(/[^\d+]/g, '');
+      return digits.length >= 7 ? digits : undefined;
+    }
+
+    function buildIntakeBody() {
+      const uiType = val('templateType') || 'App';
+      const goals =
+        val('goals') ||
+        `Booked via localgovy.com/demo (${uiType}). Build a branded working demo.`;
+      const timeline = val('timeline') || 'Within a month';
+      const brandStyle =
+        val('brandStyle') || 'Match the organization branding from the booking form';
+      const body = {
+        templateType: factoryTemplateType(),
+        businessName: val('businessName'),
+        contactName: val('contactName'),
+        email: val('email'),
+        goals,
+        timeline,
+        brandStyle,
+        // Accepted by Edge when TURNSTILE_SECRET_KEY is unset; swap for Turnstile widget later.
+        captchaToken: 'accept',
+        country: 'CA'
+      };
+      const phone = normalizePhone(val('phone'));
+      if (phone) body.phone = phone;
+      const site = normalizeSite(val('currentSite'));
+      if (site) body.currentSite = site;
+      return body;
+    }
+
+    async function notifyInbox(intakeResult) {
+      if (!cfg.notifyFormSubmit || !cfg.formSubmitUrl) return;
       const payload = {
         _subject: `Demo Request — ${val('businessName') || 'New organization'} (${val('templateType') || 'App'})`,
         _template: 'table',
@@ -330,31 +374,81 @@
         'Main goal': val('goals') || '(not provided)',
         Timeline: val('timeline') || '(not provided)',
         'Brand / style notes': val('brandStyle') || '(not provided)',
+        'Factory slug': (intakeResult && intakeResult.slug) || '',
+        'Factory jobId': (intakeResult && intakeResult.jobId) || '',
         _replyto: val('email')
       };
+      try {
+        await fetch(cfg.formSubmitUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (_) {
+        /* inbox notify is best-effort; factory booking already succeeded */
+      }
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formError.classList.add('hidden');
+      formError.textContent = '';
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Honeypot: bots that fill _gotcha are dropped silently.
+      if (val('_gotcha')) {
+        form.classList.add('hidden');
+        thankYou.classList.remove('hidden');
+        return;
+      }
+
+      if (!cfg.intakeUrl || !cfg.supabaseAnonKey) {
+        showError('Demo intake is not configured. Please email noah@localgovy.com directly.');
+        return;
+      }
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
       try {
-        const res = await fetch('https://formsubmit.co/ajax/noah@localgovy.com', {
+        const res = await fetch(cfg.intakeUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            Accept: 'application/json'
+            Accept: 'application/json',
+            apikey: cfg.supabaseAnonKey,
+            Authorization: `Bearer ${cfg.supabaseAnonKey}`
           },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(buildIntakeBody())
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok) {
-          throw new Error(data.message || 'Something went wrong. Please email noah@localgovy.com directly.');
+          const detail =
+            data.message ||
+            data.error ||
+            (data.detail && JSON.stringify(data.detail)) ||
+            'Something went wrong. Please email noah@localgovy.com directly.';
+          throw new Error(detail);
         }
+
+        await notifyInbox(data);
 
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'generate_lead', {
             event_category: 'demo',
             event_label: val('templateType') || 'unknown'
           });
+        }
+
+        if (data.slug && thankYouRef) {
+          thankYouRef.textContent = data.duplicate
+            ? `We already have a demo in progress for this booking (ref: ${data.slug}).`
+            : `Reference: ${data.slug}`;
+          thankYouRef.classList.remove('hidden');
         }
 
         form.classList.add('hidden');
