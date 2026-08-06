@@ -19,5 +19,5 @@ window.LG = {
   // Optional: still email the inbox after a successful factory booking
   notifyFormSubmit: true,
   formSubmitUrl: 'https://formsubmit.co/ajax/noah@localgovy.com',
-  deployMarker: '20260806b',
+  deployMarker: '20260806d',
 };

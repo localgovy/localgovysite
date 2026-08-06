@@ -245,6 +245,13 @@
               <label class="block text-sm font-semibold text-ink mb-1.5" for="brandStyle">Brand / style notes</label>
               <input id="brandStyle" name="brandStyle" type="text" placeholder="e.g. deep green and gold" class="field-input w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink placeholder:text-sub/60 transition" />
             </div>
+            <label class="choice-card relative flex items-start gap-3 p-3 rounded-xl border border-line cursor-pointer transition hover:border-brand/30">
+              <input type="checkbox" name="forceNewDemo" value="1" class="mt-1" />
+              <span>
+                <span class="block text-sm font-semibold text-ink">Force a new demo job</span>
+                <span class="block text-xs text-sub">For re-testing the same company. Leave unchecked for normal bookings.</span>
+              </span>
+            </label>
           </div>
         </details>
 
@@ -357,6 +364,10 @@
       if (phone) body.phone = phone;
       const site = normalizeSite(val('currentSite'));
       if (site) body.currentSite = site;
+      const forceNew = form.querySelector('input[name="forceNewDemo"]');
+      if (forceNew && forceNew.checked) {
+        body.dedupeSalt = `web-${Date.now().toString(36)}`;
+      }
       return body;
     }
 
@@ -430,9 +441,26 @@
           const detail =
             data.message ||
             data.error ||
+            (typeof data.detail === 'string' ? data.detail : '') ||
             (data.detail && JSON.stringify(data.detail)) ||
             'Something went wrong. Please email noah@localgovy.com directly.';
-          throw new Error(detail);
+          // Factory dedupe: same business already booked — treat as success for UX/testing.
+          const isDedupe =
+            data.error === 'INTAKE_E_DUPLICATE' ||
+            /dedupe key already exists/i.test(String(detail)) ||
+            /prospect with this dedupe/i.test(String(detail)) ||
+            data.code === 'DEDUPE' ||
+            data.duplicate === true;
+          if (!isDedupe) {
+            throw new Error(
+              data.error === 'INTAKE_E_DUPLICATE'
+                ? 'We already have a demo for this organization. Open “Add more details” and check “Force a new demo job” to start another.'
+                : detail,
+            );
+          }
+          // Fall through to thank-you as a duplicate booking.
+          data.duplicate = true;
+          if (!data.slug && data.existingSlug) data.slug = data.existingSlug;
         }
 
         await notifyInbox(data);
@@ -444,11 +472,16 @@
           });
         }
 
-        if (data.slug && thankYouRef) {
-          thankYouRef.textContent = data.duplicate
-            ? `We already have a demo in progress for this booking (ref: ${data.slug}).`
-            : `Reference: ${data.slug}`;
-          thankYouRef.classList.remove('hidden');
+        if (thankYouRef) {
+          if (data.duplicate) {
+            thankYouRef.textContent = data.slug
+              ? `We already have a demo in progress for this booking (ref: ${data.slug}).`
+              : 'We already have a demo in progress for this organization — check your email, or reply to noah@localgovy.com if you need a fresh one.';
+            thankYouRef.classList.remove('hidden');
+          } else if (data.slug) {
+            thankYouRef.textContent = `Reference: ${data.slug}`;
+            thankYouRef.classList.remove('hidden');
+          }
         }
 
         form.classList.add('hidden');
