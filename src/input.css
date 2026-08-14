@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .template-row {
+    @apply group flex items-center gap-4 sm:gap-6 rounded-2xl border border-line bg-paper p-4 sm:p-5 hover:shadow-soft hover:border-brand/40 transition;
+  }
+  .template-thumb {
+    @apply w-[4.25rem] sm:w-[5.5rem] h-[6.4rem] sm:h-[8.25rem] flex-shrink-0 rounded-[0.95rem] overflow-hidden bg-black border border-black/10;
+  }
+  .template-thumb img {
+    @apply w-full h-full object-cover object-top;
+  }
+  .template-thumb-fallback {
+    @apply w-[4.25rem] sm:w-[5.5rem] h-[6.4rem] sm:h-[8.25rem] flex-shrink-0 rounded-[0.95rem] bg-brand text-paper flex items-center justify-center border border-black/10;
+  }
+  .template-arrow {
+    @apply w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-brand/35 group-hover:text-brand group-hover:translate-x-1 transition;
+  }
+}
