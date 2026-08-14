@@ -18,4 +18,19 @@
   .template-arrow {
     @apply w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-brand/35 group-hover:text-brand group-hover:translate-x-1 transition;
   }
+  .cta-band {
+    @apply rounded-xl bg-brand text-paper px-6 py-12 md:px-12 md:py-16 text-center border border-brand;
+  }
+  .price-col {
+    @apply rounded-xl border border-line bg-paper p-6 md:p-7 flex flex-col text-left;
+  }
+  .price-col-featured {
+    @apply border-brand bg-brand text-paper;
+  }
+  .brief-list {
+    @apply divide-y divide-line border-t border-b border-line;
+  }
+  .brief-list > div {
+    @apply py-4;
+  }
 }

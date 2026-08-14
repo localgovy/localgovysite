@@ -67,16 +67,16 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://localgovy.com/localgovy/regional/</loc>
+    <loc>https://localgovy.com/localgovy/web/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://localgovy.com/localgovy/counties/</loc>
+    <loc>https://localgovy.com/pricing/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://localgovy.com/about/</loc>

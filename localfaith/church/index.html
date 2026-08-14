@@ -118,11 +118,12 @@
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
+      <nav class="hidden lg:flex items-center gap-3 xl:gap-5 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
         <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
         <a href="/localbiz/" class="text-paper/80 hover:text-paper transition">For Businesses</a>
         <a href="/localgovy/" class="text-paper/80 hover:text-paper transition">For Municipalities</a>
         <a href="/localfaith/" class="text-paper font-semibold">For Religious Institutions</a>
+        <a href="/pricing/" class="text-paper/80 hover:text-paper transition">Pricing</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
         <a href="/demo/?type=faith" class="px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-gold text-white text-sm md:text-base font-semibold hover:bg-gold2 transition whitespace-nowrap">Book a Demo</a>
@@ -136,6 +137,7 @@
         <a onclick="toggleMenu()" href="/localgovy/" class="py-2.5 text-paper/85">For Municipalities</a>
         <a onclick="toggleMenu()" href="/localfaith/" class="py-2.5 text-paper font-semibold">For Religious Institutions</a>
         <a onclick="toggleMenu()" href="/about/" class="py-2.5 text-paper/85 border-t border-white/10 mt-1 pt-3">About</a>
+        <a onclick="toggleMenu()" href="/pricing/" class="py-2.5 text-paper/85">Pricing</a>
         <a href="/demo/?type=faith" class="mt-3 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
       </nav>
     </div>
@@ -144,12 +146,6 @@
   <div class="bg-surface/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><a href="/localfaith/" class="hover:text-brand transition">For Religious Institutions</a><span>/</span><span class="text-brand font-medium">Church</span></div></div>
 
   <section class="relative overflow-hidden">
-    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-      <div class="absolute inset-0" style="background:
-        radial-gradient(900px 480px at 12% -10%, rgba(207,162,75,0.14), transparent 55%),
-        radial-gradient(720px 520px at 88% 20%, rgba(30,90,66,0.16), transparent 60%),
-        linear-gradient(180deg, rgba(246,243,236,0.2) 0%, transparent 40%);"></div>
-    </div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-14 md:pb-20">
       <div class="grid max-w-2xl">
         <div>
@@ -159,6 +155,7 @@
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="/demo/?type=faith" class="px-6 py-3.5 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition shadow-card">Book a Demo</a>
             <a href="/localfaith/" class="px-6 py-3.5 rounded-full bg-surface border border-line font-semibold hover:border-brand/40 transition">All templates</a>
+            <a href="/pricing/#faith" class="px-6 py-3.5 rounded-full bg-surface border border-line font-semibold hover:border-brand/40 transition">See pricing</a>
           </div>
         </div>
 
@@ -167,17 +164,16 @@
   </section>
 
   <section class="py-16 md:py-24 bg-surface border-y border-line">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mb-10"><div class="text-xs uppercase tracking-[0.2em] text-gold font-bold">What's included</div><h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">Built for churches</h2></div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Service times</h3><p class="mt-2 text-[0.95rem] text-ink/80">Sunday and midweek times that update in the app and on the site together.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Giving &amp; tithes</h3><p class="mt-2 text-[0.95rem] text-ink/80">One-time and recurring gifts, plus a building-fund campaign if you need one.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Small groups</h3><p class="mt-2 text-[0.95rem] text-ink/80">Directory, signups, and reminders without a separate spreadsheet.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Livestreams</h3><p class="mt-2 text-[0.95rem] text-ink/80">Sunday service live and archived for whoever couldn't attend.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Push notifications</h3><p class="mt-2 text-[0.95rem] text-ink/80">A weather cancellation or a funeral notice reaches the congregation.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Matching website</h3><p class="mt-2 text-[0.95rem] text-ink/80">The Complete Platform includes a site on the same system.</p></div>
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl md:text-4xl text-brand">Built for churches</h2>
+      <div class="mt-8 brief-list">
+        <div><h3 class="font-serif text-xl text-brand">Service times</h3><p class="mt-1 text-[0.95rem] text-ink/80">Sunday and midweek times that update in the app and on the site together.</p></div>
+        <div><h3 class="font-serif text-xl text-brand">Giving &amp; tithes</h3><p class="mt-1 text-[0.95rem] text-ink/80">One-time and recurring gifts, plus a building-fund campaign if you need one.</p></div>
+        <div><h3 class="font-serif text-xl text-brand">Small groups</h3><p class="mt-1 text-[0.95rem] text-ink/80">Directory, signups, and reminders without a separate spreadsheet.</p></div>
+        <div><h3 class="font-serif text-xl text-brand">Livestreams</h3><p class="mt-1 text-[0.95rem] text-ink/80">Sunday service live and archived for whoever couldn't attend.</p></div>
+        <div><h3 class="font-serif text-xl text-brand">Matching website</h3><p class="mt-1 text-[0.95rem] text-ink/80">The $150 Complete Platform includes the app and a site on the same system.</p></div>
       </div>
-      <p class="mt-10 text-center text-sm text-sub">Fully branded apps <strong class="text-brand font-semibold">from $150/mo</strong></p>
+      <p class="mt-8 text-sm text-sub">App and website, <strong class="text-brand font-semibold">$150/mo</strong> · <a href="/pricing/#faith" class="text-brand font-semibold hover:underline">See pricing</a></p>
     </div>
   </section>
 
@@ -193,9 +189,8 @@
 
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-brand text-paper px-6 py-14 md:px-16 md:py-20 text-center relative overflow-hidden shadow-soft">
-        <div class="absolute inset-0 opacity-40" style="background: radial-gradient(600px 300px at 50% -20%, rgba(207,162,75,0.25), transparent 70%);"></div>
-        <div class="relative">
+      <div class="cta-band">
+        <div>
           <h2 class="font-serif text-3xl md:text-4xl">One home for your congregation</h2>
           <p class="mt-4 text-paper/85 max-w-xl mx-auto">Tell us your church's name and we'll send a <strong class="font-semibold text-paper">working app in your branding within 48 hours</strong>.</p>
           <div class="mt-8 flex flex-wrap justify-center gap-3">
@@ -212,7 +207,7 @@
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
         <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Platforms</div><ul class="space-y-2 text-sm"><li><a href="/localbiz/" class="hover:text-paper transition">For Businesses</a></li><li><a href="/localgovy/" class="hover:text-paper transition">For Municipalities</a></li><li><a href="/localfaith/" class="hover:text-paper transition">For Religious Institutions</a></li></ul></div>
-        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/?type=faith" class="hover:text-paper transition">Book a Demo</a></li><li><a href="tel:+19784933736" class="hover:text-paper transition">9784933736</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="/pricing/" class="hover:text-paper transition">Pricing</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/?type=faith" class="hover:text-paper transition">Book a Demo</a></li><li><a href="tel:+19784933736" class="hover:text-paper transition">9784933736</a></li></ul></div>
       </div>
       <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>
     </div>

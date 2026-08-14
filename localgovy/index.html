@@ -11,8 +11,8 @@
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
-  <title>Mobile App for Towns &amp; Local Governments — Canadian Municipality Apps | LocalGovy</title>
-  <meta name="description" content="A local government mobile app for Canadian towns and cities — news, events, polls, a business directory, and a 24/7 assistant. Mobile app for towns starting at $150/month. Branded demo in 48 hours." />
+  <title>Municipal Website, App, or Both — Towns and Cities | LocalGovy</title>
+  <meta name="description" content="A municipal subscription for Canadian towns and cities: website $150/mo, iOS and Android app $250/mo, or both for $350/mo. News, alerts, events, directory, and a 24/7 assistant. Branded demo in 48 hours." />
   <meta name="keywords" content="local government mobile apps, mobile app for towns, local government app, Canadian municipality app, town app Canada, city app Canada, township app, regional municipality app, county app, local government app Canada" />
   <meta name="author" content="LocalGovy" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -24,8 +24,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LocalGovy" />
-  <meta property="og:title" content="Mobile App for Towns &amp; Local Governments — Canadian Municipality Apps | LocalGovy" />
-  <meta property="og:description" content="A local government mobile app for Canadian towns and cities — news, events, polls, directory, and a 24/7 assistant. Starting at $150/month." />
+  <meta property="og:title" content="Municipal Website, App, or Both — Towns and Cities | LocalGovy" />
+  <meta property="og:description" content="Website $150/mo, mobile app $250/mo, or both for $350/mo. News, alerts, events, directory, and a 24/7 assistant for Canadian towns." />
   <meta property="og:url" content="https://localgovy.com/localgovy/" />
   <meta property="og:image" content="https://localgovy.com/IMG_7892.jpg" />
   <meta property="og:image:alt" content="Local government mobile app news feed for Canadian towns" />
@@ -33,8 +33,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mobile App for Towns &amp; Local Governments — Canadian Municipality Apps | LocalGovy" />
-  <meta name="twitter:description" content="A local government mobile app for Canadian towns and cities — news, events, polls, directory, and a 24/7 assistant. Starting at $150/month." />
+  <meta name="twitter:title" content="Municipal Website, App, or Both — Towns and Cities | LocalGovy" />
+  <meta name="twitter:description" content="Website $150/mo, mobile app $250/mo, or both for $350/mo. News, alerts, events, directory, and a 24/7 assistant for Canadian towns." />
   <meta name="twitter:image" content="https://localgovy.com/IMG_7892.jpg" />
 
   <!-- Structured data -->
@@ -44,22 +44,24 @@
     "@graph": [
       {
         "@type": "Service",
-        "name": "Local Government Mobile Apps for Canadian Towns",
-        "serviceType": "Local government mobile app development for Canadian towns and cities",
+        "name": "Municipal website and app subscriptions for Canadian towns",
+        "serviceType": "Municipal website and mobile app subscriptions",
         "url": "https://localgovy.com/localgovy/",
-        "description": "A local government mobile app for Canadian towns, cities, townships, and regional municipalities — with news and alerts, events, community polls, a business directory, school updates, and a 24/7 virtual assistant. Mobile app for towns starting at $150 per month.",
+        "description": "A subscription for Canadian towns and cities: a municipal website, an iOS and Android app, or both. News, alerts, events, a business directory, polls, school updates, and a 24/7 assistant. Website $150 per month, mobile app $250 per month, website and app together $350 per month.",
         "provider": { "@type": "Organization", "name": "LocalGovy", "url": "https://localgovy.com/" },
         "areaServed": [
           { "@type": "Country", "name": "Canada" },
           { "@type": "Country", "name": "United States" }
         ],
         "audience": { "@type": "Audience", "audienceType": "Canadian towns, cities, counties, townships, regional municipalities, and districts" },
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "CAD",
-          "price": "150",
-          "url": "https://localgovy.com/localgovy/",
-          "description": "Starting monthly rate for a branded municipality app"
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Municipal subscriptions",
+          "itemListElement": [
+            { "@type": "Offer", "name": "Website", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/localgovy/web/" },
+            { "@type": "Offer", "name": "Mobile app", "priceCurrency": "CAD", "price": "250", "url": "https://localgovy.com/localgovy/towns/" },
+            { "@type": "Offer", "name": "Town bundle", "priceCurrency": "CAD", "price": "350", "url": "https://localgovy.com/demo/?type=municipality&product=bundle" }
+          ]
         }
       },
       {
@@ -74,33 +76,33 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is a local government mobile app?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A local government mobile app puts your town's news, events, polls, business directory, school updates, and a 24/7 assistant on residents' phones — a direct channel without relying on social media algorithms." }
+            "name": "Can we buy only the website?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The website subscription is $150 per month. It carries the same news, events, directory, and services as the app, for residents who never install anything." }
           },
           {
             "@type": "Question",
-            "name": "Do you build mobile apps for towns?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build branded mobile apps for Canadian towns, cities, townships, regional municipalities, counties, and districts — with your real departments, services, and content." }
+            "name": "Can we buy only the mobile app?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The iOS and Android app is $250 per month, including store listings, push notifications, and the resident assistant." }
           },
           {
             "@type": "Question",
-            "name": "How long to launch?",
-            "acceptedAnswer": { "@type": "Answer", "text": "You'll see a branded demo within 48 hours of booking. Typical full launch is about 2 weeks, including branding, setup, training, and app-store submission." }
+            "name": "What is the town bundle?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Website and mobile app together for $350 per month — $50 less than buying both. Staff update one dashboard; the same post appears on the site and in the app." }
           },
           {
             "@type": "Question",
-            "name": "Do we need technical staff?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. Whoever currently updates your website can run the app. Posting news or an alert takes about as long as writing the notice itself, and we train your staff before launch." }
+            "name": "Do we need an IT department?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Whoever currently updates your website can run this. Posting a road closure takes about as long as writing the notice. We train your staff before launch." }
           },
           {
             "@type": "Question",
-            "name": "How much does a municipality app cost?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The complete platform starts at $150 per month, billed annually with the first month free. There is no implementation fee and no per-resident charge, which is where most municipal platforms get expensive." }
+            "name": "What happens when we book a demo?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Within 48 hours we send a working sample in your town's name and colours. Look at it, show council, then decide. You pay nothing until you are live. Typical launch is about two weeks." }
           },
           {
             "@type": "Question",
-            "name": "Can it be customized to our town?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes — we implement your municipality's actual departments, services, and content, not just your name, logo, and colours. Every Canadian town, city, township, or regional municipality gets its own distinct app." }
+            "name": "Is this a live town?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The screens on these pages are sample builds. We load your real departments, services, and content before anything goes to residents." }
           }
         ]
       }
@@ -152,14 +154,15 @@
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
+      <nav class="hidden lg:flex items-center gap-3 xl:gap-5 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
         <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
         <a href="/localbiz/" class="text-paper/80 hover:text-paper transition">For Businesses</a>
         <a href="/localgovy/" class="text-paper font-semibold">For Municipalities</a>
         <a href="/localfaith/" class="text-paper/80 hover:text-paper transition">For Religious Institutions</a>
+        <a href="/pricing/" class="text-paper/80 hover:text-paper transition">Pricing</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="/demo/?type=municipality" class="px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-gold text-white text-sm md:text-base font-semibold hover:bg-gold2 transition whitespace-nowrap">Book a Demo</a>
+        <a href="/demo/?type=municipality&product=bundle" class="px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-gold text-white text-sm md:text-base font-semibold hover:bg-gold2 transition whitespace-nowrap">Book a Demo</a>
         <button class="lg:hidden p-2" id="menuBtn" aria-label="Toggle menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#F6F3EC" stroke-width="1.5" stroke-linecap="round"/></svg></button>
       </div>
     </div>
@@ -170,7 +173,8 @@
         <a onclick="toggleMenu()" href="/localgovy/" class="py-2.5 text-paper font-semibold">For Municipalities</a>
         <a onclick="toggleMenu()" href="/localfaith/" class="py-2.5 text-paper/85">For Religious Institutions</a>
         <a onclick="toggleMenu()" href="/about/" class="py-2.5 text-paper/85 border-t border-white/10 mt-1 pt-3">About</a>
-        <a href="/demo/?type=municipality" class="mt-3 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
+        <a onclick="toggleMenu()" href="/pricing/" class="py-2.5 text-paper/85">Pricing</a>
+        <a href="/demo/?type=municipality&product=bundle" class="mt-3 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
       </nav>
     </div>
   </header>
@@ -178,136 +182,104 @@
   <!-- Breadcrumb -->
   <div class="bg-surface/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><span class="text-brand font-medium">For Municipalities</span></div></div>
 
-  <section class="relative overflow-hidden">
-    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-      <div class="absolute inset-0" style="background:
-        radial-gradient(900px 480px at 12% -10%, rgba(207,162,75,0.14), transparent 55%),
-        radial-gradient(720px 520px at 88% 20%, rgba(30,90,66,0.16), transparent 60%),
-        linear-gradient(180deg, rgba(246,243,236,0.2) 0%, transparent 40%);"></div>
-    </div>
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-10">
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-10 md:pb-12">
       <p class="font-serif text-lg text-gold tracking-tight">For municipalities</p>
-      <h1 class="mt-4 font-serif text-4xl md:text-5xl leading-[1.05] tracking-tight text-brand">Towns, regions &amp; counties</h1>
-      <p class="mt-4 text-lg text-ink/80 leading-relaxed">A local government mobile app with news, alerts, events, polls, a business directory, and a 24/7 assistant. Pick the closest match.</p>
+      <h1 class="mt-3 font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight text-brand">Towns and cities</h1>
+      <div class="mt-5 h-[3px] w-16 bg-brand" aria-hidden="true"></div>
+      <p class="mt-5 text-lg text-ink leading-relaxed">A subscription for Canadian towns and cities. Residents get news, alerts, events, a business directory, polls, school updates, and a 24/7 assistant. Staff update one dashboard. You take the website, the mobile app, or both.</p>
     </div>
   </section>
 
-  <section class="pb-16 md:pb-20">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-4">
-      <a href="/localgovy/towns/" class="template-row group">
-        <div class="template-thumb">
-          <picture><source type="image/webp" srcset="/IMG_7892.webp" /><img src="/IMG_7892.jpg" alt="Local government mobile app news feed" width="471" height="1024" loading="lazy" decoding="async" /></picture>
-        </div>
-        <div class="min-w-0 flex-1">
-          <h2 class="font-serif text-xl sm:text-2xl text-brand">Towns &amp; cities</h2>
-          <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">News, alerts, events, polls, a business directory, and school updates for Canadian towns and cities.</p>
-        </div>
-        <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="/localgovy/regional/" class="template-row group">
-        <div class="template-thumb">
-          <picture><source type="image/webp" srcset="/IMG_7896.webp" /><img src="/IMG_7896.jpg" alt="Municipality app community poll" width="471" height="1024" loading="lazy" decoding="async" /></picture>
-        </div>
-        <div class="min-w-0 flex-1">
-          <h2 class="font-serif text-xl sm:text-2xl text-brand">Regional municipalities</h2>
-          <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Region-wide notices, services, and polls with your actual departments — not a generic city skin.</p>
-        </div>
-        <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="/localgovy/counties/" class="template-row group">
-        <div class="template-thumb">
-          <picture><source type="image/webp" srcset="/IMG_7894.webp" /><img src="/IMG_7894.jpg" alt="Municipality app business directory" width="471" height="1024" loading="lazy" decoding="async" /></picture>
-        </div>
-        <div class="min-w-0 flex-1">
-          <h2 class="font-serif text-xl sm:text-2xl text-brand">Counties &amp; townships</h2>
-          <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Built for small offices: post a road closure as quickly as writing the notice itself.</p>
-        </div>
-        <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== FEATURES ===== -->
-  <section id="features" class="py-16 md:py-24 scroll-mt-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mb-10"><div class="text-xs uppercase tracking-[0.2em] text-gold font-bold">What's included</div><h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">The things residents call the office about</h2></div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">News &amp; alerts</h3><p class="mt-2 text-[0.95rem] text-ink/80">A water main break or a road closure goes out <strong class="font-semibold text-ink">to every resident's phone</strong> in under a minute.</p></div>
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">School updates</h3><p class="mt-2 text-[0.95rem] text-ink/80">Snow days, bus cancellations, and schedule changes, in the same place parents already check.</p></div>
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Business directory</h3><p class="mt-2 text-[0.95rem] text-ink/80">Every shop and service in town, searchable, so residents spend locally instead of driving out.</p></div>
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Events calendar</h3><p class="mt-2 text-[0.95rem] text-ink/80">Council meetings, rec programs, and community events, filtered so residents see what applies to them.</p></div>
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Community polls</h3><p class="mt-2 text-[0.95rem] text-ink/80">Ask the whole town a question and get answers from more than the dozen people who attend meetings.</p></div>
-        <div class="p-6 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">24/7 virtual assistant</h3><p class="mt-2 text-[0.95rem] text-ink/80">Answers the routine questions about hours, bylaws, and pickup days <strong class="font-semibold text-ink">so your staff don't have to</strong>.</p></div>
-      </div>
-      <div class="mt-10 text-center">
-        <a href="/demo/?type=municipality" class="inline-flex px-6 py-3 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition">Book a Demo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="py-16 md:py-24 bg-surface border-y border-line">
+  <section class="py-12 md:py-16">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8"><h2 class="font-serif text-3xl md:text-4xl text-brand">Simple, transparent pricing</h2></div>
-      <div class="rounded-3xl bg-paper border border-line p-8 md:p-10 shadow-card">
-        <div class="text-center">
-          <div class="text-xs uppercase tracking-[0.2em] text-gold font-bold">Complete Platform · Starting at</div>
-          <div class="mt-2 font-serif text-5xl text-brand">$150<span class="text-lg text-sub font-sans">/month</span></div>
-          <div class="mt-1 text-sm text-sub">1 month free, then billed annually</div>
-          <p class="mt-3 text-sm text-ink/70 max-w-md mx-auto">One line item, no implementation fee, and nothing to charge against a capital budget. Small enough to approve without a procurement process in most municipalities.</p>
-          <p class="mt-5 mx-auto max-w-lg text-[0.8rem] leading-relaxed text-sub/90 border-t border-line pt-4">
-            <strong class="font-semibold text-ink/80">Up to 80% less</strong> than other municipal platforms such as
-            <span class="text-ink/70">CivicPlus</span>,
-            <span class="text-ink/70">GoGov</span>,
-            <span class="text-ink/70">Driftscape</span>,
-            <span class="text-ink/70">Bludot</span>, and
-            <span class="text-ink/70">Open&nbsp;Rewards</span>.
-          </p>
-        </div>
-        <div class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-[0.95rem] font-medium text-ink/85">
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> Branded iOS &amp; Android apps</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> Community polls &amp; surveys</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> News &amp; announcements</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> 24/7 virtual assistant</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> School updates</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> Unlimited push notifications</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> Business directory</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> Admin dashboard</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> Events calendar</div>
-          <div class="flex items-center gap-2"><span class="text-gold font-bold">✓</span> Training &amp; support</div>
-        </div>
-        <a href="/demo/?type=municipality" class="mt-8 block text-center px-6 py-3.5 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition">Book a Demo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-3xl md:text-4xl text-brand text-center mb-10">Frequently asked questions</h2>
-      <div class="divide-y divide-line border-t border-b border-line">
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">What is a local government mobile app?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">A <strong>local government mobile app</strong> puts your town's news, events, polls, business directory, school updates, and a 24/7 assistant on residents' phones — a direct channel without relying on social media algorithms.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">Do you build mobile apps for towns?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Yes. We build branded <strong>mobile apps for towns</strong>, cities, townships, regional municipalities, counties, and districts across Canada — with your real departments, services, and content.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">How long to launch?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">You'll see a <strong>branded demo within 48 hours</strong> of booking. Typical full launch is about <strong>2 weeks</strong>, including branding, setup, training, and app-store submission.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">Do we need technical staff?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">No. Whoever currently updates your website can run the app. Posting news or an alert takes about as long as writing the notice itself, and we train your staff before launch.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">How much does a municipality app cost?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">The complete platform <strong>starts at $150/month</strong>, billed annually with the first month free. There's no implementation fee and no per-resident charge, which is where most municipal platforms get expensive.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">Can it be customized to our town?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Yes — we implement <strong>your municipality's actual departments, services, and content</strong>, not just your name, logo, and colours. Every Canadian town, city, township, or regional municipality gets its own distinct app.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-brand text-paper px-6 py-14 md:px-16 md:py-20 text-center relative overflow-hidden shadow-soft">
-        <div class="absolute inset-0 opacity-40" style="background: radial-gradient(600px 300px at 50% -20%, rgba(207,162,75,0.25), transparent 70%);"></div>
-        <div class="relative">
-          <h2 class="font-serif text-3xl md:text-4xl">Ready to connect your community?</h2>
-          <p class="mt-4 text-paper/85 max-w-xl mx-auto">Send us your municipality's name and we'll build a <strong class="font-semibold text-paper">demo around your town within 48 hours</strong>. Bring it to council before you commit to anything.</p>
-          <div class="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="/demo/?type=municipality" class="px-7 py-3.5 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a>
-            <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 rounded-full bg-white/10 border border-white/20 text-paper font-semibold hover:bg-white/15 transition">Email us</a>
+      <h2 class="font-serif text-2xl md:text-3xl text-brand">Two samples</h2>
+      <p class="mt-2 text-ink/75 leading-relaxed">These are samples of what we would build for your municipality — not live clients.</p>
+      <div class="mt-6 space-y-3">
+        <a href="/localgovy/towns/" class="template-row group rounded-xl">
+          <div class="template-thumb rounded-[0.7rem]">
+            <picture><source type="image/webp" srcset="/IMG_7892.webp" /><img src="/IMG_7892.jpg" alt="Sample municipal mobile app news feed" width="471" height="1024" loading="lazy" decoding="async" /></picture>
           </div>
+          <div class="min-w-0 flex-1">
+            <h3 class="font-serif text-xl sm:text-2xl text-brand">Mobile Apps</h3>
+            <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Sample of the iOS and Android app: news, a road-closure alert, events, polls, and a 24/7 assistant on the home screen.</p>
+          </div>
+          <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/localgovy/web/" class="template-row group rounded-xl">
+          <div class="template-thumb-fallback rounded-[0.7rem]" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM8 22h8M4 8h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="min-w-0 flex-1">
+            <h3 class="font-serif text-xl sm:text-2xl text-brand">Web Apps</h3>
+            <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Sample of the municipal website — same content system as the app, for residents who never install anything.</p>
+          </div>
+          <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-12 md:py-16 bg-surface border-y border-line scroll-mt-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl md:text-4xl text-brand">Website, app, or both</h2>
+      <p class="mt-3 max-w-2xl text-ink/80 leading-relaxed">Billed annually. First month free. No implementation fee. No per-resident fee. Most towns book the bundle.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-px bg-line border border-line">
+        <div class="price-col rounded-none border-0 bg-paper">
+          <h3 class="font-serif text-2xl text-brand">Website</h3>
+          <p class="mt-3 font-serif text-4xl text-brand">$150<span class="text-base font-sans text-sub">/mo</span></p>
+          <p class="mt-4 text-sm text-ink leading-relaxed">The municipal website only: news, events, directory, service pages, and the assistant in the browser.</p>
+          <p class="mt-3 text-sm text-sub leading-relaxed">Not included: iOS and Android, push notifications, or store listings.</p>
+          <a href="/demo/?type=municipality&product=web" class="mt-8 inline-flex justify-center px-5 py-2.5 rounded-full bg-brand text-paper text-sm font-semibold hover:bg-brand2 transition">Book a Demo</a>
+        </div>
+        <div class="price-col rounded-none border-0 bg-paper md:border-x md:border-line">
+          <h3 class="font-serif text-2xl text-brand">Mobile app</h3>
+          <p class="mt-3 font-serif text-4xl text-brand">$250<span class="text-base font-sans text-sub">/mo</span></p>
+          <p class="mt-4 text-sm text-ink leading-relaxed">Branded iOS and Android, push, App Store and Google Play, polls, and the resident assistant.</p>
+          <p class="mt-3 text-sm text-sub leading-relaxed">Not included: the public website. Residents who don't install the app won't see this content on the web.</p>
+          <a href="/demo/?type=municipality&product=mobile" class="mt-8 inline-flex justify-center px-5 py-2.5 rounded-full bg-brand text-paper text-sm font-semibold hover:bg-brand2 transition">Book a Demo</a>
+        </div>
+        <div class="price-col price-col-featured rounded-none border-0">
+          <p class="text-xs uppercase tracking-[0.16em] text-gold2 font-semibold">Website + app</p>
+          <h3 class="mt-2 font-serif text-2xl text-paper">Town bundle</h3>
+          <p class="mt-3 font-serif text-4xl text-paper">$350<span class="text-base font-sans text-paper/70">/mo</span></p>
+          <p class="mt-4 text-sm text-paper/90 leading-relaxed">Website and mobile app together. One dashboard; the same post appears on the site and in the app. $50 less than buying both.</p>
+          <p class="mt-3 text-sm text-paper/70 leading-relaxed">This is what most towns should take to council. About $4,200 a year.</p>
+          <a href="/demo/?type=municipality&product=bundle" class="mt-8 inline-flex justify-center px-5 py-2.5 rounded-full bg-gold text-white text-sm font-semibold hover:bg-gold2 transition">Book a Demo</a>
+        </div>
+      </div>
+      <p class="mt-5 text-sm text-sub">Cities and regional governments: rates scale with population — ask.</p>
+      <p class="mt-4"><a href="/pricing/#municipalities" class="inline-flex px-5 py-2.5 rounded-full bg-paper border border-line font-semibold hover:border-brand/40 transition">See pricing</a></p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-2xl md:text-3xl text-brand">What staff actually do</h2>
+      <p class="mt-4 text-ink leading-relaxed">Whoever currently updates your website can run this. A road closure is a post: write it, publish, done. It shows on the website and, if you have the app, on every resident's phone. We train your staff before launch. There is no IT project and no resident database to migrate.</p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 border-t border-line">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl md:text-4xl text-brand mb-8">Questions a clerk usually asks</h2>
+      <div class="divide-y divide-line border-t border-b border-line">
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">Can we buy only the website?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Yes. The website subscription is $150 per month. It carries the same news, events, directory, and services as the app, for residents who never install anything.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">Can we buy only the mobile app?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Yes. The iOS and Android app is $250 per month, including store listings, push notifications, and the resident assistant.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">What is the town bundle?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Website and mobile app together for $350 per month — $50 less than buying both. Staff update one dashboard; the same post appears on the site and in the app.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">Do we need an IT department?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">No. Whoever currently updates your website can run this. Posting a road closure takes about as long as writing the notice. We train your staff before launch.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">What happens when we book a demo?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Within 48 hours we send a working sample in your town's name and colours. Look at it, show council, then decide. You pay nothing until you are live. Typical launch is about two weeks.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">Is this a live town?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">No. The screens on these pages are sample builds. We load your real departments, services, and content before anything goes to residents.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="cta-band">
+        <h2 class="font-serif text-3xl md:text-4xl">Bring a demo to council</h2>
+        <p class="mt-4 text-paper/85 max-w-xl mx-auto leading-relaxed">Send the municipality's name. Within 48 hours you'll have a working sample in your colours. Show it before you commit to a line item.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="/demo/?type=municipality&product=bundle" class="px-7 py-3.5 rounded-full bg-gold text-white font-semibold hover:bg-gold2 transition">Book a Demo</a>
+          <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 rounded-full bg-white/10 border border-white/20 text-paper font-semibold hover:bg-white/15 transition">Email us</a>
         </div>
       </div>
     </div>
@@ -319,7 +291,7 @@
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
         <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Platforms</div><ul class="space-y-2 text-sm"><li><a href="/localbiz/" class="hover:text-paper transition">For Businesses</a></li><li><a href="/localgovy/" class="hover:text-paper transition">For Municipalities</a></li><li><a href="/localfaith/" class="hover:text-paper transition">For Religious Institutions</a></li></ul></div>
-        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/?type=municipality" class="hover:text-paper transition">Book a Demo</a></li><li><a href="tel:+19784933736" class="hover:text-paper transition">9784933736</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="/pricing/" class="hover:text-paper transition">Pricing</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/?type=municipality&product=bundle" class="hover:text-paper transition">Book a Demo</a></li><li><a href="tel:+19784933736" class="hover:text-paper transition">9784933736</a></li></ul></div>
       </div>
       <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>
     </div>

@@ -143,11 +143,12 @@
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
+      <nav class="hidden lg:flex items-center gap-3 xl:gap-5 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
         <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
         <a href="/localbiz/" class="text-paper font-semibold">For Businesses</a>
         <a href="/localgovy/" class="text-paper/80 hover:text-paper transition">For Municipalities</a>
         <a href="/localfaith/" class="text-paper/80 hover:text-paper transition">For Religious Institutions</a>
+        <a href="/pricing/" class="text-paper/80 hover:text-paper transition">Pricing</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
         <a href="/demo/?type=retail" class="px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-gold text-white text-sm md:text-base font-semibold hover:bg-gold2 transition whitespace-nowrap">Book a Demo</a>
@@ -161,6 +162,7 @@
         <a onclick="toggleMenu()" href="/localgovy/" class="py-2.5 text-paper/85">For Municipalities</a>
         <a onclick="toggleMenu()" href="/localfaith/" class="py-2.5 text-paper/85">For Religious Institutions</a>
         <a onclick="toggleMenu()" href="/about/" class="py-2.5 text-paper/85 border-t border-white/10 mt-1 pt-3">About</a>
+        <a onclick="toggleMenu()" href="/pricing/" class="py-2.5 text-paper/85">Pricing</a>
         <a href="/demo/?type=retail" class="mt-3 py-2.5 text-center rounded-full bg-gold text-white font-semibold">Book a Demo</a>
       </nav>
     </div>
@@ -171,31 +173,19 @@
 
   <!-- ===== HERO ===== -->
   <section class="relative overflow-hidden">
-    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-      <div class="absolute inset-0" style="background:
-        radial-gradient(900px 480px at 12% -10%, rgba(207,162,75,0.14), transparent 55%),
-        radial-gradient(720px 520px at 88% 20%, rgba(30,90,66,0.16), transparent 60%),
-        linear-gradient(180deg, rgba(246,243,236,0.2) 0%, transparent 40%);"></div>
-    </div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <p class="font-serif text-lg text-gold tracking-tight">Dispensary &amp; cannabis retail</p>
           <h1 class="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.03] tracking-tight text-brand">A branded ordering app for <span class="u-gold">dispensaries</span></h1>
-          <p class="mt-6 text-lg md:text-xl text-ink/80 max-w-xl leading-relaxed">A full storefront for <strong class="font-semibold text-ink">cannabis retail</strong>, running <strong class="font-semibold text-ink">your real catalog, THC and CBD figures, and your pricing</strong>. Customers browse, filter, and order without leaving your brand. Built for licensed dispensaries across Canada.</p>
-          <div class="mt-8 grid sm:grid-cols-2 gap-4">
-            <div class="p-4 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><div class="font-semibold text-brand">Full catalog</div><p class="mt-1 text-sm text-ink/75">Categories, live search, and filters.</p></div>
-            <div class="p-4 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><div class="font-semibold text-brand">Product details</div><p class="mt-1 text-sm text-ink/75">THC/CBD, strain, weight, and price.</p></div>
-            <div class="p-4 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><div class="font-semibold text-brand">Cart &amp; checkout</div><p class="mt-1 text-sm text-ink/75">Order and track history in-app.</p></div>
-            <div class="p-4 rounded-2xl bg-surface border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><div class="font-semibold text-brand">Deals &amp; trending</div><p class="mt-1 text-sm text-ink/75">Highlight sales to lift baskets.</p></div>
-          </div>
+          <p class="mt-6 text-lg md:text-xl text-ink max-w-xl leading-relaxed">A full storefront for cannabis retail: your real catalog, THC and CBD figures, and pricing. Customers browse, filter, and order without leaving your brand. Built for licensed dispensaries across Canada.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="/demo/?type=retail" class="px-6 py-3.5 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition shadow-card">Book a Demo</a>
             <a href="/localbiz/" class="px-6 py-3.5 rounded-full bg-surface border border-line font-semibold hover:border-brand/40 transition">All templates</a>
+            <a href="/pricing/#businesses" class="px-6 py-3.5 rounded-full bg-surface border border-line font-semibold hover:border-brand/40 transition">See pricing</a>
           </div>
         </div>
-        <div class="flex justify-center relative">
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100%,20rem)] h-[20rem] -z-10 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(30,90,66,0.28) 0%, rgba(207,162,75,0.12) 42%, transparent 70%);" aria-hidden="true"></div>
+        <div class="flex justify-center">
           <div class="w-full max-w-[17.5rem]">
             <div class="hero-device">
               <div class="device-shell">
@@ -212,25 +202,14 @@
     </div>
   </section>
 
-  <!-- Built for regulated retail -->
   <section class="py-16 md:py-24 bg-surface border-y border-line">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <div class="text-xs uppercase tracking-[0.2em] text-gold font-bold">Purpose-built</div>
-        <h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">Made for regulated retail</h2>
-        <p class="mt-4 text-ink/80 leading-relaxed">Age gating, potency fields, and strain data are built into the product model. That's the difference between an app made for <strong class="font-semibold text-ink">licensed Canadian cannabis retail</strong> and a generic shop template with your logo on it.</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Age-gated access</h3><p class="mt-2 text-[0.95rem] text-ink/80"><strong class="font-semibold text-ink">Age verification</strong> before browsing keeps you compliant.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Potency &amp; strain data</h3><p class="mt-2 text-[0.95rem] text-ink/80">THC/CBD, strain type, and weight on every product.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Search &amp; filters</h3><p class="mt-2 text-[0.95rem] text-ink/80">Filter by category, effect, THC, and price.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Cart &amp; checkout</h3><p class="mt-2 text-[0.95rem] text-ink/80">Familiar flow with order history and tracking.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Deals &amp; promotions</h3><p class="mt-2 text-[0.95rem] text-ink/80">Flash sales, bundles, and curated collections to move slow inventory.</p></div>
-        <div class="p-6 rounded-2xl bg-paper border border-line shadow-card transition hover:border-brand/40 hover:shadow-soft"><h3 class="font-semibold text-brand text-lg">Admin dashboard</h3><p class="mt-2 text-[0.95rem] text-ink/80">Manage products, pricing, and promos in one place.</p></div>
-      </div>
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-        <p class="text-sm text-sub">Fully branded apps <strong class="text-brand font-semibold">from $150/mo</strong> · same retail plan</p>
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl md:text-4xl text-brand">Made for regulated retail</h2>
+      <p class="mt-4 text-ink leading-relaxed">Age gating, potency fields, and strain data are built into the product model. That's the difference between an app made for licensed Canadian cannabis retail and a generic shop template with your logo on it.</p>
+      <p class="mt-8 text-sm text-sub">Fully branded apps <strong class="text-brand font-semibold">from $150/mo</strong> · same retail plan</p>
+      <div class="mt-4 flex flex-wrap gap-3">
         <a href="/demo/?type=retail" class="inline-flex px-6 py-3 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition">Book a Demo</a>
+        <a href="/pricing/#businesses" class="inline-flex px-6 py-3 rounded-full bg-paper border border-line font-semibold hover:border-brand/40 transition">See pricing</a>
       </div>
     </div>
   </section>
@@ -251,9 +230,8 @@
   <!-- CTA -->
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-brand text-paper px-6 py-14 md:px-16 md:py-20 text-center relative overflow-hidden shadow-soft">
-        <div class="absolute inset-0 opacity-40" style="background: radial-gradient(600px 300px at 50% -20%, rgba(207,162,75,0.25), transparent 70%);"></div>
-        <div class="relative">
+      <div class="cta-band">
+        <div>
           <h2 class="font-serif text-3xl md:text-4xl">Ready to build your dispensary app?</h2>
           <p class="mt-4 text-paper/85 max-w-xl mx-auto">Send us your store name and a sample of your menu. You'll have a <strong class="font-semibold text-paper">working demo in your branding within 48 hours</strong>.</p>
           <div class="mt-8 flex flex-wrap justify-center gap-3">
@@ -271,7 +249,7 @@
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
         <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Platforms</div><ul class="space-y-2 text-sm"><li><a href="/localbiz/" class="hover:text-paper transition">For Businesses</a></li><li><a href="/localgovy/" class="hover:text-paper transition">For Municipalities</a></li><li><a href="/localfaith/" class="hover:text-paper transition">For Religious Institutions</a></li></ul></div>
-        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/?type=retail" class="hover:text-paper transition">Book a Demo</a></li><li><a href="tel:+19784933736" class="hover:text-paper transition">9784933736</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="/pricing/" class="hover:text-paper transition">Pricing</a></li><li><a href="mailto:noah@localgovy.com" class="hover:text-paper transition">Contact</a></li><li><a href="/demo/?type=retail" class="hover:text-paper transition">Book a Demo</a></li><li><a href="tel:+19784933736" class="hover:text-paper transition">9784933736</a></li></ul></div>
       </div>
       <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>
     </div>
