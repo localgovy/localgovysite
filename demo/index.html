@@ -78,7 +78,7 @@
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
       <a href="/" class="flex items-center py-3 flex-shrink-0"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium">
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
         <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
         <a href="/localbiz/" class="text-paper/80 hover:text-paper transition">For Businesses</a>
         <a href="/localgovy/" class="text-paper/80 hover:text-paper transition">For Municipalities</a>
@@ -147,19 +147,19 @@
           <label class="choice-card relative flex items-start gap-3 p-4 rounded-2xl border border-line cursor-pointer transition hover:border-brand/30">
             <input type="radio" name="templateType" value="Retail & Ordering" required data-type="retail" />
             <span class="w-9 h-9 rounded-lg bg-brand/8 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span><span class="block font-semibold text-brand">Retail &amp; Ordering</span><span class="block text-xs text-sub">Shops, cafés, dispensaries</span></span>
+            <span><span class="block font-semibold text-brand">For Businesses</span><span class="block text-xs text-sub">Shops, cafés, dispensaries</span></span>
             <svg class="choice-check absolute top-3 right-3 opacity-0 scale-75 transition text-brand" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </label>
           <label class="choice-card relative flex items-start gap-3 p-4 rounded-2xl border border-line cursor-pointer transition hover:border-brand/30">
             <input type="radio" name="templateType" value="Faith & Community" required data-type="faith" />
             <span class="w-9 h-9 rounded-lg bg-brand/8 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M12 3l7 4v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V7l7-4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span><span class="block font-semibold text-brand">Faith &amp; Community</span><span class="block text-xs text-sub">Mosques, temples, churches</span></span>
+            <span><span class="block font-semibold text-brand">For Religious Institutions</span><span class="block text-xs text-sub">Mosques, temples, churches</span></span>
             <svg class="choice-check absolute top-3 right-3 opacity-0 scale-75 transition text-brand" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </label>
           <label class="choice-card relative flex items-start gap-3 p-4 rounded-2xl border border-line cursor-pointer transition hover:border-brand/30">
             <input type="radio" name="templateType" value="Municipality" required data-type="municipality" />
             <span class="w-9 h-9 rounded-lg bg-brand/8 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-brand"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span><span class="block font-semibold text-brand">Municipality</span><span class="block text-xs text-sub">Towns &amp; cities</span></span>
+            <span><span class="block font-semibold text-brand">For Municipalities</span><span class="block text-xs text-sub">Towns, regions &amp; counties</span></span>
             <svg class="choice-check absolute top-3 right-3 opacity-0 scale-75 transition text-brand" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </label>
           <label class="choice-card relative flex items-start gap-3 p-4 rounded-2xl border border-line cursor-pointer transition hover:border-brand/30">

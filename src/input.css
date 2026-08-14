@@ -4,7 +4,7 @@
 
 @layer components {
   .template-row {
-    @apply group flex items-center gap-4 sm:gap-6 rounded-2xl border border-line bg-paper p-4 sm:p-5 hover:shadow-soft hover:border-brand/40 transition;
+    @apply flex items-center gap-4 sm:gap-6 rounded-2xl border border-line bg-paper p-4 sm:p-5 text-left hover:shadow-soft hover:border-brand/40 transition;
   }
   .template-thumb {
     @apply w-[4.25rem] sm:w-[5.5rem] h-[6.4rem] sm:h-[8.25rem] flex-shrink-0 rounded-[0.95rem] overflow-hidden bg-black border border-black/10;

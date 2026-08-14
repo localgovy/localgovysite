@@ -113,7 +113,7 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Retail ordering apps",
+                "name": "Apps for businesses",
                 "url": "https://localgovy.com/localbiz/"
               }
             },
@@ -228,7 +228,7 @@
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium">
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
         <a href="/" class="text-paper font-semibold">Home</a>
         <a href="/localbiz/" class="text-paper/80 hover:text-paper transition">For Businesses</a>
         <a href="/localgovy/" class="text-paper/80 hover:text-paper transition">For Municipalities</a>
@@ -277,9 +277,9 @@
           <a href="#templates" class="px-6 py-3.5 rounded-full bg-surface border border-line text-ink font-semibold hover:border-brand/40 transition">Browse Templates</a>
         </div>
         <div class="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold">
-          <a href="/localbiz/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">Retail</a>
-          <a href="/localfaith/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">Faith &amp; Community</a>
-          <a href="/localgovy/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">Municipalities</a>
+          <a href="/localbiz/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Businesses</a>
+          <a href="/localgovy/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Municipalities</a>
+          <a href="/localfaith/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Religious Institutions</a>
         </div>
         <div class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-ink/75">
           <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Demo in 48 hours</div>
@@ -330,68 +330,42 @@
   <section id="templates" class="py-16 md:py-24 bg-surface border-y border-line scroll-mt-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <div class="text-xs uppercase tracking-[0.2em] text-gold font-bold">Our App Platforms</div>
-        <h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand leading-tight">A proven foundation, built out for your organization.</h2>
-        <p class="mt-4 text-ink/80 leading-relaxed">Every platform below is a <strong class="font-semibold text-ink">working sample build</strong> you can explore. Starting from a tested foundation is why we can move in days instead of months. What we build on top of it is yours: <strong class="font-semibold text-ink">your products, your service times, your departments</strong>, published as a distinct app on the App&nbsp;Store and Google&nbsp;Play.</p>
+        <div class="text-xs uppercase tracking-[0.2em] text-gold font-bold">Templates</div>
+        <h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand leading-tight">Pick a platform, then a template.</h2>
+        <p class="mt-4 text-ink/80 leading-relaxed">Each row below opens a catalog of templates. We start from a tested foundation so we can move in days instead of months. What we build on top of it is yours: <strong class="font-semibold text-ink">your products, your service times, your departments</strong>, published as a distinct app on the App&nbsp;Store and Google&nbsp;Play.</p>
       </div>
 
-      <!-- To add a platform: copy one <article> card block and update the image, text, tags, and link. -->
-      <div class="mt-12 grid md:grid-cols-3 gap-6 items-stretch">
-
-        <!-- Retail -->
-        <a href="/localbiz/" class="group flex flex-col rounded-3xl border border-line bg-paper overflow-hidden hover:shadow-soft hover:border-brand/40 transition">
-          <div class="p-6 pb-0 flex justify-center">
-            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><picture><source type="image/webp" srcset="/dispensary-showcase-420.webp" /><img src="/dispensary-showcase.jpg" alt="Local business app ordering example for Canadian retail" class="w-full h-auto" width="471" height="1024" loading="lazy" decoding="async" /></picture></div>
+      <div class="mt-12 max-w-3xl space-y-4">
+        <a href="/localbiz/" class="template-row group">
+          <div class="template-thumb">
+            <picture><source type="image/webp" srcset="/dispensary-showcase-420.webp" /><img src="/dispensary-showcase.jpg" alt="Retail and ordering app example" width="471" height="1024" loading="lazy" decoding="async" /></picture>
           </div>
-          <div class="p-6 flex flex-col flex-1">
-            <div class="text-xs uppercase tracking-[0.14em] text-gold font-bold">Retail &amp; Ordering</div>
-            <h3 class="mt-2 font-serif text-2xl text-brand">Your storefront, in their pocket</h3>
-            <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">A <strong class="font-semibold text-ink">local business app</strong> with a full <strong class="font-semibold text-ink">catalog, cart, and checkout</strong>, plus bookings and loyalty. Shown here as a dispensary build.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Dispensaries</span>
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Cafés</span>
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Shops</span>
-            </div>
-            <span class="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand group-hover:gap-2.5 transition-all">Retail &amp; ordering apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="min-w-0 flex-1">
+            <h3 class="font-serif text-xl sm:text-2xl text-brand">For Businesses</h3>
+            <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Dispensary, restaurant, and golf simulator templates — ordering, bookings, and loyalty in your own app.</p>
           </div>
+          <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-
-        <!-- Faith -->
-        <a href="/localfaith/" class="group flex flex-col rounded-3xl border border-line bg-paper overflow-hidden hover:shadow-soft hover:border-brand/40 transition">
-          <div class="p-6 pb-0 flex justify-center">
-            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><picture><source type="image/webp" srcset="/mosque-showcase-420.webp" /><img src="/mosque-showcase.png" alt="Mosque and religious institution community app" class="w-full h-auto" width="471" height="1024" loading="lazy" decoding="async" /></picture></div>
+        <a href="/localgovy/" class="template-row group">
+          <div class="template-thumb">
+            <picture><source type="image/webp" srcset="/IMG_7894-420.webp" /><img src="/IMG_7894.jpg" alt="Municipality app example" width="540" height="1122" loading="lazy" decoding="async" /></picture>
           </div>
-          <div class="p-6 flex flex-col flex-1">
-            <div class="text-xs uppercase tracking-[0.14em] text-gold font-bold">Faith &amp; Community</div>
-            <h3 class="mt-2 font-serif text-2xl text-brand">One place for your whole congregation</h3>
-            <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed"><strong class="font-semibold text-ink">Prayer and service times, giving, events,</strong> and livestreams, set up for the traditions your community actually keeps.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Mosques</span>
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Temples</span>
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Churches</span>
-            </div>
-            <span class="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand group-hover:gap-2.5 transition-all">Apps for religious institutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="min-w-0 flex-1">
+            <h3 class="font-serif text-xl sm:text-2xl text-brand">For Municipalities</h3>
+            <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Towns, regional governments, and counties — news, alerts, events, polls, and a 24/7 resident assistant.</p>
           </div>
+          <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-
-        <!-- Municipality -->
-        <a href="/localgovy/" class="group flex flex-col rounded-3xl border border-line bg-paper overflow-hidden hover:shadow-soft hover:border-brand/40 transition">
-          <div class="p-6 pb-0 flex justify-center">
-            <div class="w-full max-w-[210px] rounded-t-[1.6rem] overflow-hidden bg-black border border-black/10 phone"><picture><source type="image/webp" srcset="/IMG_7894-420.webp" /><img src="/IMG_7894.jpg" alt="Local government mobile app business directory for towns" class="w-full h-auto" width="540" height="1122" loading="lazy" decoding="async" /></picture></div>
+        <a href="/localfaith/" class="template-row group">
+          <div class="template-thumb">
+            <picture><source type="image/webp" srcset="/mosque-showcase-420.webp" /><img src="/mosque-showcase.png" alt="Religious institution app example" width="471" height="1024" loading="lazy" decoding="async" /></picture>
           </div>
-          <div class="p-6 flex flex-col flex-1">
-            <div class="text-xs uppercase tracking-[0.14em] text-gold font-bold">Municipalities</div>
-            <h3 class="mt-2 font-serif text-2xl text-brand">Your town's digital front door</h3>
-            <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">A <strong class="font-semibold text-ink">local government mobile app</strong> carrying <strong class="font-semibold text-ink">news, alerts, events, and polls</strong>, plus a business directory and an assistant that answers residents around the clock.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Towns</span>
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Cities</span>
-              <span class="text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded-full">Townships</span>
-            </div>
-            <span class="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand group-hover:gap-2.5 transition-all">Canadian municipality apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="min-w-0 flex-1">
+            <h3 class="font-serif text-xl sm:text-2xl text-brand">For Religious Institutions</h3>
+            <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Mosque, church, and temple templates — prayer and service times, giving, events, and a matching website.</p>
           </div>
+          <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-
       </div>
 
       <div class="mt-8 rounded-2xl border border-dashed border-line bg-paper/60 p-6 text-center">

@@ -66,7 +66,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://localgovy.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Municipalities", "item": "https://localgovy.com/localgovy/" }
+          { "@type": "ListItem", "position": 2, "name": "For Municipalities", "item": "https://localgovy.com/localgovy/" }
         ]
       },
       {
@@ -152,7 +152,7 @@
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium">
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
         <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
         <a href="/localbiz/" class="text-paper/80 hover:text-paper transition">For Businesses</a>
         <a href="/localgovy/" class="text-paper font-semibold">For Municipalities</a>
@@ -176,9 +176,8 @@
   </header>
 
   <!-- Breadcrumb -->
-  <div class="bg-surface/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><span class="text-brand font-medium">Municipalities</span></div></div>
+  <div class="bg-surface/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><span class="text-brand font-medium">For Municipalities</span></div></div>
 
-  <!-- ===== HERO ===== -->
   <section class="relative overflow-hidden">
     <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
       <div class="absolute inset-0" style="background:
@@ -186,56 +185,45 @@
         radial-gradient(720px 520px at 88% 20%, rgba(30,90,66,0.16), transparent 60%),
         linear-gradient(180deg, rgba(246,243,236,0.2) 0%, transparent 40%);"></div>
     </div>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
-      <div class="grid lg:grid-cols-[1.05fr_1fr] gap-12 items-center">
-        <div>
-          <p class="font-serif text-lg text-gold tracking-tight">For Canadian municipalities</p>
-          <h1 class="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.03] tracking-tight text-brand">A mobile app for <span class="u-gold">towns and local governments</span></h1>
-          <p class="mt-6 text-lg md:text-xl text-ink/80 max-w-xl leading-relaxed">A <strong class="font-semibold text-ink">local government mobile app</strong> that carries <strong class="font-semibold text-ink">news, alerts, events, and polls</strong>, plus a business directory, school updates, and an assistant that answers residents around the clock.</p>
-          <p class="mt-3 text-sm text-sub">Built for towns, cities, townships, counties, and regional municipalities across Canada.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/demo/?type=municipality" class="px-6 py-3.5 rounded-full bg-brand text-paper font-semibold hover:bg-brand2 transition shadow-card">Book a Demo</a>
-            <a href="#features" class="px-6 py-3.5 rounded-full bg-surface border border-line font-semibold hover:border-brand/40 transition">What's included</a>
-          </div>
-          <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-ink/75">
-            <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Demo in 48 hours</div>
-            <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> iOS &amp; Android</div>
-            <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> From $150/mo</div>
-          </div>
-          <p class="mt-5 text-xs text-sub">Sample build · Canadian municipality · iOS &amp; Android</p>
-        </div>
-        <div class="flex justify-center gap-4 relative">
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100%,24rem)] h-[20rem] -z-10 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(30,90,66,0.28) 0%, rgba(207,162,75,0.12) 42%, transparent 70%);" aria-hidden="true"></div>
-          <div class="hero-device w-2/5 max-w-[11rem] sm:max-w-[12rem]">
-            <div class="device-shell">
-              <div class="device-screen">
-                <span class="device-notch" aria-hidden="true"></span>
-                <picture><source type="image/webp" srcset="/IMG_7892.webp" /><img src="/IMG_7892.jpg" alt="Local government mobile app news feed for a Canadian town" class="w-full h-auto block" width="540" height="1121" fetchpriority="high" /></picture>
-              </div>
-            </div>
-          </div>
-          <div class="hero-device w-2/5 max-w-[11rem] sm:max-w-[12rem] translate-y-8">
-            <div class="device-shell">
-              <div class="device-screen">
-                <span class="device-notch" aria-hidden="true"></span>
-                <picture><source type="image/webp" srcset="/IMG_7896.webp" /><img src="/IMG_7896.jpg" alt="Town app community poll for local government" class="w-full h-auto block" width="540" height="1122" loading="lazy" decoding="async" /></picture>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-10">
+      <p class="font-serif text-lg text-gold tracking-tight">For municipalities</p>
+      <h1 class="mt-4 font-serif text-4xl md:text-5xl leading-[1.05] tracking-tight text-brand">Towns, regions &amp; counties</h1>
+      <p class="mt-4 text-lg text-ink/80 leading-relaxed">A local government mobile app with news, alerts, events, polls, a business directory, and a 24/7 assistant. Pick the closest match.</p>
     </div>
   </section>
 
-  <!-- Screens gallery -->
-  <section class="py-10 md:py-14 bg-surface border-y border-line">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-        <figure><div class="hero-device"><div class="device-shell"><div class="device-screen"><span class="device-notch" aria-hidden="true"></span><picture><source type="image/webp" srcset="/IMG_7894.webp" /><img src="/IMG_7894.jpg" alt="Local government app business directory for towns" class="w-full h-auto block" width="540" height="1122" loading="lazy" decoding="async"/></picture></div></div></div><figcaption class="mt-2 text-center text-xs font-medium text-sub">Business Directory</figcaption></figure>
-        <figure><div class="hero-device"><div class="device-shell"><div class="device-screen"><span class="device-notch" aria-hidden="true"></span><picture><source type="image/webp" srcset="/IMG_7895.webp" /><img src="/IMG_7895.jpg" alt="Mobile app for towns — local events calendar" class="w-full h-auto block" width="540" height="1121" loading="lazy" decoding="async"/></picture></div></div></div><figcaption class="mt-2 text-center text-xs font-medium text-sub">Local Events</figcaption></figure>
-        <figure><div class="hero-device"><div class="device-shell"><div class="device-screen"><span class="device-notch" aria-hidden="true"></span><picture><source type="image/webp" srcset="/IMG_7897.webp" /><img src="/IMG_7897.jpg" alt="Local government app 24/7 virtual assistant" class="w-full h-auto block" width="540" height="1123" loading="lazy" decoding="async"/></picture></div></div></div><figcaption class="mt-2 text-center text-xs font-medium text-sub">Virtual Assistant</figcaption></figure>
-        <figure><div class="hero-device"><div class="device-shell"><div class="device-screen"><span class="device-notch" aria-hidden="true"></span><picture><source type="image/webp" srcset="/IMG_7898.webp" /><img src="/IMG_7898.jpg" alt="Town app school updates for local government" class="w-full h-auto block" width="540" height="1121" loading="lazy" decoding="async"/></picture></div></div></div><figcaption class="mt-2 text-center text-xs font-medium text-sub">School Updates</figcaption></figure>
-      </div>
+  <section class="pb-16 md:pb-20">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-4">
+      <a href="/localgovy/towns/" class="template-row group">
+        <div class="template-thumb">
+          <picture><source type="image/webp" srcset="/IMG_7892.webp" /><img src="/IMG_7892.jpg" alt="Local government mobile app news feed" width="471" height="1024" loading="lazy" decoding="async" /></picture>
+        </div>
+        <div class="min-w-0 flex-1">
+          <h2 class="font-serif text-xl sm:text-2xl text-brand">Towns &amp; cities</h2>
+          <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">News, alerts, events, polls, a business directory, and school updates for Canadian towns and cities.</p>
+        </div>
+        <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/localgovy/regional/" class="template-row group">
+        <div class="template-thumb">
+          <picture><source type="image/webp" srcset="/IMG_7896.webp" /><img src="/IMG_7896.jpg" alt="Municipality app community poll" width="471" height="1024" loading="lazy" decoding="async" /></picture>
+        </div>
+        <div class="min-w-0 flex-1">
+          <h2 class="font-serif text-xl sm:text-2xl text-brand">Regional municipalities</h2>
+          <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Region-wide notices, services, and polls with your actual departments — not a generic city skin.</p>
+        </div>
+        <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/localgovy/counties/" class="template-row group">
+        <div class="template-thumb">
+          <picture><source type="image/webp" srcset="/IMG_7894.webp" /><img src="/IMG_7894.jpg" alt="Municipality app business directory" width="471" height="1024" loading="lazy" decoding="async" /></picture>
+        </div>
+        <div class="min-w-0 flex-1">
+          <h2 class="font-serif text-xl sm:text-2xl text-brand">Counties &amp; townships</h2>
+          <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Built for small offices: post a road closure as quickly as writing the notice itself.</p>
+        </div>
+        <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </section>
 
