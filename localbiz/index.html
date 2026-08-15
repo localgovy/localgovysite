@@ -138,6 +138,36 @@
     }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
+    .cta-steps {
+      list-style: none;
+      margin: 1.75rem auto 0;
+      max-width: 28.5rem;
+      padding: 0;
+      text-align: left;
+      border-top: 1px solid rgba(212, 199, 176, 0.34);
+    }
+    .cta-steps li {
+      display: grid;
+      grid-template-columns: 1.75rem minmax(0, 1fr);
+      column-gap: 1.15rem;
+      align-items: baseline;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(212, 199, 176, 0.34);
+    }
+    .cta-steps .n {
+      font-family: Newsreader, Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: #D4C7B0;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.55;
+    }
+    .cta-steps p {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: rgba(246, 243, 236, 0.9);
+    }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
@@ -254,8 +284,26 @@
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <div class="cta-band">
-        <h2 class="font-serif text-3xl md:text-4xl">Your shop on every regular's phone</h2>
-        <p class="mt-4 text-paper/85 max-w-xl mx-auto">Send your name and a sample of your menu. You'll have a working demo in your brand within 48 hours.</p>
+        <h2 class="font-serif text-3xl md:text-4xl tracking-tight">Keep your customers coming back</h2>
+        <div class="mx-auto mt-5 h-px w-10 bg-gold2/50" aria-hidden="true"></div>
+        <ol class="cta-steps">
+          <li>
+            <span class="n" aria-hidden="true">01</span>
+            <p>Send us the business's name, website, and any details you feel like we need to know.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">02</span>
+            <p>Receive a fully functional branded demo within 48 hours.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">03</span>
+            <p>You tell us how you liked it and what we should change.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">04</span>
+            <p>We finish it up and ship it out, ready for your customers.</p>
+          </li>
+        </ol>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
           <a href="/demo/?type=retail" class="px-7 py-3.5 rounded-full btn-on-dark">Book a Demo</a>
           <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 rounded-full bg-white/10 border border-white/20 text-paper font-semibold hover:bg-white/15 transition">Email us</a>
