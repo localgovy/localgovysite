@@ -107,7 +107,6 @@
   <link rel="preload" as="font" href="/assets/fonts/newsreader-latin.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts.css" />
   <link rel="stylesheet" href="/assets/site.css" />
-<link rel="preload" as="image" href="/dispensary-showcase.webp" type="image/webp" fetchpriority="high" />
 
   <style>
     html { scroll-behavior: smooth; }
@@ -187,9 +186,7 @@
   <section class="pb-16 md:pb-20">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-4">
       <a href="/localbiz/dispensary/" class="template-row group">
-        <div class="template-thumb">
-          <picture><source type="image/webp" srcset="/dispensary-showcase-420.webp" /><img src="/dispensary-showcase.jpg" alt="Dispensary ordering app catalog" width="471" height="1024" loading="lazy" decoding="async" /></picture>
-        </div>
+        <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21V11M12 12c-5 0-8-4.5-9-8.5 5.5 1 8 4.5 9 8.5M12 12c5 0 8-4.5 9-8.5-5.5 1-8 4.5-9 8.5M12 12c0-5-2-9-5.5-10.5 2.5 3.5 4.5 7 5.5 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="min-w-0 flex-1">
           <h2 class="font-serif text-xl sm:text-2xl text-brand">Dispensary</h2>
           <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Catalog, cart, and checkout with age gating and potency data for licensed cannabis retail.</p>
@@ -222,12 +219,10 @@
         <h2 class="font-serif text-3xl md:text-4xl text-brand">Built for any local business</h2>
         <p class="mt-4 text-ink/80 leading-relaxed">If people come back to you more than once a month, an app pays for itself. These are the businesses we build for most often.</p>
         <ul class="mt-6 grid sm:grid-cols-2 gap-y-2.5 gap-x-4 text-[0.95rem] font-medium text-ink/85">
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Restaurants &amp; cafés</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Retail shops</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Salons &amp; spas</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Fitness &amp; studios</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Service businesses</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Events &amp; venues</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Golf sim</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Café</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Restaurant</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Dispensary</li>
         </ul>
       </div>
       <div class="rounded-xl border border-line bg-paper p-8 md:p-10">
