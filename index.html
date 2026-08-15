@@ -220,28 +220,6 @@
     }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
-    .process-steps {
-      list-style: none;
-      margin: 2.25rem 0 0;
-      padding: 0;
-      border-top: 1px solid #E7E0D2;
-    }
-    .process-steps li {
-      display: grid;
-      grid-template-columns: 1.75rem minmax(0, 1fr);
-      column-gap: 1.15rem;
-      align-items: baseline;
-      padding: 1.15rem 0;
-      border-bottom: 1px solid #E7E0D2;
-    }
-    .process-steps .n {
-      font-family: Newsreader, Georgia, serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      color: #2F5644;
-      font-variant-numeric: tabular-nums;
-      line-height: 1.55;
-    }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
@@ -319,46 +297,33 @@
     </div>
   </section>
 
-  <!-- ===== WHAT HAPPENS NEXT ===== -->
-  <section class="py-16 md:py-20">
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="py-12 md:py-16">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-3xl md:text-4xl text-brand tracking-tight">What happens next</h2>
-      <p class="mt-4 text-ink/80 leading-relaxed">Send a few details. Within 48 hours you have a working sample in your brand. You tell us what to change. We finish it and ship it. You pay nothing until you are live.</p>
-      <ol class="process-steps">
-        <li>
-          <span class="n" aria-hidden="true">01</span>
-          <div>
-            <p class="font-medium text-brand leading-relaxed">Send us your organization's name, website, and any details you feel like we need to know.</p>
-            <p class="mt-2 text-[0.95rem] text-ink/75 leading-relaxed">The demo form is four fields and takes under a minute. Say whether you are a business, a municipality, or a religious institution. Add a current site, a menu, colours — whatever would help.</p>
-          </div>
+      <h2 class="font-serif text-3xl md:text-4xl text-brand tracking-tight">How it all works</h2>
+      <p class="mt-3 text-ink/75">A working demo in 48 hours. Nothing to pay until you are live.</p>
+      <ol class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-6">
+        <li class="border-t border-line pt-4">
+          <div class="font-serif text-2xl text-gold leading-none">01</div>
+          <p class="mt-3 text-[0.95rem] text-ink leading-relaxed">Send us the name, website, and any details you feel like we need to know.</p>
         </li>
-        <li>
-          <span class="n" aria-hidden="true">02</span>
-          <div>
-            <p class="font-medium text-brand leading-relaxed">Receive a fully functional branded demo within 48 hours.</p>
-            <p class="mt-2 text-[0.95rem] text-ink/75 leading-relaxed">A working sample in your name, logo, and colours, loaded with your own content. Not a slide. Show it to your team, your board, or council before you commit to a line item.</p>
-          </div>
+        <li class="border-t border-line pt-4">
+          <div class="font-serif text-2xl text-gold leading-none">02</div>
+          <p class="mt-3 text-[0.95rem] text-ink leading-relaxed">Receive a branded demo within 48 hours.</p>
         </li>
-        <li>
-          <span class="n" aria-hidden="true">03</span>
-          <div>
-            <p class="font-medium text-brand leading-relaxed">You tell us how you liked it and what we should change.</p>
-            <p class="mt-2 text-[0.95rem] text-ink/75 leading-relaxed">We adjust it. There is no implementation fee, and you pay nothing until you are live.</p>
-          </div>
+        <li class="border-t border-line pt-4">
+          <div class="font-serif text-2xl text-gold leading-none">03</div>
+          <p class="mt-3 text-[0.95rem] text-ink leading-relaxed">Tell us how you liked it and what we should change.</p>
         </li>
-        <li>
-          <span class="n" aria-hidden="true">04</span>
-          <div>
-            <p class="font-medium text-brand leading-relaxed">We finish it up and ship it out, ready for the people you serve.</p>
-            <p class="mt-2 text-[0.95rem] text-ink/75 leading-relaxed">Typical launch is about two weeks. We create, deploy, and maintain it. Where an app store listing applies, we handle the submission. Your staff can take the last say in the dashboard at any time.</p>
-          </div>
+        <li class="border-t border-line pt-4">
+          <div class="font-serif text-2xl text-gold leading-none">04</div>
+          <p class="mt-3 text-[0.95rem] text-ink leading-relaxed">We finish it and ship it, ready for the people you serve.</p>
         </li>
       </ol>
-      <div class="mt-10 flex flex-wrap gap-3">
+      <div class="mt-8 flex flex-wrap gap-3">
         <a href="/demo/" class="px-7 py-3.5 btn btn-primary">Book a Demo</a>
         <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 btn btn-secondary">Email us</a>
       </div>
-      <p class="mt-5 text-sm text-sub">Plans start at $150 a month. <a href="/pricing/" class="text-brand font-medium hover:underline">See pricing</a> if you want the numbers first.</p>
     </div>
   </section>
 
