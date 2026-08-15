@@ -21,8 +21,37 @@
   .cta-band {
     @apply rounded-xl bg-brand text-paper px-6 py-12 md:px-12 md:py-16 text-center border border-brand;
   }
+  .btn {
+    @apply inline-flex items-center justify-center font-semibold transition;
+    border-radius: 0;
+    letter-spacing: 0.02em;
+    clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%);
+  }
+  .btn:focus-visible {
+    outline: 2px solid #D4C7B0;
+    outline-offset: 2px;
+  }
+  .btn-primary {
+    @apply bg-brand text-paper hover:bg-brand2;
+    border-left: 3px solid #D4C7B0;
+  }
   .btn-on-dark {
-    @apply bg-paper text-brand font-semibold hover:bg-gold2 transition;
+    @apply bg-paper text-brand hover:bg-gold2;
+    border-left: 3px solid #123B2C;
+  }
+  .btn-secondary {
+    @apply bg-surface text-ink;
+    border: 1px solid #E7E0D2;
+    border-left: 3px solid #123B2C;
+  }
+  .btn-secondary:hover {
+    border-color: rgb(18 59 44 / 0.4);
+    border-left-color: #123B2C;
+  }
+  .btn-ghost-dark {
+    @apply bg-white/10 text-paper hover:bg-white/15;
+    border: 1px solid rgb(255 255 255 / 0.2);
+    border-left: 3px solid #D4C7B0;
   }
   .price-col {
     @apply rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left;
