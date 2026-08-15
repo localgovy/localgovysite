@@ -216,7 +216,7 @@
   <section class="pb-16 md:pb-20">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-4">
       <a href="/localbiz/dispensary/" class="template-row group">
-        <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21V11M12 12c-5 0-8-4.5-9-8.5 5.5 1 8 4.5 9 8.5M12 12c5 0 8-4.5 9-8.5-5.5 1-8 4.5-9 8.5M12 12c0-5-2-9-5.5-10.5 2.5 3.5 4.5 7 5.5 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21v-8M12 13c-1-5.4-2.8-8.4-6-9.8 2.6 2.4 4.6 5.8 6 9.8M12 13c1-5.4 2.8-8.4 6-9.8-2.6 2.4-4.6 5.8-6 9.8M12 13c-4.4-1.8-7.6-1.2-9.4.2 2.8.2 6.4.4 9.4-.2M12 13c4.4-1.8 7.6-1.2 9.4.2-2.8.2-6.4.4-9.4-.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="min-w-0 flex-1">
           <h2 class="font-serif text-xl sm:text-2xl text-brand">Dispensary</h2>
           <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Catalog, cart, and checkout with age gating and potency data for licensed cannabis retail.</p>
@@ -224,10 +224,10 @@
         <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="/localbiz/restaurant/" class="template-row group">
-        <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 3v7a2 2 0 01-2 2H5M8 3c0 3-3 3.5-3 7M16 3v18M16 8h4a1 1 0 011 1v3a3 3 0 01-3 3h-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3v7M8 3v18M11 3v7M5 10h6M16 21V8.5M16 3.2c2.6 1.4 3.6 4.4 3 8.3H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="min-w-0 flex-1">
           <h2 class="font-serif text-xl sm:text-2xl text-brand">Restaurant</h2>
-          <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">In-app ordering, table bookings, daily specials, and loyalty — without a delivery-platform commission.</p>
+          <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">In-app ordering, table bookings, daily specials, and loyalty — without any added service fees at checkout.</p>
         </div>
         <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -244,24 +244,25 @@
 
   <!-- Who + Pricing -->
   <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
-      <div>
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-3 items-stretch">
+      <div class="rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-8 md:p-10 flex flex-col">
         <h2 class="font-serif text-3xl md:text-4xl text-brand">Built for any local business</h2>
         <p class="mt-4 text-ink/80 leading-relaxed">If people come back to you more than once a month, an app pays for itself. These are the businesses we build for most often.</p>
-        <ul class="mt-6 grid sm:grid-cols-2 gap-y-2.5 gap-x-4 text-[0.95rem] font-medium text-ink/85">
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Golf sim</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Café</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Restaurant</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span> Dispensary</li>
+        <ul class="mt-8 grid grid-cols-2 border-t border-l border-line">
+          <li class="border-b border-r border-line px-4 py-4 font-serif text-lg text-brand">Golf sim</li>
+          <li class="border-b border-r border-line px-4 py-4 font-serif text-lg text-brand">Café</li>
+          <li class="border-b border-r border-line px-4 py-4 font-serif text-lg text-brand">Restaurant</li>
+          <li class="border-b border-r border-line px-4 py-4 font-serif text-lg text-brand">Dispensary</li>
         </ul>
       </div>
-      <div class="rounded-xl border border-line bg-paper p-8 md:p-10">
-        <p class="mt-2 font-serif text-5xl text-brand">$150<span class="text-lg text-sub font-sans">/month</span></p>
-        <p class="mt-1 text-sm text-sub">Billed annually · first month free</p>
-        <p class="mt-4 text-ink leading-relaxed">No build fee and no charge until your app is live. Roughly what one month of delivery-app commissions costs a busy kitchen. Branded iOS and Android, ordering, bookings, loyalty, push, dashboard, and training.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/demo/?type=retail" class="inline-flex px-6 py-3.5 btn btn-primary">Book a Demo</a>
-          <a href="/pricing/#businesses" class="inline-flex px-6 py-3.5 btn btn-secondary">See pricing</a>
+      <div class="rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-8 md:p-10 flex flex-col">
+        <p class="font-serif text-lg text-gold tracking-tight">Starting at</p>
+        <p class="mt-3 font-serif text-5xl text-brand">$150<span class="text-lg text-sub font-sans">/mo</span></p>
+        <p class="mt-2 text-sm text-sub">Billed annually · first month free</p>
+        <p class="mt-5 text-ink leading-relaxed">No build fee and no charge until your app is live. Roughly what one month of delivery-app commissions costs a busy kitchen. Branded iOS and Android, ordering, bookings, loyalty, push, dashboard, and training.</p>
+        <div class="mt-8 flex flex-wrap gap-3 mt-auto pt-6">
+          <a href="/demo/?type=retail" class="px-6 py-3.5 btn btn-primary">Book a Demo</a>
+          <a href="/pricing/#businesses" class="px-6 py-3.5 btn btn-secondary">See pricing</a>
         </div>
       </div>
     </div>

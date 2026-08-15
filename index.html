@@ -220,6 +220,28 @@
     }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
+    .process-steps {
+      list-style: none;
+      margin: 2.25rem 0 0;
+      padding: 0;
+      border-top: 1px solid #E7E0D2;
+    }
+    .process-steps li {
+      display: grid;
+      grid-template-columns: 1.75rem minmax(0, 1fr);
+      column-gap: 1.15rem;
+      align-items: baseline;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid #E7E0D2;
+    }
+    .process-steps .n {
+      font-family: Newsreader, Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: #2F5644;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.55;
+    }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
@@ -276,7 +298,10 @@
           <a href="/localgovy/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Municipalities</a>
           <a href="/localfaith/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Religious Institutions</a>
         </div>
-        <p class="mt-6 text-sm text-ink/70">Starting at $150/mo · Towns: app $150, app + one site $250 · <a href="/pricing/" class="text-brand font-semibold hover:underline">See pricing</a></p>
+        <p class="mt-8 inline-flex items-baseline justify-center gap-2.5 text-[0.95rem] text-ink/65">
+          <span class="font-serif text-2xl leading-none tracking-tight text-gold">$150</span>
+          <span>a month to start · <a href="/pricing/" class="text-brand font-medium hover:underline">See pricing</a></span>
+        </p>
       </div>
     </div>
   </section>
@@ -294,23 +319,46 @@
     </div>
   </section>
 
-  <!-- ===== VALUE PROPS ===== -->
+  <!-- ===== WHAT HAPPENS NEXT ===== -->
   <section class="py-16 md:py-20">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-10 md:gap-12">
-        <div class="border-t-[3px] border-brand pt-5">
-          <h2 class="font-serif text-2xl text-brand">Sell without the middleman</h2>
-          <p class="mt-3 text-[0.95rem] text-ink/80 leading-relaxed">Ordering, reservations, and donations run through your own checkout. No delivery-app commissions, and nobody gets handed off to a third-party page to pay.</p>
-        </div>
-        <div class="border-t-[3px] border-brand pt-5">
-          <h2 class="font-serif text-2xl text-brand">Reach people directly</h2>
-          <p class="mt-3 text-[0.95rem] text-ink/80 leading-relaxed">A push lands on the lock screen of everyone who installed the app. No ad budget, no waiting on a social feed to show your post.</p>
-        </div>
-        <div class="border-t-[3px] border-brand pt-5">
-          <h2 class="font-serif text-2xl text-brand">Genuinely yours</h2>
-          <p class="mt-3 text-[0.95rem] text-ink/80 leading-relaxed">Your name, logo, and colours on the outside. Your actual menu, service times, or departments on the inside. It ships on the stores under your own account.</p>
-        </div>
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl md:text-4xl text-brand tracking-tight">What happens next</h2>
+      <p class="mt-4 text-ink/80 leading-relaxed">Send a few details. Within 48 hours you have a working sample in your brand. You tell us what to change. We finish it and ship it. You pay nothing until you are live.</p>
+      <ol class="process-steps">
+        <li>
+          <span class="n" aria-hidden="true">01</span>
+          <div>
+            <p class="font-medium text-brand leading-relaxed">Send us your organization's name, website, and any details you feel like we need to know.</p>
+            <p class="mt-2 text-[0.95rem] text-ink/75 leading-relaxed">The demo form is four fields and takes under a minute. Say whether you are a business, a municipality, or a religious institution. Add a current site, a menu, colours — whatever would help.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">02</span>
+          <div>
+            <p class="font-medium text-brand leading-relaxed">Receive a fully functional branded demo within 48 hours.</p>
+            <p class="mt-2 text-[0.95rem] text-ink/75 leading-relaxed">A working sample in your name, logo, and colours, loaded with your own content. Not a slide. Show it to your team, your board, or council before you commit to a line item.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">03</span>
+          <div>
+            <p class="font-medium text-brand leading-relaxed">You tell us how you liked it and what we should change.</p>
+            <p class="mt-2 text-[0.95rem] text-ink/75 leading-relaxed">We adjust it. There is no implementation fee, and you pay nothing until you are live.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">04</span>
+          <div>
+            <p class="font-medium text-brand leading-relaxed">We finish it up and ship it out, ready for the people you serve.</p>
+            <p class="mt-2 text-[0.95rem] text-ink/75 leading-relaxed">Typical launch is about two weeks. We create, deploy, and maintain it. Where an app store listing applies, we handle the submission. Your staff can take the last say in the dashboard at any time.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/demo/" class="px-7 py-3.5 btn btn-primary">Book a Demo</a>
+        <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 btn btn-secondary">Email us</a>
       </div>
+      <p class="mt-5 text-sm text-sub">Plans start at $150 a month. <a href="/pricing/" class="text-brand font-medium hover:underline">See pricing</a> if you want the numbers first.</p>
     </div>
   </section>
 
@@ -325,9 +373,7 @@
 
       <div class="mt-12 max-w-3xl space-y-4">
         <a href="/localbiz/" class="template-row group">
-          <div class="template-thumb">
-            <picture><source type="image/webp" srcset="/dispensary-showcase-420.webp" /><img src="/dispensary-showcase.jpg" alt="Retail and ordering app example" width="471" height="1024" loading="lazy" decoding="async" /></picture>
-          </div>
+          <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v10h14V10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="min-w-0 flex-1">
             <h3 class="font-serif text-xl sm:text-2xl text-brand">For Businesses</h3>
             <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Dispensary, restaurant, and golf simulator templates — ordering, bookings, and loyalty in your own app.</p>
@@ -335,9 +381,7 @@
           <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="/localgovy/" class="template-row group">
-          <div class="template-thumb">
-            <picture><source type="image/webp" srcset="/IMG_7894-420.webp" /><img src="/IMG_7894.jpg" alt="Municipality app example" width="540" height="1122" loading="lazy" decoding="async" /></picture>
-          </div>
+          <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 2.5h10A1.5 1.5 0 0118.5 4v16a1.5 1.5 0 01-1.5 1.5H7A1.5 1.5 0 015.5 20V4A1.5 1.5 0 017 2.5zM12 18.25h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="min-w-0 flex-1">
             <h3 class="font-serif text-xl sm:text-2xl text-brand">For Municipalities</h3>
             <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Towns and cities — an iOS and Android app, or the app plus one website. News, alerts, events, polls, and a 24/7 resident assistant.</p>
@@ -345,9 +389,7 @@
           <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="/localfaith/" class="template-row group">
-          <div class="template-thumb">
-            <picture><source type="image/webp" srcset="/mosque-showcase-420.webp" /><img src="/mosque-showcase.png" alt="Religious institution app example" width="471" height="1024" loading="lazy" decoding="async" /></picture>
-          </div>
+          <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3M6 20V10l6-4 6 4v10M10 20v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="min-w-0 flex-1">
             <h3 class="font-serif text-xl sm:text-2xl text-brand">For Religious Institutions</h3>
             <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Mosque, church, and temple templates — prayer and service times, giving, events, and a matching website.</p>
@@ -367,25 +409,6 @@
           <a href="/demo/" class="inline-flex justify-center px-6 py-2.5 btn btn-on-dark whitespace-nowrap">Book a Demo</a>
           <a href="/pricing/" class="inline-flex justify-center px-6 py-2.5 btn btn-ghost-dark whitespace-nowrap">See pricing</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto">
-        <div class="text-xs uppercase tracking-[0.2em] text-gold font-bold">How it works</div>
-        <h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand">Demo in 48 hours. Live in 2 weeks.</h2>
-      </div>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="border-t border-line pt-5"><div class="font-serif text-3xl text-gold">01</div><h3 class="mt-3 font-serif text-xl text-brand">Tell us about your organization</h3><p class="mt-2 text-sm text-ink/75">Four fields on the demo form. It takes under a minute.</p></div>
-        <div class="border-t border-line pt-5"><div class="font-serif text-3xl text-gold">02</div><h3 class="mt-3 font-serif text-xl text-brand">We build the demo in 48 hours</h3><p class="mt-2 text-sm text-ink/75">A real sample in your name, logo, and colours, loaded with your own content.</p></div>
-        <div class="border-t border-line pt-5"><div class="font-serif text-3xl text-gold">03</div><h3 class="mt-3 font-serif text-xl text-brand">You tell us what to change</h3><p class="mt-2 text-sm text-ink/75">We adjust it, finish the setup, and hand you the dashboard.</p></div>
-        <div class="border-t border-line pt-5"><div class="font-serif text-3xl text-gold">04</div><h3 class="mt-3 font-serif text-xl text-brand">You're live in 2 weeks</h3><p class="mt-2 text-sm text-ink/75">We handle store submissions where they apply, and train your team.</p></div>
-      </div>
-      <div class="mt-10 text-center">
-        <a href="/demo/" class="inline-flex px-6 py-3 btn btn-primary">Book a Demo</a>
       </div>
     </div>
   </section>
