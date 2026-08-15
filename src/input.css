@@ -21,6 +21,9 @@
   .cta-band {
     @apply rounded-xl bg-brand text-paper px-6 py-12 md:px-12 md:py-16 text-center border border-brand;
   }
+  .btn-on-dark {
+    @apply bg-paper text-brand font-semibold hover:bg-gold2 transition;
+  }
   .price-col {
     @apply rounded-xl border border-line bg-paper p-6 md:p-7 flex flex-col text-left;
   }

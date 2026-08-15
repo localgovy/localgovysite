@@ -4,6 +4,7 @@ module.exports = {
     './*.html',
     './about/**/*.html',
     './demo/**/*.html',
+    './pricing/**/*.html',
     './localbiz/**/*.html',
     './localfaith/**/*.html',
     './localgovy/**/*.html',
@@ -21,9 +22,9 @@ module.exports = {
         sub: '#48514A',
         brand: '#123B2C',
         brand2: '#1E5A42',
-        // Darker golds pass WCAG AA for small text on paper and white-on-gold buttons
-        gold: '#8A6420',
-        gold2: '#A07828',
+        // Sage for small labels on paper; linen for type on dark green. Not used as button fill.
+        gold: '#2F5644',
+        gold2: '#D4C7B0',
         line: '#E7E0D2',
       },
       boxShadow: {
