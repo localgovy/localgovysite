@@ -30,6 +30,9 @@
   .price-col-featured {
     @apply border-brand bg-brand text-paper;
   }
+  .price-amt {
+    @apply mt-3 min-h-[2.75rem] flex items-end;
+  }
   .brief-list {
     @apply divide-y divide-line border-t border-b border-line;
   }
