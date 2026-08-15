@@ -330,45 +330,41 @@
   <!-- ===== TEMPLATES GALLERY ===== -->
   <section id="templates" class="py-16 md:py-24 bg-surface border-y border-line scroll-mt-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <div class="text-xs uppercase tracking-[0.2em] text-gold font-bold">Templates</div>
-        <h2 class="mt-3 font-serif text-3xl md:text-4xl text-brand leading-tight">Pick a platform, then a template.</h2>
-        <p class="mt-4 text-ink/80 leading-relaxed">Each row opens a catalog. We start from a tested foundation so we can move in days instead of months. What we build is yours: your products, your service times, your departments. Retail and faith ship as apps on the stores. Towns take an app, or an app and one website.</p>
+      <div class="grid lg:grid-cols-2 gap-6 lg:gap-16 items-end">
+        <div>
+          <p class="font-serif text-lg text-gold tracking-tight">Templates</p>
+          <h2 class="mt-2 font-serif text-3xl md:text-4xl text-brand leading-tight">Pick a platform, then a template.</h2>
+        </div>
+        <p class="text-ink/80 leading-relaxed">Each card opens a catalog. We start from a tested foundation so we can move in days instead of months. What we build is yours: your products, your service times, your departments. Retail and faith ship as apps on the stores. Towns take an app, or an app and one website.</p>
       </div>
 
-      <div class="mt-12 max-w-3xl space-y-4">
-        <a href="/localbiz/" class="template-row group">
-          <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v10h14V10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="min-w-0 flex-1">
-            <h3 class="font-serif text-xl sm:text-2xl text-brand">For Businesses</h3>
-            <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Dispensary, restaurant, and golf simulator templates — ordering, bookings, and loyalty in your own app.</p>
-          </div>
-          <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="mt-10 grid md:grid-cols-3 gap-3">
+        <a href="/localbiz/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+          <div class="w-11 h-11 rounded-md bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 10l9-6 9 6M5 10v10h14V10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 class="mt-5 font-serif text-2xl text-brand">For Businesses</h3>
+          <p class="mt-2 text-sm text-ink/75 leading-relaxed flex-1">Dispensary, restaurant, and golf simulator templates — ordering, bookings, and loyalty in your own app.</p>
+          <span class="mt-6 text-sm font-semibold text-brand inline-flex items-center gap-2">See templates <svg class="template-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a href="/localgovy/" class="template-row group">
-          <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 2.5h10A1.5 1.5 0 0118.5 4v16a1.5 1.5 0 01-1.5 1.5H7A1.5 1.5 0 015.5 20V4A1.5 1.5 0 017 2.5zM12 18.25h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="min-w-0 flex-1">
-            <h3 class="font-serif text-xl sm:text-2xl text-brand">For Municipalities</h3>
-            <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Towns and cities — an iOS and Android app, or the app plus one website. News, alerts, events, polls, and a 24/7 resident assistant.</p>
-          </div>
-          <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="/localgovy/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+          <div class="w-11 h-11 rounded-md bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 2.5h10A1.5 1.5 0 0118.5 4v16a1.5 1.5 0 01-1.5 1.5H7A1.5 1.5 0 015.5 20V4A1.5 1.5 0 017 2.5zM12 18.25h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 class="mt-5 font-serif text-2xl text-brand">For Municipalities</h3>
+          <p class="mt-2 text-sm text-ink/75 leading-relaxed flex-1">Towns and cities — an iOS and Android app, or the app plus one website. News, alerts, events, polls, and a 24/7 resident assistant.</p>
+          <span class="mt-6 text-sm font-semibold text-brand inline-flex items-center gap-2">See templates <svg class="template-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a href="/localfaith/" class="template-row group">
-          <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3M6 20V10l6-4 6 4v10M10 20v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="min-w-0 flex-1">
-            <h3 class="font-serif text-xl sm:text-2xl text-brand">For Religious Institutions</h3>
-            <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Mosque, church, and temple templates — prayer and service times, giving, events, and a matching website.</p>
-          </div>
-          <svg class="template-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="/localfaith/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+          <div class="w-11 h-11 rounded-md bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v3M6 20V10l6-4 6 4v10M10 20v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 class="mt-5 font-serif text-2xl text-brand">For Religious Institutions</h3>
+          <p class="mt-2 text-sm text-ink/75 leading-relaxed flex-1">Mosque, church, and temple templates — prayer and service times, giving, events, and a matching website.</p>
+          <span class="mt-6 text-sm font-semibold text-brand inline-flex items-center gap-2">See templates <svg class="template-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
       </div>
 
-      <div class="mt-8 rounded-2xl border border-dashed border-line bg-paper/60 p-6 text-center">
+      <div class="mt-3 rounded-xl border border-line bg-paper/60 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <p class="text-sm text-ink/80">Don't see your industry? <strong class="font-semibold text-brand">We add new platforms regularly.</strong> Tell us what you do and we'll tell you honestly whether we can build it.</p>
-        <a href="/demo/?type=other" class="mt-3 inline-flex px-5 py-2.5 btn btn-primary">Ask about your industry</a>
+        <a href="/demo/?type=other" class="flex-shrink-0 px-5 py-2.5 btn btn-primary">Ask about your industry</a>
       </div>
 
-      <div class="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t-[3px] border-brand bg-brand text-paper px-6 py-5">
+      <div class="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t-[3px] border-brand bg-brand text-paper px-6 py-5">
         <p class="text-sm md:text-base text-paper/90">Starting at $150/mo · Towns: app, or app and a site · Demo in 48 hours</p>
         <div class="flex flex-wrap gap-3">
           <a href="/demo/" class="inline-flex justify-center px-6 py-2.5 btn btn-on-dark whitespace-nowrap">Book a Demo</a>
