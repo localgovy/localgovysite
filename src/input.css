@@ -25,10 +25,10 @@
     @apply bg-paper text-brand font-semibold hover:bg-gold2 transition;
   }
   .price-col {
-    @apply rounded-xl border border-line bg-paper p-6 md:p-7 flex flex-col text-left;
+    @apply rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left;
   }
   .price-col-featured {
-    @apply border-brand bg-brand text-paper;
+    @apply border-brand border-t-gold2 bg-brand text-paper;
   }
   .price-amt {
     @apply mt-3 min-h-[2.75rem] flex items-end;
