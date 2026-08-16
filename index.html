@@ -74,7 +74,28 @@
         "url": "https://localgovy.com/",
         "name": "LocalGovy",
         "publisher": { "@id": "https://localgovy.com/#organization" },
-        "inLanguage": "en-CA"
+        "inLanguage": "en-CA",
+        "hasPart": [
+          { "@type": "WebPage", "name": "For Municipalities", "url": "https://localgovy.com/municipal/", "description": "News, alerts, a business directory, and a 24/7 assistant for Canadian towns. App $75/mo, or app plus one website $250/mo." },
+          { "@type": "WebPage", "name": "For Businesses", "url": "https://localgovy.com/business/", "description": "Branded iOS and Android for shops, restaurants, and retail — ordering, bookings, loyalty, and push. Starting at $100/mo." },
+          { "@type": "WebPage", "name": "For Religious Institutions", "url": "https://localgovy.com/religion/", "description": "A branded app and matching website — prayer and service times, giving, events, and livestreams. Starting at $150/mo." },
+          { "@type": "WebPage", "name": "Pricing", "url": "https://localgovy.com/pricing/", "description": "Published CAD rates for towns, businesses, and religious institutions. First month free. Nothing to pay until you are live." },
+          { "@type": "WebPage", "name": "Book a Demo", "url": "https://localgovy.com/demo/", "description": "A working branded demo in 48 hours. Send the name and website. You tell us what to change." }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://localgovy.com/#sitelinks",
+        "name": "Primary pages",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 5,
+        "itemListElement": [
+          { "@type": "SiteNavigationElement", "position": 1, "name": "For Municipalities", "url": "https://localgovy.com/municipal/", "description": "News, alerts, a business directory, and a 24/7 assistant for Canadian towns. App $75/mo, or app plus one website $250/mo." },
+          { "@type": "SiteNavigationElement", "position": 2, "name": "For Businesses", "url": "https://localgovy.com/business/", "description": "Branded iOS and Android for shops, restaurants, and retail — ordering, bookings, loyalty, and push. Starting at $100/mo." },
+          { "@type": "SiteNavigationElement", "position": 3, "name": "For Religious Institutions", "url": "https://localgovy.com/religion/", "description": "A branded app and matching website — prayer and service times, giving, events, and livestreams. Starting at $150/mo." },
+          { "@type": "SiteNavigationElement", "position": 4, "name": "Pricing", "url": "https://localgovy.com/pricing/", "description": "Published CAD rates for towns, businesses, and religious institutions. First month free. Nothing to pay until you are live." },
+          { "@type": "SiteNavigationElement", "position": 5, "name": "Book a Demo", "url": "https://localgovy.com/demo/", "description": "A working branded demo in 48 hours. Send the name and website. You tell us what to change." }
+        ]
       },
       {
         "@type": "ProfessionalService",
@@ -113,7 +134,15 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Apps for businesses",
+                "name": "For Municipalities",
+                "url": "https://localgovy.com/municipal/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "For Businesses",
                 "url": "https://localgovy.com/business/"
               }
             },
@@ -121,15 +150,7 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Dispensary ordering apps",
-                "url": "https://localgovy.com/business/dispensary/"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Apps for religious institutions",
+                "name": "For Religious Institutions",
                 "url": "https://localgovy.com/religion/"
               }
             },
@@ -137,8 +158,16 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Municipal websites and apps",
-                "url": "https://localgovy.com/municipal/"
+                "name": "Pricing",
+                "url": "https://localgovy.com/pricing/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Book a Demo",
+                "url": "https://localgovy.com/demo/"
               }
             }
           ]
