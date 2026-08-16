@@ -133,6 +133,36 @@
     }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
+    .cta-steps {
+      list-style: none;
+      margin: 1.75rem auto 0;
+      max-width: 28.5rem;
+      padding: 0;
+      text-align: left;
+      border-top: 1px solid rgba(212, 199, 176, 0.34);
+    }
+    .cta-steps li {
+      display: grid;
+      grid-template-columns: 1.75rem minmax(0, 1fr);
+      column-gap: 1.15rem;
+      align-items: baseline;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(212, 199, 176, 0.34);
+    }
+    .cta-steps .n {
+      font-family: Newsreader, Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: #D4C7B0;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.55;
+    }
+    .cta-steps p {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: rgba(246, 243, 236, 0.9);
+    }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
@@ -207,17 +237,28 @@
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-surface border-y border-line">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-3xl md:text-4xl text-brand">App and website, $150 a month</h2>
-      <p class="mt-3 text-ink/80 leading-relaxed">Unlike towns, religious institutions get the matching website in this one plan. Billed annually, first month free, no setup fee.</p>
-      <div class="mt-8 rounded-xl border border-line bg-paper p-8 md:p-10">
-        <p class="font-serif text-5xl text-brand">$150<span class="text-lg text-sub font-sans">/month</span></p>
-        <p class="mt-2 text-sm text-sub">Branded iOS and Android app plus the matching website on the same dashboard.</p>
-        <p class="mt-6 text-ink leading-relaxed">Push notifications, events, giving, media, forms, training, and support. This is not the municipal price list — towns take the app at $150, or the app plus one website at $250.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/demo/?type=faith" class="inline-flex px-6 py-3.5 btn btn-primary">Book a Demo</a>
-          <a href="/pricing/#faith" class="inline-flex px-6 py-3.5 btn btn-secondary">See pricing</a>
+  <!-- Who + Pricing -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-3 items-stretch">
+      <div class="rounded-xl border border-brand/20 border-t-[3px] border-t-brand bg-surface p-8 md:p-10 flex flex-col">
+        <h2 class="font-serif text-3xl md:text-4xl text-brand">Built for any faith community</h2>
+        <p class="mt-4 text-ink/80 leading-relaxed">If people come back to you more than once a week, an app pays for itself. These are the communities we build for most often.</p>
+        <ul class="mt-8 grid grid-cols-2 border-t border-l border-brand/20">
+          <li class="border-b border-r border-brand/20 px-4 py-4 font-serif text-lg text-brand">Mosque</li>
+          <li class="border-b border-r border-brand/20 px-4 py-4 font-serif text-lg text-brand">Church</li>
+          <li class="border-b border-r border-brand/20 px-4 py-4 font-serif text-lg text-brand">Temple</li>
+          <li class="border-b border-r border-brand/20 px-4 py-4 font-serif text-lg text-brand">Synagogue</li>
+        </ul>
+      </div>
+      <div class="rounded-xl border border-brand/20 border-t-[3px] border-t-brand bg-surface p-8 md:p-10 flex flex-col">
+        <p class="font-serif text-lg text-gold tracking-tight">Starting at</p>
+        <p class="mt-3 font-serif text-5xl text-brand">$150<span class="text-lg text-sub font-sans">/mo</span></p>
+        <p class="mt-2 text-sm text-sub">Billed annually · first month free</p>
+        <p class="mt-5 text-ink leading-relaxed">A branded iOS and Android app and a matching website, customized for your community — prayer and service times, giving, events, and livestreams. We create, deploy, and maintain it. You have the last say in the administrative dashboard; we fill in the gaps.</p>
+        <p class="mt-3 text-sm text-sub leading-relaxed">No implementation fee. You pay nothing until you are live. The matching website is included in this plan.</p>
+        <div class="mt-8 flex flex-wrap gap-3 mt-auto pt-6">
+          <a href="/demo/?type=faith" class="px-6 py-3.5 btn btn-primary">Book a Demo</a>
+          <a href="/pricing/#faith" class="px-6 py-3.5 btn btn-secondary">See pricing</a>
         </div>
       </div>
     </div>
@@ -229,8 +270,8 @@
       <h2 class="font-serif text-3xl md:text-4xl text-brand text-center mb-10">Frequently asked questions</h2>
       <div class="divide-y divide-line border-t border-b border-line">
         <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">Is every app the same?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">No. A mosque app shouldn't feel like a church app. We set up <strong>your prayer or service times, language, giving categories, and events</strong> rather than handing you a rebranded copy of another community's app.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">Do you build the website too?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Yes. The $150 Complete Platform includes a matching website connected to the same system as the app. That is different from municipalities, where the app is $150 and a website is added in the $250 plan.</p></details>
-        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">How much does a faith community app cost?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">The Complete Platform is <strong>$150/month</strong>, billed annually with the first month free. It includes a branded app and a matching website, with no setup fee and nothing charged until you're live.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">Do you build the website too?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Yes. The $150 Complete Platform includes a matching website connected to the same system as the app. That is different from municipalities, where the app is $150 and a website is added in the $250 plan.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">How much does a faith community app cost?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">The Complete Platform is <strong>$150/month</strong>, billed annually with the first month free. It includes a branded app and a matching website, with no setup fee and nothing charged until you're live.</p></details>
         <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand -mx-4 px-4 py-2 rounded-xl hover:bg-paper/60 transition">Can we accept donations?<svg class="transition group-open:rotate-180" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Yes. One-time and recurring giving, campaign pages with goals, and whichever categories fit your community, from zakat and seva to tithes and a building fund. Donations settle into your own account.</p></details>
       </div>
     </div>
@@ -239,8 +280,26 @@
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <div class="cta-band">
-        <h2 class="font-serif text-3xl md:text-4xl">One place for the congregation</h2>
-        <p class="mt-4 text-paper/85 max-w-xl mx-auto">Tell us your institution's name. We'll send a working app with your times and branding within 48 hours. Show it to your board before you commit.</p>
+        <h2 class="font-serif text-3xl md:text-4xl tracking-tight">Keep your congregation coming back</h2>
+        <div class="mx-auto mt-5 h-px w-10 bg-gold2/50" aria-hidden="true"></div>
+        <ol class="cta-steps">
+          <li>
+            <span class="n" aria-hidden="true">01</span>
+            <p>Send us the institution's name, website, and any details you feel like we need to know.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">02</span>
+            <p>Receive a fully functional branded demo within 48 hours.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">03</span>
+            <p>You tell us how you like it and if we should make any tweaks.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">04</span>
+            <p>We finish it up and ship it out, ready for your community.</p>
+          </li>
+        </ol>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
           <a href="/demo/?type=faith" class="px-7 py-3.5 btn btn-on-dark">Book a Demo</a>
           <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 btn btn-ghost-dark">Email us</a>
