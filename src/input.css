@@ -42,6 +42,12 @@
     flex-shrink: 0;
     background: rgb(246 243 236 / 0.22);
   }
+  .nav-rule-ink {
+    width: 1px;
+    height: 0.85rem;
+    flex-shrink: 0;
+    background: rgb(18 59 44 / 0.18);
+  }
   .panel {
     border-radius: 0;
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
