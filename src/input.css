@@ -78,7 +78,7 @@
   }
   .btn {
     @apply inline-flex items-center justify-center font-semibold transition;
-    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
     border-radius: 0;
     letter-spacing: 0.01em;
     clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%);
