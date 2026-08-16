@@ -12,7 +12,7 @@
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
   <title>About LocalGovy — Toronto Apps for Retail, Faith, and Towns</title>
-  <meta name="description" content="LocalGovy is a Toronto company that builds branded apps for Canadian retail and religious institutions, and website-and-app subscriptions for towns. Founded by Noah Khan." />
+  <meta name="description" content="LocalGovy is a Toronto company that builds branded iOS and Android apps for Canadian retail and religious institutions, and for towns an app, or an app and one website. Founded by Noah Khan." />
   <meta name="keywords" content="LocalGovy, about LocalGovy, Noah Khan, Canadian mobile app company, Toronto app developer, religious institution apps, municipality apps Canada" />
   <meta name="author" content="LocalGovy" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -25,7 +25,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LocalGovy" />
   <meta property="og:title" content="About LocalGovy — Toronto Apps for Retail, Faith, and Towns" />
-  <meta property="og:description" content="LocalGovy is a Toronto company that builds branded apps for Canadian retail and religious institutions, and website-and-app subscriptions for towns." />
+  <meta property="og:description" content="LocalGovy is a Toronto company that builds branded apps for Canadian retail and religious institutions, and for towns an app, or an app and one website." />
   <meta property="og:url" content="https://localgovy.com/about/" />
   <meta property="og:image" content="https://localgovy.com/mosque-showcase.png" />
   <meta property="og:image:alt" content="LocalGovy branded community app example" />
@@ -34,7 +34,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About LocalGovy — Toronto Apps for Retail, Faith, and Towns" />
-  <meta name="twitter:description" content="LocalGovy is a Toronto company that builds branded apps for Canadian retail and religious institutions, and website-and-app subscriptions for towns." />
+  <meta name="twitter:description" content="LocalGovy is a Toronto company that builds branded apps for Canadian retail and religious institutions, and for towns an app, or an app and one website." />
   <meta name="twitter:image" content="https://localgovy.com/mosque-showcase.png" />
 
   <!-- Structured data -->
@@ -46,7 +46,7 @@
         "@type": "AboutPage",
         "url": "https://localgovy.com/about/",
         "name": "About LocalGovy",
-        "description": "LocalGovy builds branded mobile apps for local businesses and religious institutions, and municipal website and app subscriptions for towns.",
+        "description": "LocalGovy is a Toronto company that builds branded iOS and Android apps for Canadian retail and religious institutions, and for towns an app, or an app and one website.",
         "about": { "@type": "Organization", "name": "LocalGovy", "url": "https://localgovy.com/" }
       },
       {
@@ -83,9 +83,38 @@
   <link rel="preload" as="font" href="/assets/fonts/source-sans-3-latin.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts.css" />
   <link rel="stylesheet" href="/assets/site.css" />
-<style>
+  <style>
     html { scroll-behavior: smooth; }
-    .u-gold { background-image: linear-gradient(transparent 62%, rgba(212,199,176,0.55) 62%); }
+    .cta-steps {
+      list-style: none;
+      margin: 1.75rem auto 0;
+      max-width: 28.5rem;
+      padding: 0;
+      text-align: left;
+      border-top: 1px solid rgba(212, 199, 176, 0.34);
+    }
+    .cta-steps li {
+      display: grid;
+      grid-template-columns: 1.75rem minmax(0, 1fr);
+      column-gap: 1.15rem;
+      align-items: baseline;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(212, 199, 176, 0.34);
+    }
+    .cta-steps .n {
+      font-family: Newsreader, Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: #D4C7B0;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.55;
+    }
+    .cta-steps p {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: rgba(246, 243, 236, 0.9);
+    }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
@@ -112,34 +141,95 @@
         <a onclick="toggleMenu()" href="/business/" class="py-2.5 text-paper/85">For Businesses</a>
         <a onclick="toggleMenu()" href="/municipal/" class="py-2.5 text-paper/85">For Municipalities</a>
         <a onclick="toggleMenu()" href="/religion/" class="py-2.5 text-paper/85">For Religious Institutions</a>
-        <a onclick="toggleMenu()" href="/about/" class="py-2.5 text-paper/85 border-t border-white/10 mt-1 pt-3">About</a>
+        <a onclick="toggleMenu()" href="/about/" class="py-2.5 text-paper font-semibold border-t border-white/10 mt-1 pt-3">About</a>
         <a onclick="toggleMenu()" href="/pricing/" class="py-2.5 text-paper/85">Pricing</a>
         <a href="/demo/" class="mt-3 py-2.5 text-center btn btn-on-dark">Book a Demo</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative py-16 md:py-24 border-b border-line">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+  <div class="bg-surface/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><span class="text-brand font-medium">About</span></div></div>
+
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-10 md:pb-12">
       <p class="font-serif text-lg text-gold tracking-tight">About</p>
-      <h1 class="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-brand">A serious product shouldn't cost <span class="u-gold">six figures</span></h1>
-      <p class="mt-6 text-lg text-ink max-w-2xl mx-auto leading-relaxed">We design, build, and run apps for <strong class="font-semibold text-brand">Canadian retail</strong> and <strong class="font-semibold text-brand">religious institutions</strong>, and a website-and-app subscription for <strong class="font-semibold text-brand">towns</strong>, from our office in Toronto.</p>
-      <p class="mt-6 text-sm text-ink/70">Demo in 48 hours · Typical launch in about 2 weeks</p>
+      <h1 class="mt-3 font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight text-brand">A Toronto company.</h1>
+      <div class="mt-5 h-[3px] w-16 bg-brand" aria-hidden="true"></div>
+      <p class="mt-5 text-lg text-ink leading-relaxed">We design, build, and run branded iOS and Android apps for Canadian retail and religious institutions. Towns take an app, or an app and one website.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/demo/" class="px-6 py-3.5 btn btn-primary">Book a Demo</a>
+        <a href="mailto:noah@localgovy.com" class="px-6 py-3.5 btn btn-secondary">Email us</a>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+        <a href="/business/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Businesses</a>
+        <a href="/municipal/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Municipalities</a>
+        <a href="/religion/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Religious Institutions</a>
+      </div>
     </div>
   </section>
 
-  <!-- Story -->
-  <section class="pb-16 md:pb-20">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-surface border border-line p-8 md:p-12 shadow-card">
-        <h2 class="font-serif text-2xl md:text-3xl text-brand">Our story</h2>
-        <div class="mt-5 space-y-4 text-sub leading-relaxed">
-          <p>A custom mobile app has traditionally meant a quote in the tens of thousands, a six-month timeline, and a developer you have to call every time a price changes. For a café, a mosque, or a town of four thousand people, that has never been realistic.</p>
-          <p>So the same organizations end up scattered across a website nobody updates, a Facebook page most people don't see, and a payment link that belongs to someone else. LocalGovy exists to close that gap: a genuinely branded app for retail and faith from $150 a month, and for towns a subscription — the app, or the app plus one website.</p>
-          <p>We're early. We're taking on a small number of <strong class="font-semibold text-brand">founding partners</strong> in Ontario — organizations that get a fully built product, hands-on support, and a voice in how it develops. In return we ask for feedback and permission to use the work as a reference.</p>
-          <p>We do the design, the build, the store submissions where they apply, and the maintenance afterwards. You get a dashboard and a person to email. There's no build fee, and you don't pay until you're live.</p>
-          <p>Every product runs on <strong class="font-semibold text-brand">your real menu, service times, or departments</strong> from day one, not placeholder content. That's what makes it genuinely yours.</p>
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="font-serif text-lg text-gold tracking-tight">What we build</p>
+      <h2 class="mt-2 font-serif text-3xl md:text-4xl text-brand">Shops, congregations, and towns.</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-3">
+        <a href="/business/" class="group panel border border-line border-t-[3px] border-t-brand bg-surface p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+          <div class="mark w-11 h-11 bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 10l9-6 9 6M5 10v10h14V10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p class="mt-5 font-serif text-lg text-gold tracking-tight">For Businesses</p>
+          <h3 class="mt-1 font-serif text-2xl text-brand">Retail &amp; ordering</h3>
+          <p class="mt-3 text-sm text-ink/80 leading-relaxed flex-1">A branded iOS and Android app. Ordering, bookings, loyalty, and push. A public website is not included. Starting at $150/mo.</p>
+          <span class="mt-6 text-sm font-semibold text-brand inline-flex items-center gap-2">See demos <svg class="template-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="/municipal/" class="group panel border border-line border-t-[3px] border-t-brand bg-surface p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+          <div class="mark w-11 h-11 bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 21h16M7 18V11M12 18V11M17 18V11M5 11h14M12 4l8 7H4l8-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p class="mt-5 font-serif text-lg text-gold tracking-tight">For Municipalities</p>
+          <h3 class="mt-1 font-serif text-2xl text-brand">Apps and Websites</h3>
+          <p class="mt-3 text-sm text-ink/80 leading-relaxed flex-1">We offer our all-in-one flagship app either by itself or paired with a website for the lowest costs in Canada. Need a little more than a website and app? Inquire about Town Pro.</p>
+          <span class="mt-6 text-sm font-semibold text-brand inline-flex items-center gap-2">See demos <svg class="template-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="/religion/" class="group panel border border-line border-t-[3px] border-t-brand bg-surface p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+          <div class="mark w-11 h-11 bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v3M6 20V10l6-4 6 4v10M10 20v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p class="mt-5 font-serif text-lg text-gold tracking-tight">For Religious Institutions</p>
+          <h3 class="mt-1 font-serif text-2xl text-brand">App and website</h3>
+          <p class="mt-3 text-sm text-ink/80 leading-relaxed flex-1">A branded app and a matching website — prayer and service times, giving, events, and livestreams. Starting at $150/mo for both.</p>
+          <span class="mt-6 text-sm font-semibold text-brand inline-flex items-center gap-2">See demos <svg class="template-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-surface border-y border-line">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl md:text-4xl text-brand tracking-tight">How we work</h2>
+      <p class="mt-3 text-ink/75">A working demo in <strong class="font-semibold text-ink">48 hours</strong>. Nothing to pay until you are live.</p>
+      <ol class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-6">
+        <li class="border-t border-line pt-4">
+          <h3 class="font-serif text-xl text-brand">We design, build, and maintain it</h3>
+          <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Store submissions where they apply, ongoing updates, and a person to email. You do not hire a developer.</p>
+        </li>
+        <li class="border-t border-line pt-4">
+          <h3 class="font-serif text-xl text-brand">You have the last say</h3>
+          <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Post, edit, and delete from the administrative dashboard. We fill in the gaps wherever you need us.</p>
+        </li>
+        <li class="border-t border-line pt-4">
+          <h3 class="font-serif text-xl text-brand">Nothing until you are live</h3>
+          <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">No implementation fee. The branded sample is free to look at. Typical full launch is about two weeks.</p>
+        </li>
+        <li class="border-t border-line pt-4">
+          <h3 class="font-serif text-xl text-brand">Your content from day one</h3>
+          <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Every product runs on your real menu, service times, or departments — not placeholder content.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="panel border border-brand/20 border-t-[3px] border-t-brand bg-surface p-8 md:p-10">
+        <h2 class="font-serif text-3xl md:text-4xl text-brand">Why LocalGovy exists</h2>
+        <div class="mt-5 space-y-4 text-ink leading-relaxed">
+          <p>A custom mobile app has traditionally meant a quote in the tens of thousands, a long timeline, and a developer you have to call every time a price changes. For a café, a mosque, or a town of a few thousand people, that has never been realistic.</p>
+          <p>LocalGovy closes that gap: a branded app for retail and faith starting at $150 a month, and for towns an app, or the app plus one website.</p>
         </div>
         <div class="mt-8 pt-6 border-t border-line">
           <div class="font-semibold text-brand">Noah Khan</div>
@@ -149,29 +239,33 @@
     </div>
   </section>
 
-  <!-- What we build -->
-  <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-3xl md:text-4xl text-brand text-center">What we build</h2>
-      <div class="mt-10 grid md:grid-cols-3 gap-8">
-        <a href="/business/" class="block border-t-[3px] border-brand pt-5"><div class="text-xs uppercase tracking-[0.15em] text-gold font-semibold">For Businesses</div><h3 class="mt-2 font-serif text-xl text-brand">Retail &amp; ordering apps</h3><p class="mt-2 text-sm text-sub">Ordering, bookings, promotions, and loyalty through your own checkout, from $150/month.</p></a>
-        <a href="/religion/" class="block border-t-[3px] border-brand pt-5"><div class="text-xs uppercase tracking-[0.15em] text-gold font-semibold">For Religious Institutions</div><h3 class="mt-2 font-serif text-xl text-brand">App and website together</h3><p class="mt-2 text-sm text-sub">Prayer and service times, giving, events, and livestreams, with a matching website, $150/month.</p></a>
-        <a href="/municipal/" class="block border-t-[3px] border-brand pt-5"><div class="text-xs uppercase tracking-[0.15em] text-gold font-semibold">For Municipalities</div><h3 class="mt-2 font-serif text-xl text-brand">A subscription, not one SKU</h3><p class="mt-2 text-sm text-sub">Mobile app $150, or the app plus one website $250. Extra apps and sites are quoted.</p></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <div class="cta-band">
-        <h2 class="font-serif text-3xl md:text-4xl">See a demo in less than 48 hours</h2>
-        <p class="mt-4 text-paper/80 max-w-xl mx-auto">Tell us who you are and you'll have a sample in 48 hours. Based in Toronto, working with organizations across Canada and the US.</p>
+        <h2 class="font-serif text-3xl md:text-4xl tracking-tight">See it in your name in less than 48 hours</h2>
+        <div class="mx-auto mt-5 h-px w-10 bg-gold2/50" aria-hidden="true"></div>
+        <ol class="cta-steps">
+          <li>
+            <span class="n" aria-hidden="true">01</span>
+            <p>Send us the name, website, and any details you feel like we need to know.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">02</span>
+            <p>Receive a fully functional branded demo within 48 hours.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">03</span>
+            <p>You tell us how you like it and if we should make any tweaks.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">04</span>
+            <p>We finish it up and ship it out, ready for the people you serve.</p>
+          </li>
+        </ol>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
           <a href="/demo/" class="px-7 py-3.5 btn btn-on-dark">Book a Demo</a>
           <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 btn btn-ghost-dark">Email us</a>
         </div>
-        <p class="mt-6 text-sm text-paper/60"><a href="mailto:noah@localgovy.com" class="text-gold2 hover:underline">noah@localgovy.com</a></p>
       </div>
     </div>
   </section>
