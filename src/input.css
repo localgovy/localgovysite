@@ -3,6 +3,45 @@
 @tailwind utilities;
 
 @layer components {
+  .site-header-bar {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-6 lg:gap-10;
+  }
+  .site-header-bar > a:first-child,
+  .site-header-bar > div:last-child {
+    flex-shrink: 0;
+  }
+  .site-nav {
+    @apply hidden lg:flex items-center ml-auto gap-7 xl:gap-10 text-[0.8125rem] font-medium;
+  }
+  .nav-link {
+    position: relative;
+    color: rgb(246 243 236 / 0.78);
+    padding: 0.15rem 0;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+  }
+  .nav-link:hover {
+    color: #F6F3EC;
+  }
+  .nav-link-current {
+    color: #F6F3EC;
+    font-weight: 600;
+  }
+  .nav-link-current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.45rem;
+    height: 2px;
+    background: #D4C7B0;
+  }
+  .nav-rule {
+    width: 1px;
+    height: 0.85rem;
+    flex-shrink: 0;
+    background: rgb(246 243 236 / 0.22);
+  }
   .template-row {
     @apply flex items-center gap-4 sm:gap-6 rounded-2xl border border-line bg-paper p-4 sm:p-5 text-left hover:shadow-soft hover:border-brand/40 transition;
   }

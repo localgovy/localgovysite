@@ -174,14 +174,14 @@
 
   <!-- ===== HEADER ===== -->
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-3 xl:gap-5 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
-        <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
-        <a href="/localbiz/" class="text-paper font-semibold">For Businesses</a>
-        <a href="/localgovy/" class="text-paper/80 hover:text-paper transition">For Municipalities</a>
-        <a href="/localfaith/" class="text-paper/80 hover:text-paper transition">For Religious Institutions</a>
-        <a href="/pricing/" class="text-paper/80 hover:text-paper transition">Pricing</a>
+    <div class="site-header-bar">
+      <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-40 lg:w-44 brightness-125" width="256" height="256" decoding="async" /></picture></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/localbiz/" class="nav-link nav-link-current">For Businesses</a>
+        <a href="/localgovy/" class="nav-link">For Municipalities</a>
+        <a href="/localfaith/" class="nav-link">For Religious Institutions</a>
+        <span class="nav-rule" aria-hidden="true"></span>
+        <a href="/pricing/" class="nav-link">Pricing</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
         <a href="/demo/?type=retail" class="px-4 py-2 md:px-5 md:py-2.5 btn btn-on-dark text-sm md:text-base whitespace-nowrap">Book a Demo</a>
@@ -216,7 +216,7 @@
   <section class="pb-16 md:pb-20">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-4">
       <a href="/localbiz/dispensary/" class="template-row group">
-        <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 2.6h6v1.9H9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10.2 4.5h3.6v2.3h-3.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6.5 6.8h11v11.4a2.8 2.8 0 0 1-2.8 2.8H9.3a2.8 2.8 0 0 1-2.8-2.8V6.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10.6c-.7-1.7-2-2.3-2.9-2.1.6 1.2 1.6 2.2 2.9 2.9M12 10.6c.7-1.7 2-2.3 2.9-2.1-.6 1.2-1.6 2.2-2.9 2.9M12 11.5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="template-thumb-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5M5 10.5V20h14v-9.5M10 20v-5.5h4V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="min-w-0 flex-1">
           <h2 class="font-serif text-xl sm:text-2xl text-brand">Dispensary</h2>
           <p class="mt-1.5 text-sm sm:text-[0.95rem] text-ink/75 leading-relaxed">Catalog, cart, and checkout with age gating and potency data for licensed cannabis retail.</p>

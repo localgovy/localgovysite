@@ -117,14 +117,14 @@
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
 
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-3 xl:gap-5 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
-        <a href="/" class="text-paper/80 hover:text-paper transition">Home</a>
-        <a href="/localbiz/" class="text-paper/80 hover:text-paper transition">For Businesses</a>
-        <a href="/localgovy/" class="text-paper/80 hover:text-paper transition">For Municipalities</a>
-        <a href="/localfaith/" class="text-paper font-semibold">For Religious Institutions</a>
-        <a href="/pricing/" class="text-paper/80 hover:text-paper transition">Pricing</a>
+    <div class="site-header-bar">
+      <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-40 lg:w-44 brightness-125" width="256" height="256" decoding="async" /></picture></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/localbiz/" class="nav-link">For Businesses</a>
+        <a href="/localgovy/" class="nav-link">For Municipalities</a>
+        <a href="/localfaith/" class="nav-link nav-link-current">For Religious Institutions</a>
+        <span class="nav-rule" aria-hidden="true"></span>
+        <a href="/pricing/" class="nav-link">Pricing</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
         <a href="/demo/?type=faith" class="px-4 py-2 md:px-5 md:py-2.5 btn btn-on-dark text-sm md:text-base whitespace-nowrap">Book a Demo</a>

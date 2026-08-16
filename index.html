@@ -226,14 +226,14 @@
 
   <!-- ===== HEADER (shared across all pages) ===== -->
   <header class="sticky top-0 z-50 bg-brand text-paper/90 border-b border-black/10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 md:w-52 brightness-125" width="256" height="256" decoding="async" /></picture></a>
-      <nav class="hidden lg:flex items-center gap-3 xl:gap-5 text-[0.85rem] xl:text-[0.95rem] font-medium whitespace-nowrap">
-        <a href="/" class="text-paper font-semibold">Home</a>
-        <a href="/localbiz/" class="text-paper/80 hover:text-paper transition">For Businesses</a>
-        <a href="/localgovy/" class="text-paper/80 hover:text-paper transition">For Municipalities</a>
-        <a href="/localfaith/" class="text-paper/80 hover:text-paper transition">For Religious Institutions</a>
-        <a href="/pricing/" class="text-paper/80 hover:text-paper transition">Pricing</a>
+    <div class="site-header-bar">
+      <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-40 lg:w-44 brightness-125" width="256" height="256" decoding="async" /></picture></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/localbiz/" class="nav-link">For Businesses</a>
+        <a href="/localgovy/" class="nav-link">For Municipalities</a>
+        <a href="/localfaith/" class="nav-link">For Religious Institutions</a>
+        <span class="nav-rule" aria-hidden="true"></span>
+        <a href="/pricing/" class="nav-link">Pricing</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
         <a href="/demo/" class="px-4 py-2 md:px-5 md:py-2.5 btn btn-on-dark text-sm md:text-base whitespace-nowrap">Book a Demo</a>
@@ -290,7 +290,7 @@
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold text-brand/85">
         <span class="text-sub font-medium uppercase tracking-[0.14em] text-xs">Built for</span>
         <a href="/localbiz/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3v7M8 3v18M11 3v7M5 10h6M16 21V8.5M16 3.2c2.6 1.4 3.6 4.4 3 8.3H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Shops &amp; restaurants</a>
-        <a href="/localbiz/dispensary/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 2.6h6v1.9H9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10.2 4.5h3.6v2.3h-3.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6.5 6.8h11v11.4a2.8 2.8 0 0 1-2.8 2.8H9.3a2.8 2.8 0 0 1-2.8-2.8V6.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10.6c-.7-1.7-2-2.3-2.9-2.1.6 1.2 1.6 2.2 2.9 2.9M12 10.6c.7-1.7 2-2.3 2.9-2.1-.6 1.2-1.6 2.2-2.9 2.9M12 11.5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Dispensaries</a>
+        <a href="/localbiz/dispensary/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5M5 10.5V20h14v-9.5M10 20v-5.5h4V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Dispensaries</a>
         <a href="/localfaith/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3M6 20V10l6-4 6 4v10M10 20v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Mosques, temples &amp; churches</a>
         <a href="/localgovy/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 2.5h10A1.5 1.5 0 0118.5 4v16a1.5 1.5 0 01-1.5 1.5H7A1.5 1.5 0 015.5 20V4A1.5 1.5 0 017 2.5zM12 18.25h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Towns &amp; cities</a>
       </div>
