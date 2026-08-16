@@ -53,9 +53,9 @@
         "@type": "OfferCatalog",
         "name": "LocalGovy subscriptions",
         "itemListElement": [
-          { "@type": "Offer", "name": "Retail app", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/localbiz/" },
-          { "@type": "Offer", "name": "Faith Complete Platform", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/localfaith/" },
-          { "@type": "Offer", "name": "Municipal mobile app", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/localgovy/towns/" },
+          { "@type": "Offer", "name": "Retail app", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/business/" },
+          { "@type": "Offer", "name": "Faith Complete Platform", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/religion/" },
+          { "@type": "Offer", "name": "Municipal mobile app", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/municipal/towns/" },
           { "@type": "Offer", "name": "App plus one website", "priceCurrency": "CAD", "price": "250", "url": "https://localgovy.com/demo/?type=municipality&product=bundle" }
         ]
       }
@@ -79,9 +79,9 @@
     <div class="site-header-bar">
       <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-40 lg:w-44 brightness-125" width="256" height="256" decoding="async" /></picture></a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/localbiz/" class="nav-link">For Businesses</a>
-        <a href="/localgovy/" class="nav-link">For Municipalities</a>
-        <a href="/localfaith/" class="nav-link">For Religious Institutions</a>
+        <a href="/business/" class="nav-link">For Businesses</a>
+        <a href="/municipal/" class="nav-link">For Municipalities</a>
+        <a href="/religion/" class="nav-link">For Religious Institutions</a>
         <span class="nav-rule" aria-hidden="true"></span>
         <a href="/pricing/" class="nav-link nav-link-current">Pricing</a>
       </nav>
@@ -93,9 +93,9 @@
     <div id="mobileMenu" class="lg:hidden hidden border-t border-black/10 bg-brand">
       <nav class="px-4 py-3 flex flex-col text-sm font-medium">
         <a onclick="toggleMenu()" href="/" class="py-2.5 text-paper/85">Home</a>
-        <a onclick="toggleMenu()" href="/localbiz/" class="py-2.5 text-paper/85">For Businesses</a>
-        <a onclick="toggleMenu()" href="/localgovy/" class="py-2.5 text-paper/85">For Municipalities</a>
-        <a onclick="toggleMenu()" href="/localfaith/" class="py-2.5 text-paper/85">For Religious Institutions</a>
+        <a onclick="toggleMenu()" href="/business/" class="py-2.5 text-paper/85">For Businesses</a>
+        <a onclick="toggleMenu()" href="/municipal/" class="py-2.5 text-paper/85">For Municipalities</a>
+        <a onclick="toggleMenu()" href="/religion/" class="py-2.5 text-paper/85">For Religious Institutions</a>
         <a onclick="toggleMenu()" href="/about/" class="py-2.5 text-paper/85 border-t border-white/10 mt-1 pt-3">About</a>
         <a onclick="toggleMenu()" href="/pricing/" class="py-2.5 text-paper font-semibold">Pricing</a>
         <a href="/demo/" class="mt-3 py-2.5 text-center btn btn-on-dark">Book a Demo</a>
@@ -134,7 +134,7 @@
       <p class="mt-3 text-sm text-sub">Not included: a separate public website. That is the faith and municipal products.</p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="/demo/?type=retail" class="px-6 py-3 btn btn-primary">Book a Demo</a>
-        <a href="/localbiz/" class="px-6 py-3 btn btn-secondary">See demos</a>
+        <a href="/business/" class="px-6 py-3 btn btn-secondary">See demos</a>
       </div>
     </div>
   </section>
@@ -146,7 +146,7 @@
       <p class="mt-4 text-ink leading-relaxed">The app <strong class="font-semibold text-ink">and</strong> a matching website on the same dashboard. Prayer and service times, giving, events, media. This is not the municipal price list — towns take the app at $150, or the app plus one website at $250.</p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="/demo/?type=faith" class="px-6 py-3 btn btn-primary">Book a Demo</a>
-        <a href="/localfaith/" class="px-6 py-3 btn btn-secondary">See demos</a>
+        <a href="/religion/" class="px-6 py-3 btn btn-secondary">See demos</a>
       </div>
     </div>
   </section>
@@ -188,7 +188,7 @@
           <a href="/demo/?type=municipality&product=more" class="mt-auto pt-8 inline-flex justify-center px-5 py-2.5 btn btn-primary text-sm">Book a Demo</a>
         </div>
       </div>
-      <p class="mt-5 text-sm"><a href="/localgovy/" class="text-brand font-semibold hover:underline">See the municipal samples</a></p>
+      <p class="mt-5 text-sm"><a href="/municipal/" class="text-brand font-semibold hover:underline">See the municipal samples</a></p>
     </div>
   </section>
 
@@ -225,7 +225,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
         <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
-        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Platforms</div><ul class="space-y-2 text-sm"><li><a href="/localbiz/" class="hover:text-paper transition">For Businesses</a></li><li><a href="/localgovy/" class="hover:text-paper transition">For Municipalities</a></li><li><a href="/localfaith/" class="hover:text-paper transition">For Religious Institutions</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Platforms</div><ul class="space-y-2 text-sm"><li><a href="/business/" class="hover:text-paper transition">For Businesses</a></li><li><a href="/municipal/" class="hover:text-paper transition">For Municipalities</a></li><li><a href="/religion/" class="hover:text-paper transition">For Religious Institutions</a></li></ul></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="/pricing/" class="hover:text-paper transition">Pricing</a></li><li><a href="/demo/" class="hover:text-paper transition">Book a Demo</a></li></ul></div>
       </div>
       <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>

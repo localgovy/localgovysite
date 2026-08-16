@@ -114,7 +114,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Apps for businesses",
-                "url": "https://localgovy.com/localbiz/"
+                "url": "https://localgovy.com/business/"
               }
             },
             {
@@ -122,7 +122,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Dispensary ordering apps",
-                "url": "https://localgovy.com/localbiz/dispensary/"
+                "url": "https://localgovy.com/business/dispensary/"
               }
             },
             {
@@ -130,7 +130,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Apps for religious institutions",
-                "url": "https://localgovy.com/localfaith/"
+                "url": "https://localgovy.com/religion/"
               }
             },
             {
@@ -138,7 +138,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Municipal websites and apps",
-                "url": "https://localgovy.com/localgovy/"
+                "url": "https://localgovy.com/municipal/"
               }
             }
           ]
@@ -229,9 +229,9 @@
     <div class="site-header-bar">
       <a href="/" class="flex items-center py-3"><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-40 lg:w-44 brightness-125" width="256" height="256" decoding="async" /></picture></a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/localbiz/" class="nav-link">For Businesses</a>
-        <a href="/localgovy/" class="nav-link">For Municipalities</a>
-        <a href="/localfaith/" class="nav-link">For Religious Institutions</a>
+        <a href="/business/" class="nav-link">For Businesses</a>
+        <a href="/municipal/" class="nav-link">For Municipalities</a>
+        <a href="/religion/" class="nav-link">For Religious Institutions</a>
         <span class="nav-rule" aria-hidden="true"></span>
         <a href="/pricing/" class="nav-link">Pricing</a>
       </nav>
@@ -243,9 +243,9 @@
     <div id="mobileMenu" class="lg:hidden hidden border-t border-black/10 bg-brand">
       <nav class="px-4 py-3 flex flex-col text-sm font-medium">
         <a onclick="toggleMenu()" href="/" class="py-2.5 text-paper font-semibold">Home</a>
-        <a onclick="toggleMenu()" href="/localbiz/" class="py-2.5 text-paper/85">For Businesses</a>
-        <a onclick="toggleMenu()" href="/localgovy/" class="py-2.5 text-paper/85">For Municipalities</a>
-        <a onclick="toggleMenu()" href="/localfaith/" class="py-2.5 text-paper/85">For Religious Institutions</a>
+        <a onclick="toggleMenu()" href="/business/" class="py-2.5 text-paper/85">For Businesses</a>
+        <a onclick="toggleMenu()" href="/municipal/" class="py-2.5 text-paper/85">For Municipalities</a>
+        <a onclick="toggleMenu()" href="/religion/" class="py-2.5 text-paper/85">For Religious Institutions</a>
         <a onclick="toggleMenu()" href="/about/" class="py-2.5 text-paper/85 border-t border-white/10 mt-1 pt-3">About</a>
         <a onclick="toggleMenu()" href="/pricing/" class="py-2.5 text-paper/85">Pricing</a>
         <a href="/demo/" class="mt-3 py-2.5 text-center btn btn-on-dark">Book a Demo</a>
@@ -272,9 +272,9 @@
           <a href="#demos" class="px-6 py-3.5 btn btn-secondary">See demos</a>
         </div>
         <div class="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold">
-          <a href="/localbiz/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Businesses</a>
-          <a href="/localgovy/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Municipalities</a>
-          <a href="/localfaith/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Religious Institutions</a>
+          <a href="/business/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Businesses</a>
+          <a href="/municipal/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Municipalities</a>
+          <a href="/religion/" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Religious Institutions</a>
         </div>
         <p class="mt-8 inline-flex items-baseline justify-center gap-2.5 text-[0.95rem] text-ink/65">
           <span class="font-serif text-2xl leading-none tracking-tight text-gold">$150</span>
@@ -289,10 +289,10 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-7 md:py-8">
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold text-brand/85">
         <span class="text-sub font-medium uppercase tracking-[0.14em] text-xs">Built for</span>
-        <a href="/localbiz/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3v7M8 3v18M11 3v7M5 10h6M16 21V8.5M16 3.2c2.6 1.4 3.6 4.4 3 8.3H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Shops &amp; restaurants</a>
-        <a href="/localbiz/dispensary/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5M5 10.5V20h14v-9.5M10 20v-5.5h4V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Dispensaries</a>
-        <a href="/localfaith/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3M6 20V10l6-4 6 4v10M10 20v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Mosques, temples &amp; churches</a>
-        <a href="/localgovy/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 2.5h10A1.5 1.5 0 0118.5 4v16a1.5 1.5 0 01-1.5 1.5H7A1.5 1.5 0 015.5 20V4A1.5 1.5 0 017 2.5zM12 18.25h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Towns &amp; cities</a>
+        <a href="/business/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3v7M8 3v18M11 3v7M5 10h6M16 21V8.5M16 3.2c2.6 1.4 3.6 4.4 3 8.3H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Shops &amp; restaurants</a>
+        <a href="/business/dispensary/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5M5 10.5V20h14v-9.5M10 20v-5.5h4V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Dispensaries</a>
+        <a href="/religion/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3M6 20V10l6-4 6 4v10M10 20v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Mosques, temples &amp; churches</a>
+        <a href="/municipal/" class="inline-flex items-center gap-1.5 hover:text-brand transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 2.5h10A1.5 1.5 0 0118.5 4v16a1.5 1.5 0 01-1.5 1.5H7A1.5 1.5 0 015.5 20V4A1.5 1.5 0 017 2.5zM12 18.25h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Towns &amp; cities</a>
       </div>
     </div>
   </section>
@@ -339,19 +339,19 @@
       </div>
 
       <div class="mt-10 grid md:grid-cols-3 gap-3">
-        <a href="/localbiz/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+        <a href="/business/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
           <div class="w-11 h-11 rounded-md bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 10l9-6 9 6M5 10v10h14V10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 class="mt-5 font-serif text-2xl text-brand">For Businesses</h3>
           <p class="mt-2 text-sm text-ink/75 leading-relaxed flex-1">Dispensary, restaurant, and golf simulator — ordering, bookings, and loyalty in your own app.</p>
           <span class="mt-6 text-sm font-semibold text-brand inline-flex items-center gap-2">See demos <svg class="template-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a href="/localgovy/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+        <a href="/municipal/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
           <div class="w-11 h-11 rounded-md bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 2.5h10A1.5 1.5 0 0118.5 4v16a1.5 1.5 0 01-1.5 1.5H7A1.5 1.5 0 015.5 20V4A1.5 1.5 0 017 2.5zM12 18.25h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 class="mt-5 font-serif text-2xl text-brand">For Municipalities</h3>
           <p class="mt-2 text-sm text-ink/75 leading-relaxed flex-1">Towns and cities — an iOS and Android app, or the app plus one website. News, alerts, events, polls, and a 24/7 resident assistant.</p>
           <span class="mt-6 text-sm font-semibold text-brand inline-flex items-center gap-2">See demos <svg class="template-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a href="/localfaith/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
+        <a href="/religion/" class="group rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left hover:shadow-soft transition">
           <div class="w-11 h-11 rounded-md bg-brand text-paper flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v3M6 20V10l6-4 6 4v10M10 20v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 class="mt-5 font-serif text-2xl text-brand">For Religious Institutions</h3>
           <p class="mt-2 text-sm text-ink/75 leading-relaxed flex-1">Mosque, church, and temple — prayer and service times, giving, events, and a matching website.</p>
@@ -410,7 +410,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
         <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Idea to demo in 48 hours — deployed in 2 weeks.</p></div>
-        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Platforms</div><ul class="space-y-2 text-sm"><li><a href="/localbiz/" class="hover:text-paper transition">For Businesses</a></li><li><a href="/localgovy/" class="hover:text-paper transition">For Municipalities</a></li><li><a href="/localfaith/" class="hover:text-paper transition">For Religious Institutions</a></li></ul></div>
+        <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Platforms</div><ul class="space-y-2 text-sm"><li><a href="/business/" class="hover:text-paper transition">For Businesses</a></li><li><a href="/municipal/" class="hover:text-paper transition">For Municipalities</a></li><li><a href="/religion/" class="hover:text-paper transition">For Religious Institutions</a></li></ul></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/50 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="/pricing/" class="hover:text-paper transition">Pricing</a></li><li><a href="/demo/" class="hover:text-paper transition">Book a Demo</a></li></ul></div>
       </div>
       <div class="mt-10 pt-6 border-t border-white/10 text-xs text-paper/50 flex flex-col sm:flex-row justify-between gap-2"><div>© <span id="year"></span> LocalGovy. All rights reserved.</div><div>Toronto, Ontario, Canada · Serving Canada &amp; the US</div></div>

@@ -5,9 +5,9 @@ module.exports = {
     './about/**/*.html',
     './demo/**/*.html',
     './pricing/**/*.html',
-    './localbiz/**/*.html',
-    './localfaith/**/*.html',
-    './localgovy/**/*.html',
+    './business/**/*.html',
+    './religion/**/*.html',
+    './municipal/**/*.html',
   ],
   theme: {
     extend: {
