@@ -42,23 +42,39 @@
     flex-shrink: 0;
     background: rgb(246 243 236 / 0.22);
   }
+  .panel {
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+  .mark {
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
+  }
   .template-row {
-    @apply flex items-center gap-4 sm:gap-6 rounded-2xl border border-line bg-paper p-4 sm:p-5 text-left hover:shadow-soft hover:border-brand/40 transition;
+    @apply flex items-center gap-4 sm:gap-6 border border-line bg-paper p-4 sm:p-5 text-left hover:shadow-soft hover:border-brand/40 transition;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
   }
   .template-thumb {
-    @apply w-[4.25rem] sm:w-[5.5rem] h-[6.4rem] sm:h-[8.25rem] flex-shrink-0 rounded-[0.95rem] overflow-hidden bg-black border border-black/10;
+    @apply w-14 h-14 sm:w-[4.25rem] sm:h-[4.25rem] flex-shrink-0 overflow-hidden bg-black;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
   }
   .template-thumb img {
     @apply w-full h-full object-cover object-top;
   }
   .template-thumb-fallback {
-    @apply w-[4.25rem] sm:w-[5.5rem] h-[6.4rem] sm:h-[8.25rem] flex-shrink-0 rounded-[0.95rem] bg-brand text-paper flex items-center justify-center border border-black/10;
+    @apply w-14 h-14 sm:w-[4.25rem] sm:h-[4.25rem] flex-shrink-0 bg-brand text-paper flex items-center justify-center;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
   }
   .template-arrow {
     @apply w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-brand/35 group-hover:text-brand group-hover:translate-x-1 transition;
   }
   .cta-band {
-    @apply rounded-xl bg-brand text-paper px-6 py-12 md:px-12 md:py-16 text-center border border-brand;
+    @apply bg-brand text-paper px-6 py-12 md:px-12 md:py-16 text-center border border-brand;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
   }
   .btn {
     @apply inline-flex items-center justify-center font-semibold transition;
@@ -93,7 +109,9 @@
     border-left: 3px solid #D4C7B0;
   }
   .price-col {
-    @apply rounded-xl border border-brand/20 border-t-[3px] border-t-brand bg-surface p-6 md:p-7 flex flex-col text-left;
+    @apply border border-brand/20 border-t-[3px] border-t-brand bg-surface p-6 md:p-7 flex flex-col text-left;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
   }
   .price-col-featured {
     @apply border-brand border-t-gold2 bg-brand text-paper;
@@ -108,7 +126,9 @@
     @apply min-w-0;
   }
   .audience-table-item {
-    @apply flex items-start gap-3 rounded-lg border border-brand/15 bg-paper px-3.5 py-3.5 h-full min-w-0 text-left;
+    @apply flex items-start gap-3 border border-brand/15 bg-paper px-3.5 py-3.5 h-full min-w-0 text-left;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
   }
   a.audience-table-item {
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -118,7 +138,9 @@
     box-shadow: 0 1px 2px rgba(20, 32, 27, 0.05), 0 12px 28px -18px rgba(20, 32, 27, 0.22);
   }
   .audience-table-icon {
-    @apply w-9 h-9 flex-shrink-0 rounded-md bg-brand text-paper flex items-center justify-center;
+    @apply w-9 h-9 flex-shrink-0 bg-brand text-paper flex items-center justify-center;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
   }
   .audience-table-name {
     @apply block font-serif text-lg text-brand leading-tight;
@@ -131,5 +153,20 @@
   }
   .brief-list > div {
     @apply py-4;
+  }
+  .plan-spec {
+    @apply mt-6 border-t border-line text-[0.95rem];
+  }
+  .plan-spec > div {
+    @apply flex items-baseline justify-between gap-4 py-3 border-b border-line;
+  }
+  .plan-spec dt {
+    @apply text-ink leading-snug;
+  }
+  .plan-spec .yes {
+    @apply font-semibold text-brand shrink-0;
+  }
+  .plan-spec .no {
+    @apply text-sub shrink-0;
   }
 }
