@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         sans: ['Montserrat', 'system-ui', 'sans-serif'],
         serif: ['Newsreader', 'Georgia', 'serif'],
+        btn: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
       },
       colors: {
         paper: '#F6F3EC',

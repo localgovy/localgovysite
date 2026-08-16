@@ -65,6 +65,7 @@
 
   <link rel="preload" as="font" href="/assets/fonts/montserrat-latin.woff2" type="font/woff2" crossorigin />
   <link rel="preload" as="font" href="/assets/fonts/newsreader-latin.woff2" type="font/woff2" crossorigin />
+  <link rel="preload" as="font" href="/assets/fonts/ibm-plex-sans-latin.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts.css" />
   <link rel="stylesheet" href="/assets/site.css" />
   <style>
@@ -138,7 +139,20 @@
       <p class="font-serif text-lg text-gold tracking-tight">Pricing</p>
       <h1 class="mt-3 font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight text-brand">Starting at $150 a month.</h1>
       <div class="mt-5 h-[3px] w-16 bg-brand" aria-hidden="true"></div>
-      <p class="mt-5 text-lg text-ink leading-relaxed">A business app starts at $150 a month. Religious institutions get the app and a matching website at the same price. Towns pay $150 for the app, or $250 for the app and one website.</p>
+      <ul class="mt-6 divide-y divide-line border-t border-b border-line text-ink">
+        <li class="py-3 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-8">
+          <span class="font-serif text-xl text-brand">Businesses</span>
+          <span class="text-[0.95rem] text-ink/80 sm:text-right">App, starting at $150/mo</span>
+        </li>
+        <li class="py-3 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-8">
+          <span class="font-serif text-xl text-brand">Municipalities</span>
+          <span class="text-[0.95rem] text-ink/80 sm:text-right">App $150/mo, or app and one website $250/mo</span>
+        </li>
+        <li class="py-3 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-8">
+          <span class="font-serif text-xl text-brand">Religious institutions</span>
+          <span class="text-[0.95rem] text-ink/80 sm:text-right">App and website, starting at $150/mo</span>
+        </li>
+      </ul>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="/demo/" class="px-6 py-3.5 btn btn-primary">Book a Demo</a>
         <a href="mailto:noah@localgovy.com" class="px-6 py-3.5 btn btn-secondary">Email us</a>
