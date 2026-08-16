@@ -156,10 +156,18 @@
     @apply block mt-0.5 text-xs text-ink/70 leading-snug;
   }
   .brief-list {
-    @apply divide-y divide-line border-t border-b border-line;
+    @apply grid sm:grid-cols-2 lg:grid-cols-3 gap-3;
   }
   .brief-list > div {
-    @apply py-4;
+    @apply border border-brand/20 border-t-[3px] border-t-brand bg-paper p-6 flex flex-col text-left;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+  .brief-list h3 {
+    @apply font-serif text-xl text-brand;
+  }
+  .brief-list p {
+    @apply mt-2 text-[0.95rem] text-ink/80 leading-relaxed;
   }
   .plan-spec {
     @apply mt-6 border-t border-line text-[0.95rem];
