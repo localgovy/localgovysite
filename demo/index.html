@@ -353,13 +353,13 @@
       formError.classList.remove('hidden');
     }
 
-    /** Map UI audience → factory booking templateType (retail | municipal | dispensary). */
+    /** Map UI audience → factory booking type (retail | municipal | dispensary). */
     function factoryTemplateType() {
       const checked = form.querySelector('input[name="templateType"]:checked');
       const dataType = (checked && checked.getAttribute('data-type')) || 'retail';
       if (dataType === 'municipality') return 'municipal';
       if (dataType === 'retail') return 'dispensary';
-      // faith / other — factory retail vertical until a faith template exists
+      // faith / other — factory retail vertical until a faith booking type exists
       return 'retail';
     }
 
