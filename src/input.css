@@ -170,4 +170,16 @@
   .plan-spec .no {
     @apply text-sub shrink-0;
   }
+  .bill-spec {
+    @apply grid sm:grid-cols-2 gap-x-10 text-[0.95rem];
+  }
+  .bill-spec > div {
+    @apply flex items-baseline justify-between gap-4 py-3.5 border-b border-line;
+  }
+  .bill-spec dt {
+    @apply font-serif text-lg text-brand;
+  }
+  .bill-spec dd {
+    @apply text-ink/80 text-right;
+  }
 }
