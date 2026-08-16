@@ -10,8 +10,8 @@
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
-  <title>Pricing — Apps from $150/mo, Towns App or App and a Site | LocalGovy</title>
-  <meta name="description" content="Published rates in CAD. Retail and faith $150/mo. Towns: mobile app $150, or the app plus one website $250. Extra apps and sites are quoted. First month free. Demo in 48 hours." />
+  <title>Pricing — Starting at $150/mo | LocalGovy</title>
+  <meta name="description" content="Published CAD rates. Retail and faith starting at $150/mo. Towns: mobile app $150, or the app plus one website $250. Extra apps and sites are quoted. First month free. Demo in 48 hours." />
   <meta name="author" content="LocalGovy" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#123B2C" />
@@ -22,14 +22,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LocalGovy" />
   <meta property="og:title" content="Pricing — LocalGovy" />
-  <meta property="og:description" content="Retail and faith $150/mo. Towns: mobile app $150, or the app plus one website $250. Extra properties are quoted." />
+  <meta property="og:description" content="Retail and faith starting at $150/mo. Towns: mobile app $150, or the app plus one website $250. Extra apps and sites are quoted." />
   <meta property="og:url" content="https://localgovy.com/pricing/" />
   <meta property="og:image" content="https://localgovy.com/lg_logo-256.png" />
   <meta property="og:locale" content="en_CA" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Pricing — LocalGovy" />
-  <meta name="twitter:description" content="Retail and faith $150/mo. Towns: mobile app $150, or the app plus one website $250." />
+  <meta name="twitter:description" content="Retail and faith starting at $150/mo. Towns: mobile app $150, or the app plus one website $250." />
   <meta name="twitter:image" content="https://localgovy.com/lg_logo-256.png" />
 
   <script type="application/ld+json">
@@ -40,7 +40,7 @@
         "@type": "WebPage",
         "name": "Pricing — LocalGovy",
         "url": "https://localgovy.com/pricing/",
-        "description": "Published CAD rates for LocalGovy apps and municipal subscriptions. Retail and faith $150 per month. Towns: mobile app $150, app plus one website $250. Extra apps and sites are quoted."
+        "description": "Published CAD rates for LocalGovy apps and municipal subscriptions. Retail and faith starting at $150 per month. Towns: mobile app $150, app plus one website $250. Extra apps and sites are quoted."
       },
       {
         "@type": "BreadcrumbList",
@@ -53,10 +53,10 @@
         "@type": "OfferCatalog",
         "name": "LocalGovy subscriptions",
         "itemListElement": [
-          { "@type": "Offer", "name": "Retail app", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/business/" },
-          { "@type": "Offer", "name": "Faith Complete Platform", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/religion/" },
-          { "@type": "Offer", "name": "Municipal mobile app", "priceCurrency": "CAD", "price": "150", "url": "https://localgovy.com/municipal/towns/" },
-          { "@type": "Offer", "name": "App plus one website", "priceCurrency": "CAD", "price": "250", "url": "https://localgovy.com/demo/?type=municipality&product=bundle" }
+          { "@type": "Offer", "name": "Retail app", "priceCurrency": "CAD", "price": "150", "description": "Starting monthly rate", "url": "https://localgovy.com/business/" },
+          { "@type": "Offer", "name": "Faith Complete Platform", "priceCurrency": "CAD", "price": "150", "description": "Starting monthly rate for app and matching website", "url": "https://localgovy.com/religion/" },
+            { "@type": "Offer", "name": "Municipal mobile app", "priceCurrency": "CAD", "price": "150", "description": "iOS and Android. A public website is not included.", "url": "https://localgovy.com/municipal/towns/" },
+          { "@type": "Offer", "name": "App plus one website", "priceCurrency": "CAD", "price": "250", "description": "The same municipal app plus one public website", "url": "https://localgovy.com/demo/?type=municipality&product=bundle" }
         ]
       }
     ]
@@ -71,6 +71,36 @@
     html { scroll-behavior: smooth; }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
+    .cta-steps {
+      list-style: none;
+      margin: 1.75rem auto 0;
+      max-width: 28.5rem;
+      padding: 0;
+      text-align: left;
+      border-top: 1px solid rgba(212, 199, 176, 0.34);
+    }
+    .cta-steps li {
+      display: grid;
+      grid-template-columns: 1.75rem minmax(0, 1fr);
+      column-gap: 1.15rem;
+      align-items: baseline;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(212, 199, 176, 0.34);
+    }
+    .cta-steps .n {
+      font-family: Newsreader, Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: #D4C7B0;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.55;
+    }
+    .cta-steps p {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: rgba(246, 243, 236, 0.9);
+    }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gold/25">
@@ -106,66 +136,94 @@
   <div class="bg-surface/60 border-b border-line"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-xs text-sub flex items-center gap-2"><a href="/" class="hover:text-brand transition">Home</a><span>/</span><span class="text-brand font-medium">Pricing</span></div></div>
 
   <section class="border-b border-line">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-10 md:pb-12">
-      <p class="font-serif text-lg text-gold tracking-tight">Rate card</p>
-      <h1 class="mt-3 font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight text-brand">What it costs</h1>
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-10 md:pb-12">
+      <p class="font-serif text-lg text-gold tracking-tight">Pricing</p>
+      <h1 class="mt-3 font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight text-brand">Starting at $150 a month.</h1>
       <div class="mt-5 h-[3px] w-16 bg-brand" aria-hidden="true"></div>
-      <p class="mt-5 text-lg text-ink leading-relaxed">The numbers on this page are the prices. Print it, put it in a staff report, or send it to a treasurer. You do not need a call to find out what a standard subscription costs.</p>
-    </div>
-  </section>
-
-  <section id="how-we-bill" class="py-12 md:py-16 scroll-mt-24">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-2xl md:text-3xl text-brand">How we bill</h2>
-      <div class="mt-6 brief-list">
-        <div><h3 class="font-serif text-xl text-brand">Canadian dollars</h3><p class="mt-1 text-[0.95rem] text-ink/80">Rates below are CAD per month, billed annually.</p></div>
-        <div><h3 class="font-serif text-xl text-brand">First month free</h3><p class="mt-1 text-[0.95rem] text-ink/80">Then the annual invoice. No implementation fee. No per-resident fee.</p></div>
-        <div><h3 class="font-serif text-xl text-brand">Nothing until you are live</h3><p class="mt-1 text-[0.95rem] text-ink/80">The branded sample is free to look at. You pay when the product ships to residents or customers.</p></div>
-        <div><h3 class="font-serif text-xl text-brand">A working sample in 48 hours</h3><p class="mt-1 text-[0.95rem] text-ink/80">Book a demo. We build it in your name and colours. That is not a custom quote for the SKUs on this page.</p></div>
+      <p class="mt-5 text-lg text-ink leading-relaxed">Retail and faith start at $150. Towns take a mobile app at $150, or the app plus one website at $250. CAD, billed annually, first month free. You pay nothing until you are live.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/demo/" class="px-6 py-3.5 btn btn-primary">Book a Demo</a>
+        <a href="mailto:noah@localgovy.com" class="px-6 py-3.5 btn btn-secondary">Email us</a>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+        <a href="#businesses" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Businesses</a>
+        <a href="#municipalities" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Municipalities</a>
+        <a href="#faith" class="text-brand hover:text-brand2 underline-offset-2 hover:underline">For Religious Institutions</a>
       </div>
     </div>
   </section>
 
-  <section id="businesses" class="py-12 md:py-16 bg-surface border-y border-line scroll-mt-24">
+  <section id="how-we-bill" class="py-16 md:py-24 scroll-mt-24">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <p class="text-xs uppercase tracking-[0.16em] text-gold font-semibold">For Businesses</p>
-      <h2 class="mt-2 font-serif text-3xl md:text-4xl text-brand">Retail &amp; ordering · $150/mo</h2>
-      <p class="mt-4 text-ink leading-relaxed">Branded iOS and Android. Ordering, bookings, loyalty, and push. One plan for shops, kitchens, dispensaries, and clubs.</p>
-      <p class="mt-3 text-sm text-sub">Not included: a separate public website. That is the faith and municipal products.</p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="/demo/?type=retail" class="px-6 py-3 btn btn-primary">Book a Demo</a>
-        <a href="/business/" class="px-6 py-3 btn btn-secondary">See demos</a>
+      <h2 class="font-serif text-3xl md:text-4xl text-brand tracking-tight">How we bill</h2>
+      <p class="mt-3 text-ink/75">A working demo in 48 hours. Nothing to pay until you are live.</p>
+      <ol class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-6">
+        <li class="border-t border-line pt-4">
+          <h3 class="font-serif text-xl text-brand">Canadian dollars</h3>
+          <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Rates below are CAD per month, billed annually.</p>
+        </li>
+        <li class="border-t border-line pt-4">
+          <h3 class="font-serif text-xl text-brand">First month free</h3>
+          <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Then the annual invoice. No implementation fee. No per-resident fee.</p>
+        </li>
+        <li class="border-t border-line pt-4">
+          <h3 class="font-serif text-xl text-brand">Nothing until you are live</h3>
+          <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">The branded sample is free to look at. You pay when the product ships to residents or customers.</p>
+        </li>
+        <li class="border-t border-line pt-4">
+          <h3 class="font-serif text-xl text-brand">A working demo in 48 hours</h3>
+          <p class="mt-2 text-[0.95rem] text-ink/80 leading-relaxed">Book a demo. We build it in your name and colours. Typical full launch is about two weeks.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-3 items-stretch">
+      <div id="businesses" class="rounded-xl border border-brand/20 border-t-[3px] border-t-brand bg-surface p-8 md:p-10 flex flex-col scroll-mt-24">
+        <p class="font-serif text-lg text-gold tracking-tight">For Businesses</p>
+        <h2 class="mt-2 font-serif text-3xl md:text-4xl text-brand">Retail &amp; ordering</h2>
+        <p class="mt-4 font-serif text-lg text-gold tracking-tight">Starting at</p>
+        <p class="mt-2 font-serif text-5xl text-brand">$150<span class="text-lg text-sub font-sans">/mo</span></p>
+        <p class="mt-2 text-sm text-sub">Billed annually · first month free</p>
+        <p class="mt-5 text-ink leading-relaxed">A branded iOS and Android app, customized for your business — ordering, bookings, loyalty, and push. We create, deploy, and maintain it. You have the last say in the administrative dashboard; we fill in the gaps.</p>
+        <p class="mt-3 text-sm text-sub leading-relaxed">No implementation fee. You pay nothing until you are live. A public website is not included in this plan.</p>
+        <div class="mt-8 flex flex-wrap gap-3 mt-auto pt-6">
+          <a href="/demo/?type=retail" class="px-6 py-3.5 btn btn-primary">Book a Demo</a>
+          <a href="/business/" class="px-6 py-3.5 btn btn-secondary">See demos</a>
+        </div>
+      </div>
+      <div id="faith" class="rounded-xl border border-brand/20 border-t-[3px] border-t-brand bg-surface p-8 md:p-10 flex flex-col scroll-mt-24">
+        <p class="font-serif text-lg text-gold tracking-tight">For Religious Institutions</p>
+        <h2 class="mt-2 font-serif text-3xl md:text-4xl text-brand">App and website</h2>
+        <p class="mt-4 font-serif text-lg text-gold tracking-tight">Starting at</p>
+        <p class="mt-2 font-serif text-5xl text-brand">$150<span class="text-lg text-sub font-sans">/mo</span></p>
+        <p class="mt-2 text-sm text-sub">Billed annually · first month free</p>
+        <p class="mt-5 text-ink leading-relaxed">A branded iOS and Android app and a matching website, customized for your community — prayer and service times, giving, events, and livestreams. We create, deploy, and maintain it. You have the last say in the administrative dashboard; we fill in the gaps.</p>
+        <p class="mt-3 text-sm text-sub leading-relaxed">No implementation fee. You pay nothing until you are live. The matching website is included in this plan.</p>
+        <div class="mt-8 flex flex-wrap gap-3 mt-auto pt-6">
+          <a href="/demo/?type=faith" class="px-6 py-3.5 btn btn-primary">Book a Demo</a>
+          <a href="/religion/" class="px-6 py-3.5 btn btn-secondary">See demos</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="faith" class="py-12 md:py-16 scroll-mt-24">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <p class="text-xs uppercase tracking-[0.16em] text-gold font-semibold">For Religious Institutions</p>
-      <h2 class="mt-2 font-serif text-3xl md:text-4xl text-brand">Complete Platform · $150/mo</h2>
-      <p class="mt-4 text-ink leading-relaxed">The app <strong class="font-semibold text-ink">and</strong> a matching website on the same dashboard. Prayer and service times, giving, events, media. This is not the municipal price list — towns take the app at $150, or the app plus one website at $250.</p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="/demo/?type=faith" class="px-6 py-3 btn btn-primary">Book a Demo</a>
-        <a href="/religion/" class="px-6 py-3 btn btn-secondary">See demos</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="municipalities" class="py-12 md:py-16 bg-surface border-y border-line scroll-mt-24">
+  <section id="municipalities" class="py-16 md:py-24 scroll-mt-24">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <p class="text-xs uppercase tracking-[0.16em] text-gold font-semibold">For Municipalities</p>
+      <p class="font-serif text-lg text-gold tracking-tight">For Municipalities</p>
       <h2 class="mt-2 font-serif text-3xl md:text-4xl text-brand">App, or app and a site</h2>
-      <p class="mt-3 max-w-2xl text-ink/80 leading-relaxed">Most towns take the app and one website. Same billing rules as above. No per-resident fee.</p>
+      <p class="mt-3 max-w-2xl text-ink/80 leading-relaxed">Most towns take the app and one website. Same billing as above. No per-resident fee. The app is $1,800 a year; the bundle is $3,000 a year. A website is not sold on its own.</p>
       <div class="mt-8 grid md:grid-cols-3 gap-3">
-        <div class="price-col bg-paper">
+        <div class="price-col">
           <h3 class="font-serif text-2xl text-brand">Mobile app</h3>
           <p class="mt-1 font-serif text-lg tracking-tight text-sub">iOS and Android</p>
           <div class="price-amt">
             <p class="font-serif text-4xl leading-none text-brand">$150<span class="text-base font-sans text-sub">/mo</span></p>
           </div>
           <p class="mt-4 text-sm text-ink leading-relaxed">Residents get town news, events, and school updates on iOS and Android, plus a searchable business directory and an AI assistant trained with verified town information. Everything is customized for your municipality.</p>
-          <p class="mt-3 text-sm text-sub leading-relaxed">We maintain and continuously update all content, 24/7. Staff can edit manually from the administrative dashboard at any time.</p>
-          <a href="/demo/?type=municipality&product=mobile" class="mt-auto pt-8 inline-flex justify-center px-5 py-2.5 btn btn-primary text-sm">Book a Demo</a>
+          <p class="mt-3 text-sm text-sub leading-relaxed">We maintain and continuously update all content, 24/7. Staff can edit manually from the administrative dashboard at any time. A public website is not included.</p>
+          <a href="/demo/?type=municipality&amp;product=mobile" class="mt-auto pt-8 inline-flex justify-center px-5 py-2.5 btn btn-primary text-sm">Book a Demo</a>
         </div>
         <div class="price-col price-col-featured">
           <h3 class="font-serif text-2xl text-paper">Town bundle</h3>
@@ -175,9 +233,9 @@
           </div>
           <p class="mt-4 text-sm text-paper/90 leading-relaxed">The same customized mobile app, plus a public municipal website — your main town site, a tourism site, or a BIA site. We create, deploy, and maintain all of it.</p>
           <p class="mt-3 text-sm text-paper/70 leading-relaxed">Your town decides how much control you want. Post, edit, and delete content from the administrative dashboard, and we fill in the gaps wherever you need us. We support the app and website so your community's digital presence stays up and running.</p>
-          <a href="/demo/?type=municipality&product=bundle" class="mt-auto pt-8 inline-flex justify-center px-5 py-2.5 btn btn-on-dark text-sm">Book a Demo</a>
+          <a href="/demo/?type=municipality&amp;product=bundle" class="mt-auto pt-8 inline-flex justify-center px-5 py-2.5 btn btn-on-dark text-sm">Book a Demo</a>
         </div>
-        <div class="price-col bg-paper">
+        <div class="price-col">
           <h3 class="font-serif text-2xl text-brand">Extra apps or sites</h3>
           <p class="mt-1 font-serif text-lg tracking-tight text-sub">Second app, extra site, or a city</p>
           <div class="price-amt">
@@ -185,34 +243,56 @@
           </div>
           <p class="mt-4 text-sm text-ink leading-relaxed">We build as many apps and websites as your municipality needs — a second branded app, another public site, or a city-scale build. Same in-house quality as your first app; extra work is quoted clearly, not buried in an RFP.</p>
           <p class="mt-3 text-sm text-sub leading-relaxed">Tell us what you have in mind. Depending on complexity, we can book a call or send mockups as soon as today. The $150 and $250 rates stay published.</p>
-          <a href="/demo/?type=municipality&product=more" class="mt-auto pt-8 inline-flex justify-center px-5 py-2.5 btn btn-primary text-sm">Book a Demo</a>
+          <a href="/demo/?type=municipality&amp;product=more" class="mt-auto pt-8 inline-flex justify-center px-5 py-2.5 btn btn-primary text-sm">Book a Demo</a>
         </div>
       </div>
       <p class="mt-5 text-sm"><a href="/municipal/" class="text-brand font-semibold hover:underline">See the municipal samples</a></p>
     </div>
   </section>
 
-  <section id="compared" class="py-12 md:py-16 scroll-mt-24">
+  <section id="quotes" class="py-16 md:py-24 border-t border-line scroll-mt-24">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-2xl md:text-3xl text-brand">Compared with quote-only civic platforms</h2>
-      <p class="mt-4 text-ink leading-relaxed">Vendors in the CivicPlus class do not publish a list price. A municipal website for a small town commonly lands in the high four to five figures per year before setup, with a custom quote and annual uplifts. You find that out after a sales call.</p>
-      <p class="mt-4 text-ink leading-relaxed">The LocalGovy town bundle — the app plus one website — is <strong class="font-semibold text-ink">$3,000 a year</strong>. The app alone is $1,800 a year. Those figures are on this page so a clerk can put them in a staff report without waiting on us.</p>
-      <p class="mt-4 text-sm text-sub leading-relaxed">That comparison is for the standard town SKUs above — not a claim about every module, every city, or a percentage discount we cannot show.</p>
+      <div class="rounded-xl border border-brand/20 border-t-[3px] border-t-brand bg-surface p-8 md:p-10">
+        <h2 class="font-serif text-2xl md:text-3xl text-brand">When we quote instead</h2>
+        <p class="mt-4 text-ink leading-relaxed">A letterhead one-pager that repeats the same published rates, if council wants it on paper. Extra apps, extra websites, a city or regional government, or work outside the audiences on this page. Email <a href="mailto:noah@localgovy.com" class="text-brand font-semibold hover:underline">noah@localgovy.com</a> or book a demo. The $150 and $250 rates on this page do not wait on that email.</p>
+      </div>
     </div>
   </section>
 
-  <section id="quotes" class="py-12 md:py-16 border-t border-line scroll-mt-24">
+  <section class="py-16 md:py-24 bg-surface border-y border-line">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-2xl md:text-3xl text-brand">When we quote instead</h2>
-      <p class="mt-4 text-ink leading-relaxed">A letterhead one-pager that repeats the same published SKU, if council wants it on paper. Extra apps, extra websites, a city or regional government, or work outside the audiences on this page. Email <a href="mailto:noah@localgovy.com" class="text-brand font-semibold hover:underline">noah@localgovy.com</a> or book a demo. The $150 and $250 rates on this page do not wait on that email.</p>
+      <h2 class="font-serif text-3xl md:text-4xl text-brand text-center mb-10">Common questions</h2>
+      <div class="divide-y divide-line border-t border-b border-line">
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">What's included at $150?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">Retail is a branded iOS and Android app — ordering, bookings, loyalty, and push. A public website is not included. Faith starts at the same rate and includes a matching website on the same dashboard. Towns take the app at $150; a website is added in the $250 plan.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">Can a town just get a website?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">No. The website comes with the app in the $250 plan. The app alone is $150.</p></details>
+        <details class="group py-4"><summary class="cursor-pointer flex items-center justify-between font-semibold text-brand py-1">Do I pay before I see it?<svg class="transition group-open:rotate-180 flex-shrink-0 ml-3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#48514A" stroke-width="1.8"/></svg></summary><p class="mt-3 text-[0.95rem] text-ink/80">No. You'll see a branded demo within 48 hours of booking. Typical full launch is about two weeks — and you pay nothing until you are live.</p></details>
+      </div>
     </div>
   </section>
 
-  <section class="py-12 md:py-16">
+  <section class="py-16 md:py-24">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <div class="cta-band">
-        <h2 class="font-serif text-3xl md:text-4xl">See it in your name first</h2>
-        <p class="mt-4 text-paper/85 max-w-xl mx-auto leading-relaxed">Four fields. A working sample in 48 hours. The price is the one on this page.</p>
+        <h2 class="font-serif text-3xl md:text-4xl tracking-tight">See it in your name first</h2>
+        <div class="mx-auto mt-5 h-px w-10 bg-gold2/50" aria-hidden="true"></div>
+        <ol class="cta-steps">
+          <li>
+            <span class="n" aria-hidden="true">01</span>
+            <p>Send us the name, website, and any details you feel like we need to know.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">02</span>
+            <p>Receive a fully functional branded demo within 48 hours.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">03</span>
+            <p>You tell us how you like it and if we should make any tweaks.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">04</span>
+            <p>We finish it up and ship it out, ready for the people you serve.</p>
+          </li>
+        </ol>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
           <a href="/demo/" class="px-7 py-3.5 btn btn-on-dark">Book a Demo</a>
           <a href="mailto:noah@localgovy.com" class="px-7 py-3.5 btn btn-ghost-dark">Email us</a>

@@ -93,13 +93,38 @@
     border-left: 3px solid #D4C7B0;
   }
   .price-col {
-    @apply rounded-xl border border-line border-t-[3px] border-t-brand bg-paper p-6 md:p-7 flex flex-col text-left;
+    @apply rounded-xl border border-brand/20 border-t-[3px] border-t-brand bg-surface p-6 md:p-7 flex flex-col text-left;
   }
   .price-col-featured {
     @apply border-brand border-t-gold2 bg-brand text-paper;
   }
   .price-amt {
     @apply mt-3 min-h-[2.75rem] flex items-end;
+  }
+  .audience-table {
+    @apply mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2;
+  }
+  .audience-table > li {
+    @apply min-w-0;
+  }
+  .audience-table-item {
+    @apply flex items-start gap-3 rounded-lg border border-brand/15 bg-paper px-3.5 py-3.5 h-full min-w-0 text-left;
+  }
+  a.audience-table-item {
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  a.audience-table-item:hover {
+    border-color: rgb(18 59 44 / 0.4);
+    box-shadow: 0 1px 2px rgba(20, 32, 27, 0.05), 0 12px 28px -18px rgba(20, 32, 27, 0.22);
+  }
+  .audience-table-icon {
+    @apply w-9 h-9 flex-shrink-0 rounded-md bg-brand text-paper flex items-center justify-center;
+  }
+  .audience-table-name {
+    @apply block font-serif text-lg text-brand leading-tight;
+  }
+  .audience-table-dek {
+    @apply block mt-0.5 text-xs text-ink/70 leading-snug;
   }
   .brief-list {
     @apply divide-y divide-line border-t border-b border-line;
