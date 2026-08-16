@@ -205,7 +205,38 @@
   <section class="py-12 md:py-16 bg-surface border-y border-line">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <h2 class="font-serif text-2xl md:text-3xl text-brand">Price</h2>
-      <p class="mt-3 text-ink leading-relaxed"><strong class="font-semibold text-ink">$75/mo</strong> for the mobile app. <strong class="font-semibold text-ink">$150/mo</strong> for the app plus one website. Billed annually, first month free, no implementation fee, no per-resident fee. The published rate can be locked in for up to five years.</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-3">
+        <div class="price-col bg-paper">
+          <h3 class="font-serif text-xl text-brand">Mobile app</h3>
+          <p class="mt-1 text-sm text-sub">iOS and Android</p>
+          <p class="mt-3 font-serif text-4xl leading-none text-brand">$75<span class="text-base font-sans text-sub">/mo</span></p>
+        </div>
+        <div class="price-col bg-paper">
+          <h3 class="font-serif text-xl text-brand">App + website</h3>
+          <p class="mt-1 text-sm text-sub">The same app, plus one public site</p>
+          <p class="mt-3 font-serif text-4xl leading-none text-brand">$150<span class="text-base font-sans text-sub">/mo</span></p>
+        </div>
+      </div>
+      <div class="mt-3 panel border border-line bg-paper px-6 md:px-8 py-2">
+        <dl class="bill-spec">
+          <div>
+            <dt>Invoice</dt>
+            <dd>Annual</dd>
+          </div>
+          <div>
+            <dt>First month</dt>
+            <dd>Free</dd>
+          </div>
+          <div>
+            <dt>Extra fees</dt>
+            <dd>None</dd>
+          </div>
+          <div>
+            <dt>Rate lock</dt>
+            <dd>Up to 5 years</dd>
+          </div>
+        </dl>
+      </div>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="/demo/?type=municipality&product=mobile" class="px-6 py-3 btn btn-primary">Book the app</a>
         <a href="/demo/?type=municipality&product=bundle" class="px-6 py-3 btn btn-secondary">Book the bundle</a>
