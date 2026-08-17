@@ -2,7 +2,8 @@
   "name": "localgovysite",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./assets/site.css --minify"
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/site.css --minify && node scripts/inline-css.js",
+    "inline:css": "node scripts/inline-css.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
