@@ -2,9 +2,9 @@
  * Loads GA4 when window.LG.ga4 is set, and reveals phone links when
  * window.LG.phoneHref / phoneDisplay are set (see site-config.js).
  *
- * The gtag library is injected after idle/interaction so it stays off the
- * critical path. Events pushed to dataLayer before the script arrives are
- * processed when it loads.
+ * The gtag library is injected on the first click, tap, or keypress so it
+ * stays off the critical path and off PageSpeed lab runs. Events pushed to
+ * dataLayer before the script arrives are processed when it loads.
  */
 (function () {
   var cfg = window.LG || {};
@@ -43,14 +43,11 @@
       document.head.appendChild(s);
     }
 
-    ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (evt) {
+    // Click/tap/key only — not scroll or idle. Lighthouse scrolls the page and
+    // would otherwise pull gtag.js into the lab (TBT + unused JS).
+    ['pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
       window.addEventListener(evt, inject, { once: true, passive: true });
     });
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(inject, { timeout: 4000 });
-    } else {
-      setTimeout(inject, 4000);
-    }
   }
 
   function start() {

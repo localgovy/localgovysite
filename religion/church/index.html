@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" as="font" href="/assets/fonts/newsreader-latin.woff2" type="font/woff2" crossorigin />
 
   <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon/favicon-48x48.png" type="image/png" sizes="48x48" />
@@ -18,7 +19,6 @@
   <meta name="geo.region" content="CA-ON" />
   <meta name="geo.placename" content="Toronto, Ontario" />
   <link rel="canonical" href="https://localgovy.com/religion/church/" />
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LocalGovy" />
   <meta property="og:title" content="Church App — LocalGovy" />
@@ -77,9 +77,6 @@
   }
   </script>
 
-  <link rel="preload" as="font" href="/assets/fonts/montserrat-latin.woff2" type="font/woff2" crossorigin />
-  <link rel="preload" as="font" href="/assets/fonts/newsreader-latin.woff2" type="font/woff2" crossorigin />
-  <link rel="preload" as="font" href="/assets/fonts/source-sans-3-latin.woff2" type="font/woff2" crossorigin />
   <!--lg-css-->
   <style>/* Self-hosted Montserrat (UI) + Newsreader (display) + Source Sans 3 (buttons) — latin variable files */
 @font-face {
@@ -112,30 +109,6 @@
   <style>
     html { scroll-behavior: smooth; }
     .u-gold { background-image: linear-gradient(transparent 62%, rgba(212,199,176,0.55) 62%); }
-    .hero-device { filter: drop-shadow(0 28px 40px rgba(18, 59, 44, 0.22)); }
-    .device-shell {
-      border-radius: 2.35rem;
-      background: linear-gradient(165deg, #2a2a2a 0%, #0c0c0c 45%, #1a1a1a 100%);
-      padding: 0.55rem;
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-    .device-screen {
-      border-radius: 1.85rem;
-      overflow: hidden;
-      background: #000;
-      position: relative;
-    }
-    .device-notch {
-      position: absolute;
-      top: 0.55rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 5.5rem;
-      height: 1.35rem;
-      background: #0c0c0c;
-      border-radius: 999px;
-      z-index: 2;
-    }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
   </style>
@@ -181,8 +154,8 @@
           <p class="mt-6 text-lg md:text-xl text-ink/80 max-w-xl leading-relaxed">Sunday times, giving, small groups, and livestreams in one branded app and matching website — so announcements are not split across email, a Facebook page, and a paper bulletin.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="/demo/?type=faith" class="px-6 py-3.5 btn btn-primary shadow-card">Book a Demo</a>
-            <a href="/religion/" class="px-6 py-3.5 btn btn-secondary">All demos</a>
-            <a href="/pricing/#faith" class="px-6 py-3.5 btn btn-secondary">See pricing</a>
+            <a href="/religion/" class="px-6 py-3.5 btn btn-secondary">All faith demos</a>
+            <a href="/pricing/#faith" class="px-6 py-3.5 btn btn-secondary">See faith pricing</a>
           </div>
         </div>
 
@@ -200,7 +173,7 @@
         <div><h3 class="font-serif text-xl text-brand">Livestreams</h3><p class="mt-1 text-[0.95rem] text-ink/80">Sunday service live and archived for whoever couldn't attend.</p></div>
         <div><h3 class="font-serif text-xl text-brand">Matching website</h3><p class="mt-1 text-[0.95rem] text-ink/80">The $150 complete platform includes the app and a site on the same system.</p></div>
       </div>
-      <p class="mt-8 text-sm text-sub">App and website, starting at <strong class="text-brand font-semibold">$150/mo</strong> · <a href="/pricing/#faith" class="text-brand font-semibold hover:underline">See pricing</a></p>
+      <p class="mt-8 text-sm text-sub">App and website, starting at <strong class="text-brand font-semibold">$150/mo</strong> · <a href="/pricing/#faith" class="text-brand font-semibold hover:underline">See faith pricing</a></p>
     </div>
   </section>
 
@@ -232,7 +205,7 @@
   <footer class="bg-brand text-paper/70 border-t border-black/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-8">
-        <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/60 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
+        <div><picture><source type="image/webp" srcset="/lg_logo-256.webp" /><img src="/lg_logo-256.png" alt="LocalGovy" class="w-44 brightness-125" width="256" height="256" decoding="async" /></picture><p class="mt-4 text-sm text-paper/70 max-w-xs">Custom mobile apps for local businesses and community institutions. Built in Toronto, Ontario — serving Canada &amp; the US.</p></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/70 mb-3">Platforms</div><ul class="space-y-2 text-sm"><li><a href="/municipal/" class="hover:text-paper transition">For Municipalities</a></li><li><a href="/business/" class="hover:text-paper transition">For Businesses</a></li><li><a href="/religion/" class="hover:text-paper transition">For Religious Institutions</a></li></ul></div>
         <div><div class="text-xs uppercase tracking-[0.18em] text-paper/70 mb-3">Company</div><ul class="space-y-2 text-sm"><li><a href="/about/" class="hover:text-paper transition">About</a></li><li><a href="/pricing/" class="hover:text-paper transition">Pricing</a></li><li><a href="/demo/?type=faith" class="hover:text-paper transition">Book a Demo</a></li></ul></div>
       </div>
