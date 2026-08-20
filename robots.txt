@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /municipal/web/
-Disallow: /localgovy/web/
 
 Sitemap: https://localgovy.com/sitemap.xml

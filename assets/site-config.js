@@ -12,6 +12,9 @@ window.LG = {
   phoneDisplay: '(978) 493-3736',
   phoneHref: 'tel:+19784933736',
   ga4: 'G-ZGY68NEY5N',
+  // Google Ads conversion ID. Empty until the Ads account exists.
+  // Example: 'AW-XXXX' or 'AW-XXXX/label' (send_to uses the full value).
+  adsId: '',
   // Factory control plane (Supabase project lg_agent / vyeurfhklejrfkbvxgjo)
   intakeUrl: 'https://vyeurfhklejrfkbvxgjo.supabase.co/functions/v1/intake',
   supabaseAnonKey:

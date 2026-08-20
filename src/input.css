@@ -11,7 +11,7 @@
     flex-shrink: 0;
   }
   .site-nav {
-    @apply hidden lg:flex items-center ml-auto gap-7 xl:gap-10 text-[0.8125rem] font-medium;
+    @apply hidden lg:flex items-center ml-auto gap-5 xl:gap-7 text-[0.8125rem] font-medium;
   }
   .nav-link {
     position: relative;
