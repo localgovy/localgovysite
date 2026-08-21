@@ -8,6 +8,7 @@ module.exports = {
     './business/**/*.html',
     './religion/**/*.html',
     './municipal/**/*.html',
+    './guides/**/*.html',
   ],
   theme: {
     extend: {
